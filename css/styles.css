@@ -14,6 +14,13 @@
   --borderRadius: 0.3rem;
 }
 
+@media (min-width: 400px) {
+  body {
+    width: 500px;
+    margin: 0 auto;
+  }
+}
+
 .title {
   display: flex;
   justify-content: center;
