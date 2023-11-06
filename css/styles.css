@@ -30,6 +30,9 @@
   padding: 1rem;
   font-size: 1.5rem;
   border-radius: 0 0 var(--borderRadius) var(--borderRadius);
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .quizz_card {
