@@ -8,11 +8,79 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
+:root {
+  --border: 1px solid grey;
+  --highlightColor: #51d4e387;
+  --borderRadius: 0.3rem;
+}
+
+body {
+  border: var(--border);
+  margin: 3px;
+}
+
 .title {
   display: flex;
   justify-content: center;
   align-content: center;
   width: 100%;
-  border-bottom: 2px solid grey;
+  border-bottom: var(--border);
   padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.quizz_card {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  padding: 1rem;
+  text-align: center;
+  border-radius: var(--borderRadius);
+  background-color: rgb(243, 242, 242);
+}
+
+.question {
+  margin: 2rem;
+}
+
+.answerButton {
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  border-radius: var(--borderRadius);
+  border: none;
+  background-color: rgb(254, 254, 254);
+  box-shadow: var(--highlightColor) 0 0 10px 1px;
+}
+
+.answer {
+  margin-bottom: 2rem;
+  border: var(--border);
+  width: 80%;
+  padding: 2rem 0;
+  border-radius: var(--borderRadius);
+  display: none;
+}
+
+.tagbox {
+  width: 100%;
+  display: flex;
+}
+
+.category {
+  padding: 0.2rem 0.8rem;
+  border-radius: var(--borderRadius);
+  margin-right: 0.5rem;
+  background-color: var(--highlightColor);
+}
+
+.bookmark {
+  position: absolute;
+  top: -5px;
+  right: 20px;
+  height: 3rem;
+  cursor: pointer;
 }
