@@ -10,7 +10,8 @@
 
 :root {
   --border: 1px solid grey;
-  --highlightColor: #51d4e3;
+  --highlightColor: #51d4e387;
+  --borderRadius: 0.3rem;
 }
 
 body {
@@ -25,27 +26,34 @@ body {
   width: 100%;
   border-bottom: var(--border);
   padding: 1rem;
+  font-size: 1.5rem;
 }
 
 .quizz_card {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
-  border: var(--border);
   margin: 2rem;
   padding: 1rem;
   text-align: center;
+  border-radius: var(--borderRadius);
+  background-color: rgb(243, 242, 242);
 }
 
 .question {
   margin: 2rem;
 }
 
-.showAnswer {
+.answerButton {
   width: fit-content;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   margin-bottom: 2rem;
+  border-radius: var(--borderRadius);
+  border: none;
+  background-color: rgb(254, 254, 254);
+  box-shadow: var(--highlightColor) 0 0 10px 1px;
 }
 
 .answer {
@@ -53,6 +61,8 @@ body {
   border: var(--border);
   width: 80%;
   padding: 2rem 0;
+  border-radius: var(--borderRadius);
+  display: none;
 }
 
 .tagbox {
@@ -60,9 +70,17 @@ body {
   display: flex;
 }
 
-.tag {
+.category {
   padding: 0.2rem 0.8rem;
-  border-radius: 0.3rem;
+  border-radius: var(--borderRadius);
   margin-right: 0.5rem;
   background-color: var(--highlightColor);
+}
+
+.bookmark {
+  position: absolute;
+  top: -5px;
+  right: 20px;
+  height: 3rem;
+  cursor: pointer;
 }
