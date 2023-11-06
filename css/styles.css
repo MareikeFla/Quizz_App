@@ -60,6 +60,7 @@
   border: none;
   background-color: rgb(254, 254, 254);
   box-shadow: var(--highlightColor) 0 0 10px 1px;
+  cursor: pointer;
 }
 
 .answer {
