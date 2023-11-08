@@ -14,6 +14,10 @@
   --borderRadius: 0.5rem;
 }
 
+:focus {
+  box-shadow: rgb(255, 106, 0) 0 0 2px 3px;
+}
+
 /* @media (min-width: 400px) {
   body {
     width: 500px;
@@ -26,7 +30,7 @@
   justify-content: center;
   align-content: center;
   width: 100%;
-  height: 10vh;
+  height: 4rem;
   background: linear-gradient(#00c1ff, #00546f);
   display: flex;
   align-items: center;
@@ -37,13 +41,16 @@
   top: 0;
   z-index: 1;
   color: rgb(255, 255, 255);
+  box-shadow: #00536f9a 0 3px 20px 2px;
 }
 
 .quizz_card {
   position: relative;
-  min-height: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 1rem;
-  padding: 1rem;
+  padding: 3.05rem 1rem 1rem 1rem;
   border-radius: var(--borderRadius);
   background-color: rgb(243, 242, 242);
 }
@@ -51,46 +58,40 @@
 .boxQuestion,
 .boxAnswer {
   background-color: white;
-  padding: 15px;
+  width: 100%;
+  padding: 1rem;
   border-radius: var(--borderRadius);
-  display: flex;
   color: #242424;
   display: flex;
   justify-content: center;
 }
 
 .boxQuestion {
-  width: 70%;
   min-height: 9rem;
+  margin-bottom: 1rem;
 }
 
 .boxAnswer {
   min-height: 5rem;
+  margin-top: 1rem;
 }
 
 .answerButton {
-  width: 20%;
-  max-width: 100px;
-  aspect-ratio: 1 / 1;
   font-size: 1rem;
-  margin-bottom: 2rem;
-  border-radius: 6rem;
   border: none;
-  background-color: rgb(254, 254, 254);
+  box-shadow: #00536f56 0 0 10px 8px;
   cursor: pointer;
-  position: absolute;
-  right: 15px;
-  top: 80px;
-  font-size: 1rem;
-  outline: 5px solid green;
-  color: green;
+  margin: 0.5rem;
+  padding: 0.5rem 2.5rem;
+  max-width: 300px;
+  border-radius: var(--borderRadius);
 }
 
 .tagbox {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  margin: 10px 0;
+  margin: 1rem 0;
 }
 
 .category {
@@ -98,7 +99,6 @@
   border-radius: var(--borderRadius);
   margin-right: 0.5rem;
   background-color: white;
-  margin-top: 3px;
   color: #cf3737;
   font-size: 0.8rem;
 }
@@ -106,13 +106,9 @@
 .bookmark {
   position: absolute;
   top: -5px;
-  right: 28px;
-  height: 4rem;
+  right: 0.5rem;
+  height: 3rem;
   cursor: pointer;
-}
-
-:focus {
-  outline: 2px solid red;
 }
 
 footer {
@@ -123,10 +119,11 @@ footer {
   bottom: 0;
   background: linear-gradient(#00c1ff, #00546f);
   border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+  box-shadow: #00536f9a 0 -3px 20px 2px;
 }
 
 .linkNav {
-  height: 10vh;
+  height: 3rem;
   display: flex;
   align-items: center;
 }
