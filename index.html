@@ -8,44 +8,47 @@
   </head>
   <body>
     <section class="title">
-      <h1>Quizz-App</h1>
+      <h1>QuizMe</h1>
     </section>
     <main>
       <article class="quizz_card">
-        <p class="question">What property flips the axes in flexbox</p>
-        <button class="answerButton">Show Answer</button>
-        <p class="answer">flex-direction</p>
+        <div aria-label="Question Box" class="boxQuestion">
+          <p class="question" tabindex="0">
+            What property flips the axes in flexbox?
+          </p>
+        </div>
+        <form action="">
+          <button aria-label="Show me the answer" class="answerButton">
+            Show answer
+          </button>
+        </form>
+
+        <div aria-label="Answer Box" class="boxAnswer">
+          <p class="answer" tabindex="0">?</p>
+        </div>
         <div class="tagbox">
           <div class="category">#css</div>
           <div class="category">#html</div>
           <div class="category">#javascript</div>
         </div>
         <img
-          src="pictures/bookmark-plus-regular-24.png"
-          alt="Bookmark"
+          src="pictures/Bookmark_Inactive.png"
+          alt="Click to bookmark this qustion"
           class="bookmark"
-        />
-      </article>
-      <article class="quizz_card">
-        <p class="question">What property flips the axes in flexbox</p>
-        <button class="answerButton">Show Answer</button>
-        <p class="answer">flex-direction</p>
-        <div class="tagbox">
-          <div class="category">#css</div>
-          <div class="category">#html</div>
-          <div class="category">#javascript</div>
-        </div>
-        <img
-          src="pictures/bookmark-star-solid-24.png"
-          alt="Bookmark"
-          class="bookmark active"
+          tabindex="0"
         />
       </article>
     </main>
     <footer>
-      <a href="#"><img src="pictures/home-smile-regular-24.png" alt="Home" class="imgFooter"></a>
-      <a href="#"></a><img src="pictures/bookmarks-regular-24.png" alt="Bookmarks" class="imgFooter"></a>
-      <a href="#"></a><img src="pictures/user-regular-24.png" alt="Profile" class="imgFooter"></a>
+      <a class="linkNav linkHome" href="#"
+        ><img src="pictures/HomeNav.png" alt="Home" class="imgFooter"
+      /></a>
+      <a class="linkNav linkHome" href="#"
+        ><img src="pictures/bookmarkNav.png" alt="Bookmarks" class="imgFooter"
+      /></a>
+      <a class="linkNav slinkHome" href="#"
+        ><img src="pictures/ProfileNav.png" alt="Profile" class="imgFooter"
+      /></a>
     </footer>
   </body>
 </html>
