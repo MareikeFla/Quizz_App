@@ -25,6 +25,16 @@
   }
 } */
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
 .title {
   display: flex;
   justify-content: center;
@@ -115,8 +125,6 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: sticky;
-  bottom: 0;
   background: linear-gradient(#00c1ff, #00546f);
   border-radius: var(--borderRadius) var(--borderRadius) 0 0;
   box-shadow: #00536f9a 0 -3px 20px 2px;
