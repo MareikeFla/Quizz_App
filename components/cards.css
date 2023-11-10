@@ -1,0 +1,66 @@
+.cards {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  padding: 3.05rem 1rem 1rem 1rem;
+  border-radius: var(--borderRadius);
+  background-color: rgb(243, 242, 242);
+}
+
+.cards-question-box,
+.cards-answer-box {
+  background-color: white;
+  width: 100%;
+  padding: 1rem;
+  border-radius: var(--borderRadius);
+  color: #242424;
+  display: flex;
+  justify-content: center;
+}
+
+.cards-question-box {
+  min-height: 9rem;
+  margin-bottom: 1rem;
+}
+
+.cards-answer-box {
+  min-height: 5rem;
+  margin-top: 1rem;
+}
+
+.cards-answer-button {
+  font-size: 1rem;
+  border: none;
+  box-shadow: #00536f56 0 0 10px 8px;
+  cursor: pointer;
+  margin: 0.5rem;
+  padding: 0.5rem 2.5rem;
+  max-width: 300px;
+  border-radius: var(--borderRadius);
+}
+
+.cards-tagbox {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.cards-tag {
+  padding: 0.2rem 0.8rem;
+  border-radius: var(--borderRadius);
+  margin-right: 0.5rem;
+  background-color: white;
+  color: #cf3737;
+  font-size: 0.8rem;
+}
+
+.cards-bookmark {
+  position: absolute;
+  top: -5px;
+  right: 0.5rem;
+  height: 3rem;
+  cursor: pointer;
+}

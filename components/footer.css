@@ -1,0 +1,18 @@
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(#00c1ff, #00546f);
+  border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+  box-shadow: #00536f9a 0 -3px 20px 2px;
+}
+
+.footer-link {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.footer-link-img {
+  height: 70%;
+}

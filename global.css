@@ -13,3 +13,16 @@
   --highlightColor: #51d4e387;
   --borderRadius: 0.5rem;
 }
+:focus {
+  box-shadow: rgb(255, 106, 0) 0 0 2px 3px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
