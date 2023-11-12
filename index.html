@@ -8,53 +8,52 @@
   </head>
   <body>
     <header>
-      <h1>QuizMe</h1>
+      <h1>Quiz Wave</h1>
     </header>
     <main>
-      <article class="cards">
-        <div aria-label="Question Box" class="cards-question-box">
-          <p class="cards-question" tabindex="0">
-            What property flips the axes in flexbox?
+      <section class="card">
+        <div class="card-header">
+          <h2 class="card-questionNumber">#1</h2>
+          <img
+            src="pictures/bookmark-active.png"
+            alt="bookmark-active"
+            class="card-bookmark"
+          />
+        </div>
+        <div class="card-questionBox">
+          <p class="card-questionText">
+            Wich attribut flips the axes of a flexbox?
           </p>
+          <button class="card-button">Show Answer</button>
         </div>
-        <form action="">
-          <button aria-label="Show me the answer" class="cards-answer-button">
-            Show answer
-          </button>
-        </form>
-
-        <div aria-label="Answer Box" class="cards-answer-box">
-          <p class="card-answer" tabindex="0">CARD 1</p>
+        <div class="card-answerBox">
+          <p class="card-answerText">flex-direction</p>
         </div>
-        <div class="cards-tagbox">
-          <div class="cards-tag">#css</div>
-          <div class="cards-tag">#html</div>
-          <div class="cards-tag">#javascript</div>
+        <div class="card-tagBox">
+          <arcitcle class="card-tag">#css</arcitcle>
+          <arcitcle class="card-tag">#html</arcitcle>
+          <arcitcle class="card-tag">#javascript</arcitcle>
         </div>
-        <img
-          src="pictures/Bookmark_Inactive.png"
-          alt="Click to bookmark this qustion"
-          class="cards-bookmark"
-          tabindex="0"
-        />
-      </article>
+      </section>
     </main>
     <footer>
-      <a class="footer-link linkHome" href="#"
-        ><img src="pictures/HomeNav.png" alt="Home" class="footer-link-img"
-      /></a>
-      <a class="footer-link linkHome" href="#"
+      <a href="#" class="footer-link footer-link-home footer-activePage"
+        ><img src="pictures/HomeNav.png" alt="Link Home" class="footer-icon" />
+      </a>
+      <a href="#" class="footer-link footer-link-bookmarks"
         ><img
           src="pictures/bookmarkNav.png"
-          alt="Bookmarks"
-          class="footer-link-img"
-      /></a>
-      <a class="footer-link slinkHome" href="#"
+          alt="Link Bookmark"
+          class="footer-icon"
+        />
+      </a>
+      <a href="#" class="footer-link footer-link-profile"
         ><img
           src="pictures/ProfileNav.png"
-          alt="Profile"
-          class="footer-link-img"
-      /></a>
+          alt="Link Profile"
+          class="footer-icon"
+        />
+      </a>
     </footer>
   </body>
 </html>

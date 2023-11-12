@@ -4,15 +4,13 @@ header {
   align-content: center;
   width: 100%;
   height: 4rem;
-  background: linear-gradient(#00c1ff, #00546f);
-  display: flex;
-  align-items: center;
-  font-size: 8vh;
-  overflow: hidden;
+  background-color: var(--colorBase);
+  font-size: 1.5rem;
   border-radius: 0 0 var(--borderRadius) var(--borderRadius);
   position: sticky;
   top: 0;
   z-index: 1;
-  color: rgb(255, 255, 255);
-  box-shadow: #00536f9a 0 3px 20px 2px;
+  color: white;
+  text-shadow: var(--colorHighlight) 0 0 15px;
+  box-shadow: var(--colorDark) 0 3px 20px 2px;
 }

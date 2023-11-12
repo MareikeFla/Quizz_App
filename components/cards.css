@@ -1,66 +1,74 @@
-.cards {
-  position: relative;
+.card {
+  background-color: var(--colorBase);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--colorHighlight) 0 0 15px 0px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--gapStandard);
+  margin-bottom: calc(0.5 * var(--gapStandard));
+}
+
+.card-questionNumber {
+  color: var(--colorDark);
+  align-self: center;
+  font-size: 1rem;
+}
+
+.card-bookmark {
+  height: 3rem;
+  margin-top: -10px;
+}
+
+.card-questionBox,
+.card-answerBox {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem;
-  padding: 3.05rem 1rem 1rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: var(--gapStandard) var(--gapStandard) var(--gapStandard)
+    var(--gapStandard);
+  background-color: var(--colorTextBox);
+  margin: 0 calc(1 * var(--gapStandard));
   border-radius: var(--borderRadius);
-  background-color: rgb(243, 242, 242);
+}
+.card-answerBox,
+.card-tagBox {
+  margin-bottom: var(--gapStandard);
 }
 
-.cards-question-box,
-.cards-answer-box {
-  background-color: white;
-  width: 100%;
-  padding: 1rem;
-  border-radius: var(--borderRadius);
-  color: #242424;
-  display: flex;
-  justify-content: center;
+.card-questionBox {
+  margin-bottom: calc(2 * var(--gapStandard));
 }
 
-.cards-question-box {
-  min-height: 9rem;
-  margin-bottom: 1rem;
+.card-questionText {
+  margin-bottom: var(--gapStandard);
 }
-
-.cards-answer-box {
-  min-height: 5rem;
-  margin-top: 1rem;
-}
-
-.cards-answer-button {
-  font-size: 1rem;
+.card-button {
+  padding: calc(0.5 * var(--gapStandard)) calc(2 * var(--gapStandard));
+  margin-bottom: calc(-2 * var(--gapStandard));
+  background-color: var(--colorTextBox);
   border: none;
-  box-shadow: #00536f56 0 0 10px 8px;
-  cursor: pointer;
-  margin: 0.5rem;
-  padding: 0.5rem 2.5rem;
-  max-width: 300px;
+  box-shadow: var(--colorDark) 0 0 10px 0;
   border-radius: var(--borderRadius);
 }
 
-.cards-tagbox {
-  width: 100%;
+.card-tagBox {
   display: flex;
+  background-color: var(--colorBase);
+  gap: calc(0.5 * var(--gapStandard));
+  margin: 0 calc(1 * var(--gapStandard)) var(--gapStandard)
+    calc(1 * var(--gapStandard));
   flex-wrap: wrap;
-  margin: 1rem 0;
 }
 
-.cards-tag {
-  padding: 0.2rem 0.8rem;
-  border-radius: var(--borderRadius);
-  margin-right: 0.5rem;
-  background-color: white;
-  color: #cf3737;
-  font-size: 0.8rem;
-}
-
-.cards-bookmark {
-  position: absolute;
-  top: -5px;
-  right: 0.5rem;
-  height: 3rem;
-  cursor: pointer;
+.card-tag {
+  background-color: var(--colorTextBox);
+  padding: calc(0.25 * var(--gapStandard)) calc(0.5 * var(--gapStandard));
+  font-size: 0.7rem;
+  color: var(--colorHighlight);
+  border-radius: calc(0.5 * var(--borderRadius));
 }
