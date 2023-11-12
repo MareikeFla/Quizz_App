@@ -1,0 +1,74 @@
+.card {
+  background-color: var(--colorBase);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--colorHighlight) 0 0 15px 0px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--gapStandard);
+  margin-bottom: calc(0.5 * var(--gapStandard));
+}
+
+.card-questionNumber {
+  color: var(--colorDark);
+  align-self: center;
+  font-size: 1rem;
+}
+
+.card-bookmark {
+  height: 3rem;
+  margin-top: -10px;
+}
+
+.card-questionBox,
+.card-answerBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: var(--gapStandard) var(--gapStandard) var(--gapStandard)
+    var(--gapStandard);
+  background-color: var(--colorTextBox);
+  margin: 0 calc(1 * var(--gapStandard));
+  border-radius: var(--borderRadius);
+}
+.card-answerBox,
+.card-tagBox {
+  margin-bottom: var(--gapStandard);
+}
+
+.card-questionBox {
+  margin-bottom: calc(2 * var(--gapStandard));
+}
+
+.card-questionText {
+  margin-bottom: var(--gapStandard);
+}
+.card-button {
+  padding: calc(0.5 * var(--gapStandard)) calc(2 * var(--gapStandard));
+  margin-bottom: calc(-2 * var(--gapStandard));
+  background-color: var(--colorTextBox);
+  border: none;
+  box-shadow: var(--colorDark) 0 0 10px 0;
+  border-radius: var(--borderRadius);
+}
+
+.card-tagBox {
+  display: flex;
+  background-color: var(--colorBase);
+  gap: calc(0.5 * var(--gapStandard));
+  margin: 0 calc(1 * var(--gapStandard)) var(--gapStandard)
+    calc(1 * var(--gapStandard));
+  flex-wrap: wrap;
+}
+
+.card-tag {
+  background-color: var(--colorTextBox);
+  padding: calc(0.25 * var(--gapStandard)) calc(0.5 * var(--gapStandard));
+  font-size: 0.7rem;
+  color: var(--colorHighlight);
+  border-radius: calc(0.5 * var(--borderRadius));
+}

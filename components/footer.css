@@ -1,0 +1,31 @@
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;
+  background-color: var(--colorBase);
+  border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+  box-shadow: var(--colorDark) 0 -3px 20px 2px;
+}
+
+.footer-icon {
+  height: 2.5rem;
+  cursor: pointer;
+}
+
+.footer-link {
+  background-color: var(--colorDark);
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  border-radius: var(--borderRadius);
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.footer-activePage {
+  background-color: var(--colorHighlight);
+}
