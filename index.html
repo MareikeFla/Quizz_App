@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
     <title>Quizz App</title>
   </head>
   <body>
@@ -17,17 +18,27 @@
           <img
             src="pictures/bookmark-active.png"
             alt="bookmark-active"
-            class="card-bookmark"
+            class="card-bookmark card-bookmarked"
+          />
+          <img
+            src="pictures/Bookmark_Inactive.png"
+            alt="bookmark-inactive"
+            class="card-bookmark card-notBookmarked card-bookmark-hide"
           />
         </div>
         <div class="card-questionBox">
           <p class="card-questionText">
             Wich attribut flips the axes of a flexbox?
           </p>
-          <button class="card-button">Show Answer</button>
+          <button class="card-button">
+            <p class="card-button-textShow">Show Answer</p>
+            <p class="card-button-textHide card-button-textHidden">
+              Hide Answer
+            </p>
+          </button>
         </div>
         <div class="card-answerBox">
-          <p class="card-answerText">flex-direction</p>
+          <p class="card-answerText card-answerText-hidden">flex-direction</p>
         </div>
         <div class="card-tagBox">
           <arcitcle class="card-tag">#css</arcitcle>
@@ -44,7 +55,7 @@
         ><img
           src="pictures/bookmarkNav.png"
           alt="Link Bookmark"
-          class="footer-icon"
+          class="footer-icon footer-icon-hidden"
         />
       </a>
       <a href="#" class="footer-link footer-link-profile"
