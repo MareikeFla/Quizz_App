@@ -22,13 +22,16 @@
   margin-top: -10px;
 }
 
+.card-bookmark-hide {
+  display: none;
+}
+
 .card-questionBox,
 .card-answerBox {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  font-size: 0.9rem;
   padding: var(--gapStandard) var(--gapStandard) var(--gapStandard)
     var(--gapStandard);
   background-color: var(--colorTextBox);
@@ -46,7 +49,25 @@
 
 .card-questionText {
   margin-bottom: var(--gapStandard);
+  font-size: 0.9rem;
 }
+
+.card-answerBox {
+  transition: 1s ease-out;
+}
+
+.card-answerBox-active {
+  background-color: var(--colorHighlight);
+}
+
+.card-answerText {
+  color: var(--colorBase);
+}
+
+.card-answerText-hidden {
+  visibility: hidden;
+}
+
 .card-button {
   padding: calc(0.5 * var(--gapStandard)) calc(2 * var(--gapStandard));
   margin-bottom: calc(-2 * var(--gapStandard));
@@ -54,6 +75,11 @@
   border: none;
   box-shadow: var(--colorDark) 0 0 10px 0;
   border-radius: var(--borderRadius);
+  cursor: pointer;
+}
+
+.card-button-textHidden {
+  display: none;
 }
 
 .card-tagBox {
