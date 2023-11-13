@@ -20,6 +20,7 @@
 .card-bookmark {
   height: 3rem;
   margin-top: -10px;
+  cursor: pointer;
 }
 
 .card-bookmark-hide {

@@ -14,12 +14,16 @@
 }
 
 .statistics {
-  outline: 2px solid hotpink;
   margin: var(--gapStandard) 0;
+  background-color: var(--colorTextBox);
 }
 
 h3 {
   font-size: 1.1rem;
   color: var(--colorHighlight);
   margin-bottom: var(--gapStandard);
+}
+
+.settings {
+  background-color: var(--colorDark);
 }
