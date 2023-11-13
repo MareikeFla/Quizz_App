@@ -4,7 +4,7 @@ const cardButtonTextHide = document.querySelector(".card-button-textHide");
 const cardAnswerText = document.querySelector(".card-answerText");
 const cardAnswerBox = document.querySelector(".card-answerBox");
 
-const cardBookmark = document.querySelector(".card-bookmark");
+const cardBookmark = document.querySelectorAll(".card-bookmark");
 const cardBookmarked = document.querySelector(".card-bookmarked");
 const cardNotBookmarked = document.querySelector(".card-notBookmarked");
 
@@ -15,7 +15,13 @@ cardButton.addEventListener("click", () => {
   cardButtonTextHide.classList.toggle("card-button-textHidden");
 });
 
-cardBookmark.addEventListener("click", () => {
+cardBookmarked.addEventListener("click", () => {
+  cardBookmarked.classList.toggle("card-bookmark-hide");
+  cardNotBookmarked.classList.toggle("card-bookmark-hide");
+  console.log("click");
+});
+
+cardNotBookmarked.addEventListener("click", () => {
   cardBookmarked.classList.toggle("card-bookmark-hide");
   cardNotBookmarked.classList.toggle("card-bookmark-hide");
   console.log("click");
