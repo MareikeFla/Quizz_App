@@ -1,0 +1,40 @@
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-picture {
+  height: 7rem;
+}
+
+.profile-headerHeadline {
+  color: var(--colorHighlight);
+}
+
+.statistics {
+  margin: var(--gapStandard) 0;
+  background-color: var(--colorTextBox);
+}
+
+.statistics,
+.settings {
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.profile-main {
+  margin-top: 1rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  color: var(--colorHighlight);
+  margin-bottom: var(--gapStandard);
+}
+
+@media (prefers-color-scheme: dark) {
+  .settings-mode {
+    /* Rausfinden wie ich mache dass die checkbox "checked" ist wenn darkmode an */
+  }
+}

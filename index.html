@@ -5,11 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
-    <title>Quizz App</title>
+    <title>Quizz App Profile</title>
   </head>
   <body>
     <header>
-      <h1>Quiz Wave</h1>
+      <p class="header-word">QUIZ</p>
+      <img
+        src="pictures/dolphin2.png"
+        alt="Silouette of a dolphin"
+        class="header-logo header-logo-lightMode"
+      />
+      <img
+        src="pictures/dolphin1.png"
+        alt="Silouette of a dolphin"
+        class="header-logo header-logo-darkMode"
+      />
+      <p class="header-word">WAVE</p>
     </header>
     <main>
       <section class="card">
@@ -26,7 +37,7 @@
             class="card-bookmark card-notBookmarked card-bookmark-hide"
           />
         </div>
-        <div class="card-questionBox">
+        <div class="card-questionBox card-textBox">
           <p class="card-questionText">
             Wich attribut flips the axes of a flexbox?
           </p>
@@ -37,7 +48,7 @@
             </p>
           </button>
         </div>
-        <div class="card-answerBox">
+        <div class="card-answerBox card-textBox">
           <p class="card-answerText card-answerText-hidden">flex-direction</p>
         </div>
         <div class="card-tagBox">
@@ -48,17 +59,22 @@
       </section>
     </main>
     <footer>
-      <a href="#" class="footer-link footer-link-home footer-activePage"
+      <a
+        href="index.html"
+        class="footer-link footer-link-home footer-activePage"
         ><img src="pictures/HomeNav.png" alt="Link Home" class="footer-icon" />
       </a>
-      <a href="#" class="footer-link footer-link-bookmarks"
+      <a href="profile.html" class="footer-link footer-link-bookmarks"
         ><img
           src="pictures/bookmarkNav.png"
           alt="Link Bookmark"
           class="footer-icon footer-icon-hidden"
         />
       </a>
-      <a href="#" class="footer-link footer-link-profile"
+      <a
+        href="/profile.html"
+        target="_blank"
+        class="footer-link footer-link-profile"
         ><img
           src="pictures/ProfileNav.png"
           alt="Link Profile"

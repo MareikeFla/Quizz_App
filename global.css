@@ -9,10 +9,9 @@
 }
 
 :root {
-  --colorHighlight: #1fad9e;
+  --colorHighlight: #26add1;
   --colorBase: #f2f2f2;
   --colorDark: #7f7f7f;
-  --colorBookmarked: #ffbe0b;
   --colorTextBox: #ffff;
   --borderRadius: 0.5rem;
   --gapStandard: 1rem;
@@ -30,4 +29,13 @@ main {
   display: flex;
   flex-direction: column;
   padding: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --colorHighlight: #26add1;
+    --colorBase: #181818;
+    --colorDark: #a8a8a8;
+    --colorTextBox: #e0e0e0;
+  }
 }
