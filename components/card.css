@@ -27,6 +27,11 @@
   display: none;
 }
 
+.card-textBox {
+  background-color: var(--colorTextBox);
+  border-radius: var(--borderRadius);
+}
+
 .card-questionBox,
 .card-answerBox {
   display: flex;
@@ -35,9 +40,7 @@
   text-align: center;
   padding: var(--gapStandard) var(--gapStandard) var(--gapStandard)
     var(--gapStandard);
-  background-color: var(--colorTextBox);
   margin: 0 calc(1 * var(--gapStandard));
-  border-radius: var(--borderRadius);
 }
 .card-answerBox,
 .card-tagBox {

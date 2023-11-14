@@ -9,28 +9,36 @@
   </head>
   <body>
     <header>
-      <h1>Quiz Wave</h1>
+      <p class="header-word">QUIZ</p>
+      <img
+        src="pictures/dolphin2.png"
+        alt="Silouette of a dolphin"
+        class="header-logo header-logo-lightMode"
+      />
+      <img
+        src="pictures/dolphin1.png"
+        alt="Silouette of a dolphin"
+        class="header-logo header-logo-darkMode"
+      />
+      <p class="header-word">WAVE</p>
     </header>
     <main>
       <section class="profile-header">
-        <img
-          src="pictures/image1.png"
-          alt="Quiz Wave Logo"
-          class="profile-picture"
-        />
         <h2 class="profile-headerHeadline">Welcome <span class="profile-username">Mareike</span>!</h2>
       </section>
-      <section class="statistics">
-        <h3 class="statistics-headline">Statistics</h3>
-        <div class="statistics-cards"><span>You have </span><span>12</span><span> quiz cards at the moment and </span></div>
-        <div class="statistics-bookmarks"><span>14</span><span> of your quiz cards are bookmarked.</span></div>
-      </section>
-      <section class="settings">
+      <section class="profile-main card">
+       <article class="statistics card-textBox">
+          <h3 class="statistics-headline">Statistics</h3>
+          <div class="statistics-cards"><span>You have </span><span>12</span><span> quiz cards at the moment and </span></div>
+          <div class="statistics-bookmarks"><span>14</span><span> of your quiz cards are bookmarked.</span></div>
+        </article>
+      <article class="settings card-textBox">
         <h3 class="settings-headline">Settings</h3>
         <label for="settings-toggle-mode">Switch to dark mode
-            <input id="settings-toggle-mode" class="settings-mode" type="checkbox" ></input>
+            <input id="settings-toggle-mode" class="settings-mode" type="checkbox"></input>
         </label>
       </section>
+    </section>
     </main>
     <footer>
       <a
