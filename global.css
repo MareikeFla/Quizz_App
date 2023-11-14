@@ -30,3 +30,12 @@ main {
   flex-direction: column;
   padding: 1rem;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --colorHighlight: #26add1;
+    --colorBase: #181818;
+    --colorDark: #a8a8a8;
+    --colorTextBox: #e0e0e0;
+  }
+}
