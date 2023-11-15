@@ -28,13 +28,13 @@ main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 1.5rem 1rem 1rem 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --colorHighlight: #26add1;
-    --colorBase: #181818;
+    --colorBase: #0d1117;
     --colorDark: #a8a8a8;
     --colorTextBox: #e0e0e0;
   }

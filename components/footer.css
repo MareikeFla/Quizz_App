@@ -11,21 +11,27 @@ footer {
   box-shadow: var(--colorDark) 0 -3px 20px 2px;
 }
 
-.footer-icon {
-  height: 2.5rem;
-  cursor: pointer;
-}
-
 .footer-link {
-  background-color: var(--colorDark);
-  width: 30%;
+  box-shadow: white 0 5px 10px 1px inset, var(--colorDark) 0 0 10px 5px inset,
+    var(--colorDark) 0 3px 7px 0;
+  height: 3rem;
+  width: 3rem;
   display: flex;
   justify-content: center;
+  align-items: center;
   border-radius: var(--borderRadius);
   padding: 5px 0;
   cursor: pointer;
 }
 
+.footer-icon {
+  height: 2.3rem;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
 .footer-activePage {
-  background-color: var(--colorHighlight);
+  box-shadow: white 0 5px 10px 1px inset,
+    var(--colorHighlight) 0 0 10px 5px inset,
+    var(--colorHighlight) 0 0 12px 5px inset, var(--colorDark) 0 3px 7px 0;
 }

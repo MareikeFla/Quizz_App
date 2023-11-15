@@ -1,7 +1,6 @@
 .card {
-  background-color: var(--colorBase);
+  background-color: var(--colorHighlight);
   border-radius: var(--borderRadius);
-  box-shadow: var(--colorHighlight) 0 0 15px 0px;
 }
 
 .card-header {
@@ -12,7 +11,7 @@
 }
 
 .card-questionNumber {
-  color: var(--colorDark);
+  color: var(--colorBase);
   align-self: center;
   font-size: 1rem;
 }
@@ -21,6 +20,7 @@
   height: 3rem;
   margin-top: -10px;
   cursor: pointer;
+  box-shadow: red 0 0 2px 2p;
 }
 
 .card-bookmark-hide {
@@ -88,7 +88,6 @@
 
 .card-tagBox {
   display: flex;
-  background-color: var(--colorBase);
   gap: calc(0.5 * var(--gapStandard));
   margin: 0 calc(1 * var(--gapStandard)) var(--gapStandard)
     calc(1 * var(--gapStandard));
