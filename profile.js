@@ -25,7 +25,5 @@ toggleMode.addEventListener("click", () => {
     document.documentElement.style.setProperty("--colorDark", colorDark);
     document.documentElement.style.setProperty("--colorTextBox", colorTextBox);
   }
-
   console.log(toggleModeStatus);
-  // console.log(colorBase);
 });
