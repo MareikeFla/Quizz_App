@@ -10,12 +10,21 @@
 
 :root {
   --colorHighlight: #26add1;
-  --colorBase: #f2f2f2;
-  --colorDark: #7f7f7f;
-  --colorTextBox: #ffff;
+  /* This vaiables are based on the prefered color scheme and are set with .js  */
+  --colorBase: ;
+  --colorDark: ;
+  --colorTextBox: ;
   --borderRadius: 0.5rem;
   --gapStandard: 1rem;
+  --darkMode: 0;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --darkMode: 1;
+  }
+}
+
 :focus {
   box-shadow: rgb(255, 106, 0) 0 0 2px 3px;
 }
@@ -29,13 +38,4 @@ main {
   display: flex;
   flex-direction: column;
   padding: 1.5rem 1rem 1rem 1rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --colorHighlight: #26add1;
-    --colorBase: #0d1117;
-    --colorDark: #a8a8a8;
-    --colorTextBox: #e0e0e0;
-  }
 }

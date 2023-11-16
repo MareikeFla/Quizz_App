@@ -7,12 +7,45 @@ const cardAnswerBox = document.querySelector(".card-answerBox");
 const cardBookmarked = document.querySelector(".card-bookmarked");
 const cardNotBookmarked = document.querySelector(".card-notBookmarked");
 
-const footerLinkHome = document.querySelector(".footer-link-home");
-const footerLinkBookmarks = document.querySelector(".footer-link-bookmarks");
-const footerLinkProfile = document.querySelector(".footer-link-profile");
-let footerLinkActive = footerLinkHome;
+const prefersDarkMode = Boolean(
+  getComputedStyle(document.documentElement).getPropertyValue("--darkMode")
+);
 
-const footerLink = document.querySelectorAll(".footer-link");
+const colorBase = "#f2f2f2";
+const colorBaseDark = "#181818";
+const colorDark = "#7f7f7f";
+const colorDarkDark = "#a8a8a8";
+const colorTextBox = "#ffffff";
+const colorTextBoxDark = "#e0e0e0";
+
+function initialColorMode() {
+  if (localStorage.getItem("locColorMode") == null) {
+    if (prefersDarkMode) {
+      localStorage.setItem("locColorMode", "dark");
+    } else {
+      localStorage.setItem("locColorMode", "light");
+    }
+  }
+}
+
+initialColorMode();
+
+function setColorMode(colorMode) {
+  if (colorMode == "dark") {
+    document.documentElement.style.setProperty("--colorBase", colorBaseDark);
+    document.documentElement.style.setProperty("--colorDark", colorDarkDark);
+    document.documentElement.style.setProperty(
+      "--colorTextBox",
+      colorTextBoxDark
+    );
+  } else {
+    document.documentElement.style.setProperty("--colorBase", colorBase);
+    document.documentElement.style.setProperty("--colorDark", colorDark);
+    document.documentElement.style.setProperty("--colorTextBox", colorTextBox);
+  }
+}
+
+setColorMode(localStorage.getItem("locColorMode"));
 
 cardButton.addEventListener("click", () => {
   cardAnswerText.classList.toggle("card-answerText-hidden");
@@ -32,20 +65,4 @@ cardBookmarked.addEventListener("click", () => {
 
 cardNotBookmarked.addEventListener("click", () => {
   toggleBookmarkClass();
-});
-
-function toggleActiveFooterClass(currentPage) {
-  currentPage.classList.add("footer-activePage");
-  footerLinkActive.classList.remove("footer-activePage");
-  footerLinkActive = currentPage;
-}
-
-footerLinkHome.addEventListener("click", () => {
-  toggleActiveFooterClass(footerLinkHome);
-});
-footerLinkBookmarks.addEventListener("click", () => {
-  toggleActiveFooterClass(footerLinkBookmarks);
-});
-footerLinkProfile.addEventListener("click", () => {
-  toggleActiveFooterClass(footerLinkProfile);
 });
