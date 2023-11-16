@@ -14,6 +14,31 @@ let footerLinkActive = footerLinkHome;
 
 const footerLink = document.querySelectorAll(".footer-link");
 
+let toggleModeStatus = localStorage.getItem("vtoggleModeStatus");
+
+const colorBase = "#f2f2f2";
+const colorBaseDark = "#181818";
+const colorDark = "#7f7f7f";
+const colorDarkDark = "#a8a8a8";
+const colorTextBox = "#ffffff";
+const colorTextBoxDark = "#e0e0e0";
+
+function checkCurrentColorMode() {
+  if (toggleModeStatus === "true") {
+    document.documentElement.style.setProperty("--colorBase", colorBaseDark);
+    document.documentElement.style.setProperty("--colorDark", colorDarkDark);
+    document.documentElement.style.setProperty(
+      "--colorTextBox",
+      colorTextBoxDark
+    );
+  } else {
+    document.documentElement.style.setProperty("--colorBase", colorBase);
+    document.documentElement.style.setProperty("--colorDark", colorDark);
+    document.documentElement.style.setProperty("--colorTextBox", colorTextBox);
+  }
+}
+checkCurrentColorMode();
+
 cardButton.addEventListener("click", () => {
   cardAnswerText.classList.toggle("card-answerText-hidden");
   cardAnswerBox.classList.toggle("card-answerBox-acive");

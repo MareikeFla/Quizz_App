@@ -1,16 +1,13 @@
-const toggleMode = document.querySelector("#settings-toggle-mode");
-let toggleModeValue = toggleMode.getAttribute("value");
-let toggleModeStatus = false;
+const prefersDarkMode = Boolean(
+  getComputedStyle(document.documentElement).getPropertyValue("--darkMode")
+);
 
-console.log(toggleModeValue);
+const toggleMode = document.querySelector("#settings-toggle-mode");
+let toggleModeStatus = null;
 
 const footerLinkHome = document.querySelector(".footer-link-home");
 const footerLinkBookmarks = document.querySelector(".footer-link-bookmarks");
 const footerLinkProfile = document.querySelector(".footer-link-profile");
-let footerLinkActive = footerLinkProfile;
-// const root = document.documentElement;
-// const rootStyle = getComputedStyle(root);
-// const colorBase = rootStyle.getPropertyValue("--colorBase");
 
 const colorBase = "#f2f2f2";
 const colorBaseDark = "#181818";
@@ -19,37 +16,41 @@ const colorDarkDark = "#a8a8a8";
 const colorTextBox = "#ffffff";
 const colorTextBoxDark = "#e0e0e0";
 
-toggleMode.addEventListener("click", () => {
-  toggleModeStatus = toggleModeStatus === false ? true : false;
-  if (toggleModeStatus === true) {
+function checkForDarkMode() {
+  if (Boolean(prefersDarkMode)) {
+    toggleModeStatus = "true";
+    localStorage.setItem("vtoggleModeStatus", "true");
+    toggleMode.setAttribute("checked", true);
     document.documentElement.style.setProperty("--colorBase", colorBaseDark);
     document.documentElement.style.setProperty("--colorDark", colorDarkDark);
     document.documentElement.style.setProperty(
       "--colorTextBox",
       colorTextBoxDark
     );
-    console.log(toggleModeValue);
+  } else {
+    toggleModeStatus = "false";
+    localStorage.setItem("vtoggleModeStatus", "false");
+    document.documentElement.style.setProperty("--colorBase", colorBase);
+    document.documentElement.style.setProperty("--colorDark", colorDark);
+    document.documentElement.style.setProperty("--colorTextBox", colorTextBox);
+  }
+}
+
+checkForDarkMode();
+
+toggleMode.addEventListener("click", () => {
+  toggleModeStatus = toggleModeStatus === "false" ? "true" : "false";
+  localStorage.setItem("vtoggleModeStatus", toggleModeStatus);
+  if (toggleModeStatus === "true") {
+    document.documentElement.style.setProperty("--colorBase", colorBaseDark);
+    document.documentElement.style.setProperty("--colorDark", colorDarkDark);
+    document.documentElement.style.setProperty(
+      "--colorTextBox",
+      colorTextBoxDark
+    );
   } else {
     document.documentElement.style.setProperty("--colorBase", colorBase);
     document.documentElement.style.setProperty("--colorDark", colorDark);
     document.documentElement.style.setProperty("--colorTextBox", colorTextBox);
   }
-  console.log(toggleModeValue);
-});
-
-function toggleActiveFooterClass(currentPage) {
-  currentPage.classList.add("footer-activePage");
-  footerLinkActive.classList.remove("footer-activePage");
-  footerLinkActive = currentPage;
-}
-
-footerLinkHome.addEventListener("click", () => {
-  toggleActiveFooterClass(footerLinkHome);
-});
-
-footerLinkBookmarks.addEventListener("click", () => {
-  toggleActiveFooterClass(footerLinkBookmarks);
-});
-footerLinkProfile.addEventListener("click", () => {
-  toggleActiveFooterClass(footerLinkProfile);
 });
