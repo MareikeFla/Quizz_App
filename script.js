@@ -21,14 +21,17 @@ cardButton.addEventListener("click", () => {
   cardButtonTextHide.classList.toggle("card-button-textHidden");
 });
 
-cardBookmarked.addEventListener("click", () => {
+function toggleBookmarkClass() {
   cardBookmarked.classList.toggle("card-bookmark-hide");
   cardNotBookmarked.classList.toggle("card-bookmark-hide");
+}
+
+cardBookmarked.addEventListener("click", () => {
+  toggleBookmarkClass();
 });
 
 cardNotBookmarked.addEventListener("click", () => {
-  cardBookmarked.classList.toggle("card-bookmark-hide");
-  cardNotBookmarked.classList.toggle("card-bookmark-hide");
+  toggleBookmarkClass();
 });
 
 footerLinkHome.addEventListener("click", () => {
