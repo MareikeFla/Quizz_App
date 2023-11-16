@@ -10,13 +10,13 @@ const cardNotBookmarked = document.querySelector(".card-notBookmarked");
 const footerLinkHome = document.querySelector(".footer-link-home");
 const footerLinkBookmarks = document.querySelector(".footer-link-bookmarks");
 const footerLinkProfile = document.querySelector(".footer-link-profile");
-let footerLinkActive = "footerLinkHome";
+let footerLinkActive = footerLinkHome;
 
 const footerLink = document.querySelectorAll(".footer-link");
 
 cardButton.addEventListener("click", () => {
   cardAnswerText.classList.toggle("card-answerText-hidden");
-  cardAnswerBox.classList.toggle("card-answerBox-active");
+  cardAnswerBox.classList.toggle("card-answerBox-acive");
   cardButtonTextShow.classList.toggle("card-button-textHidden");
   cardButtonTextHide.classList.toggle("card-button-textHidden");
 });
@@ -34,18 +34,18 @@ cardNotBookmarked.addEventListener("click", () => {
   toggleBookmarkClass();
 });
 
-footerLinkHome.addEventListener("click", () => {
-  footerLinkHome.classList.add("footer-activePage");
+function toggleActiveFooterClass(currentPage) {
+  currentPage.classList.add("footer-activePage");
   footerLinkActive.classList.remove("footer-activePage");
-  footerLinkActive = "footerLinkHome";
+  footerLinkActive = currentPage;
+}
+
+footerLinkHome.addEventListener("click", () => {
+  toggleActiveFooterClass(footerLinkHome);
 });
 footerLinkBookmarks.addEventListener("click", () => {
-  footerLinkBookmarks.classList.add("footer-activePage");
-  footerLinkActive.classList.remove("footer-activePage");
-  footerLinkActive = "footerLinkBookmarks";
+  toggleActiveFooterClass(footerLinkBookmarks);
 });
 footerLinkProfile.addEventListener("click", () => {
-  footerLinkProfile.classList.add("footer-activePage");
-  footerLinkActive.classList.remove("footer-activePage");
-  footerLinkActive = "footerLinkProfile";
+  toggleActiveFooterClass(footerLinkProfile);
 });
