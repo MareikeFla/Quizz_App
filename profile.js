@@ -1,10 +1,13 @@
 const toggleMode = document.querySelector("#settings-toggle-mode");
+let toggleModeValue = toggleMode.getAttribute("value");
 let toggleModeStatus = false;
+
+console.log(toggleModeValue);
 
 const footerLinkHome = document.querySelector(".footer-link-home");
 const footerLinkBookmarks = document.querySelector(".footer-link-bookmarks");
 const footerLinkProfile = document.querySelector(".footer-link-profile");
-let footerLinkActive = "footerLinkHome";
+let footerLinkActive = footerLinkProfile;
 // const root = document.documentElement;
 // const rootStyle = getComputedStyle(root);
 // const colorBase = rootStyle.getPropertyValue("--colorBase");
@@ -25,26 +28,28 @@ toggleMode.addEventListener("click", () => {
       "--colorTextBox",
       colorTextBoxDark
     );
+    console.log(toggleModeValue);
   } else {
     document.documentElement.style.setProperty("--colorBase", colorBase);
     document.documentElement.style.setProperty("--colorDark", colorDark);
     document.documentElement.style.setProperty("--colorTextBox", colorTextBox);
   }
-  console.log(toggleModeStatus);
+  console.log(toggleModeValue);
 });
 
+function toggleActiveFooterClass(currentPage) {
+  currentPage.classList.add("footer-activePage");
+  footerLinkActive.classList.remove("footer-activePage");
+  footerLinkActive = currentPage;
+}
+
 footerLinkHome.addEventListener("click", () => {
-  footerLinkHome.classList.add("footer-activePage");
-  footerLinkActive.classList.remove("footer-activePage");
-  footerLinkActive = "footerLinkHome";
+  toggleActiveFooterClass(footerLinkHome);
 });
+
 footerLinkBookmarks.addEventListener("click", () => {
-  footerLinkBookmarks.classList.add("footer-activePage");
-  footerLinkActive.classList.remove("footer-activePage");
-  footerLinkActive = "footerLinkBookmarks";
+  toggleActiveFooterClass(footerLinkBookmarks);
 });
 footerLinkProfile.addEventListener("click", () => {
-  footerLinkProfile.classList.add("footer-activePage");
-  footerLinkActive.classList.remove("footer-activePage");
-  footerLinkActive = "footerLinkProfile";
+  toggleActiveFooterClass(footerLinkProfile);
 });
