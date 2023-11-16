@@ -2,6 +2,10 @@ const footerLinkHome = document.querySelector(".footer-link-home");
 const footerLinkBookmarks = document.querySelector(".footer-link-bookmarks");
 const footerLinkProfile = document.querySelector(".footer-link-profile");
 
+const sliderBoxElementDark = document.querySelector(".sliderBox-dark");
+const sliderBoxElementLight = document.querySelector(".sliderBox-light");
+const sliderBoxElementRainbow = document.querySelector(".sliderBox-rainbow");
+
 const checkBoxToggleMode = document.querySelector("#settings-toggle-mode");
 
 const colorBase = "#f2f2f2";
@@ -44,4 +48,19 @@ checkBoxToggleMode.addEventListener("click", () => {
     localStorage.setItem("locColorMode", "dark");
     setColorMode("dark");
   }
+});
+
+sliderBoxElementLight.addEventListener("click", () => {
+  console.log("click");
+  document.documentElement.style.setProperty("--left", "33%");
+});
+
+sliderBoxElementDark.addEventListener("click", () => {
+  console.log("click");
+  document.documentElement.style.setProperty("--left", "0%");
+});
+
+sliderBoxElementRainbow.addEventListener("click", () => {
+  console.log("click");
+  document.documentElement.style.setProperty("--left", "66%");
 });

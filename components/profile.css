@@ -23,6 +23,37 @@
   margin: 1rem;
 }
 
+.sliderBox {
+  width: 95%;
+  max-width: 20rem;
+  height: 2rem;
+  margin: 0.5rem auto 0 auto;
+  background-color: lightgray;
+  box-shadow: var(--colorDark) 0 0 10px 2px, inset var(--colorDark) 0 1px 0 0,
+    inset var(--colorDark) 0 -1px 0 0;
+  border-radius: var(--borderRadius);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+}
+
+.sliderBox-element {
+  width: 33%;
+  text-align: center;
+}
+
+.slider {
+  position: absolute;
+  left: var(--left);
+  width: 33%;
+  height: 100%;
+  border-radius: var(--borderRadius);
+  box-shadow: inset var(--colorHighlight) 0 0 10px 3px,
+    rgba(255, 255, 255, 0.612) 0 0 15px 5px inset, white 0 0 10px 2px;
+  transition: left 0.5s;
+}
+
 .profile-main {
   margin-top: 1rem;
 }

@@ -25,10 +25,6 @@
   }
 }
 
-:focus {
-  box-shadow: rgb(255, 106, 0) 0 0 2px 3px;
-}
-
 body {
   background-color: var(--colorBase);
 }
