@@ -10,7 +10,7 @@
 
 :root {
   --colorHighlight: #26add1;
-  /* This vaiables are based on the prefered color scheme and are set with js  */
+  /* This vaiables are based on the prefered color scheme and are set with .js  */
   --colorBase: ;
   --colorDark: ;
   --colorTextBox: ;
