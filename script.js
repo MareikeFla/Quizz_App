@@ -4,14 +4,13 @@ const cardButtonTextHide = document.querySelector(".card-button-textHide");
 const cardAnswerText = document.querySelector(".card-answerText");
 const cardAnswerBox = document.querySelector(".card-answerBox");
 
-// const cardBookmark = document.querySelectorAll(".card-bookmark");
 const cardBookmarked = document.querySelector(".card-bookmarked");
 const cardNotBookmarked = document.querySelector(".card-notBookmarked");
 
 const footerLinkHome = document.querySelector(".footer-link-home");
 const footerLinkBookmarks = document.querySelector(".footer-link-bookmarks");
 const footerLinkProfile = document.querySelector(".footer-link-profile");
-let footerLinkActive = ".footer-link-home";
+let footerLinkActive = "footerLinkHome";
 
 const footerLink = document.querySelectorAll(".footer-link");
 
@@ -25,33 +24,25 @@ cardButton.addEventListener("click", () => {
 cardBookmarked.addEventListener("click", () => {
   cardBookmarked.classList.toggle("card-bookmark-hide");
   cardNotBookmarked.classList.toggle("card-bookmark-hide");
-  console.log("click");
 });
 
 cardNotBookmarked.addEventListener("click", () => {
   cardBookmarked.classList.toggle("card-bookmark-hide");
   cardNotBookmarked.classList.toggle("card-bookmark-hide");
-  console.log("click");
 });
 
 footerLinkHome.addEventListener("click", () => {
   footerLinkHome.classList.add("footer-activePage");
   footerLinkActive.classList.remove("footer-activePage");
-  footerLinkActive = ".footer-link-home";
+  footerLinkActive = "footerLinkHome";
 });
 footerLinkBookmarks.addEventListener("click", () => {
   footerLinkBookmarks.classList.add("footer-activePage");
   footerLinkActive.classList.remove("footer-activePage");
-  footerLinkActive = ".footer-link-bookmarks";
+  footerLinkActive = "footerLinkBookmarks";
 });
 footerLinkProfile.addEventListener("click", () => {
   footerLinkProfile.classList.add("footer-activePage");
   footerLinkActive.classList.remove("footer-activePage");
-  footerLinkActive = ".footer-link-profile";
+  footerLinkActive = "footerLinkProfile";
 });
-
-// forEach((footerLink) => {
-//   footerLink.addEventListener("click"), () => {
-//     foo
-//   }
-// };

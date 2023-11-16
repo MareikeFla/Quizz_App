@@ -1,5 +1,10 @@
 const toggleMode = document.querySelector("#settings-toggle-mode");
 let toggleModeStatus = false;
+
+const footerLinkHome = document.querySelector(".footer-link-home");
+const footerLinkBookmarks = document.querySelector(".footer-link-bookmarks");
+const footerLinkProfile = document.querySelector(".footer-link-profile");
+let footerLinkActive = "footerLinkHome";
 // const root = document.documentElement;
 // const rootStyle = getComputedStyle(root);
 // const colorBase = rootStyle.getPropertyValue("--colorBase");
@@ -26,4 +31,20 @@ toggleMode.addEventListener("click", () => {
     document.documentElement.style.setProperty("--colorTextBox", colorTextBox);
   }
   console.log(toggleModeStatus);
+});
+
+footerLinkHome.addEventListener("click", () => {
+  footerLinkHome.classList.add("footer-activePage");
+  footerLinkActive.classList.remove("footer-activePage");
+  footerLinkActive = "footerLinkHome";
+});
+footerLinkBookmarks.addEventListener("click", () => {
+  footerLinkBookmarks.classList.add("footer-activePage");
+  footerLinkActive.classList.remove("footer-activePage");
+  footerLinkActive = "footerLinkBookmarks";
+});
+footerLinkProfile.addEventListener("click", () => {
+  footerLinkProfile.classList.add("footer-activePage");
+  footerLinkActive.classList.remove("footer-activePage");
+  footerLinkActive = "footerLinkProfile";
 });
