@@ -24,11 +24,11 @@
 }
 
 .sliderBox {
-  width: 95%;
+  width: 100%;
   max-width: 20rem;
   height: 2rem;
   margin: 0.5rem auto 0 auto;
-  background-color: lightgray;
+  background-color: white;
   box-shadow: var(--colorDark) 0 0 10px 2px, inset var(--colorDark) 0 1px 0 0,
     inset var(--colorDark) 0 -1px 0 0;
   border-radius: var(--borderRadius);
@@ -39,8 +39,10 @@
 }
 
 .sliderBox-element {
-  width: 33%;
+  width: 34%;
   text-align: center;
+  text-decoration: none;
+  color: var(--colorHighlight);
 }
 
 .slider {
@@ -62,4 +64,9 @@ h3 {
   font-size: 1.1rem;
   color: var(--colorHighlight);
   margin-bottom: var(--gapStandard);
+}
+
+.setMode-headline {
+  font-weight: normal;
+  margin-bottom: 0.8rem;
 }

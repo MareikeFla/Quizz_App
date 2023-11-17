@@ -15,13 +15,21 @@ const colorDarkDark = "#a8a8a8";
 const colorTextBox = "#ffffff";
 const colorTextBoxDark = "#e0e0e0";
 
-function checkCheckBox() {
-  if (localStorage.getItem("locColorMode") === "dark") {
-    checkBoxToggleMode.setAttribute("checked", true);
+// SWITCH MODE WITH SLIDER
+
+// FUNCTIONS SLIDER
+
+function checkSliderPosition(colorMode) {
+  if (colorMode === "dark") {
+    document.documentElement.style.setProperty("--left", "0%");
+  } else if (colorMode === "light") {
+    document.documentElement.style.setProperty("--left", "33%%");
+  } else {
+    document.documentElement.style.setProperty("--left", "66%%");
   }
 }
 
-checkCheckBox();
+checkSliderPosition(localStorage.getItem("locColorMode"));
 
 function setColorMode(colorMode) {
   if (colorMode == "dark") {
@@ -40,27 +48,22 @@ function setColorMode(colorMode) {
 
 setColorMode(localStorage.getItem("locColorMode"));
 
-checkBoxToggleMode.addEventListener("click", () => {
-  if (localStorage.getItem("locColorMode") === "dark") {
-    localStorage.setItem("locColorMode", "light");
-    setColorMode("light");
-  } else {
-    localStorage.setItem("locColorMode", "dark");
-    setColorMode("dark");
-  }
-});
+// EVENTLISTENER SLIDER
 
 sliderBoxElementLight.addEventListener("click", () => {
-  console.log("click");
   document.documentElement.style.setProperty("--left", "33%");
+  localStorage.setItem("locColorMode", "light");
+  setColorMode(localStorage.getItem("locColorMode"));
 });
 
 sliderBoxElementDark.addEventListener("click", () => {
-  console.log("click");
   document.documentElement.style.setProperty("--left", "0%");
+  localStorage.setItem("locColorMode", "dark");
+  setColorMode(localStorage.getItem("locColorMode"));
 });
 
 sliderBoxElementRainbow.addEventListener("click", () => {
-  console.log("click");
   document.documentElement.style.setProperty("--left", "66%");
+  localStorage.setItem("locColorMode", "light");
+  setColorMode(localStorage.getItem("locColorMode"));
 });
