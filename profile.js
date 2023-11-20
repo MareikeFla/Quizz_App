@@ -79,15 +79,15 @@ setColorMode(localStorage.getItem("locColorMode"));
 
 // EVENTLISTENER SLIDER
 
-sliderBoxElementLight.addEventListener("click", () => {
-  document.documentElement.style.setProperty("--left", "33%");
-  localStorage.setItem("locColorMode", "light");
-  setColorMode(localStorage.getItem("locColorMode"));
-});
-
 sliderBoxElementDark.addEventListener("click", () => {
   document.documentElement.style.setProperty("--left", "0%");
   localStorage.setItem("locColorMode", "dark");
+  setColorMode(localStorage.getItem("locColorMode"));
+});
+
+sliderBoxElementLight.addEventListener("click", () => {
+  document.documentElement.style.setProperty("--left", "33%");
+  localStorage.setItem("locColorMode", "light");
   setColorMode(localStorage.getItem("locColorMode"));
 });
 
