@@ -27,75 +27,71 @@ const quizCardTry = {
   bookmarked: false,
 };
 
+const main = document.querySelector("main");
+const section = document.createElement("section");
+section.className = "card";
+
+const cardHeader = document.createElement("div");
+cardHeader.className = "card-header";
+
+const h2 = document.createElement("h2");
+h2.className = "card-questionNumber";
+h2.textContent = quizCardTry.number;
+
+const img1 = document.createElement("img");
+img1.src = "pictures/bookmarke-active2.png";
+img1.alt = "bookmark-active";
+img1.className = "card-bookmark card-bookmarked";
+
+const img2 = document.createElement("img");
+img2.src = "pictures/bookmark-inactive.png";
+img2.alt = "bookmark-inactive";
+img2.className = "card-bookmark card-notBookmarked card-bookmark-hide";
+
+const questionBox = document.createElement("div");
+questionBox.className = "card-questionBox card-textBox";
+
+const questionText = document.createElement("p");
+questionText.className = "card-questionText";
+questionText.textContent = quizCardTry.question;
+
+const createcardButton = document.createElement("button");
+createcardButton.className = "card-button";
+
+const textShow = document.createElement("p");
+textShow.className = "card-button-textShow";
+textShow.textContent = "Show Answer";
+
+const textHide = document.createElement("p");
+textHide.className = "card-button-textHide card-button-textHidden";
+textHide.textContent = "Hide Answer";
+
+const answerBox = document.createElement("div");
+answerBox.className = "card-answerBox card-textBox";
+
+const answerText = document.createElement("p");
+answerText.className = "card-answerText card-answerText-hidden";
+answerText.textContent = quizCardTry.answer;
+
+const tagBox = document.createElement("div");
+tagBox.className = "card-tagBox";
+
+const tags = document.createElement("article");
+tags.className = "card-tag";
+tags.textContent = quizCardTry.tag;
+
 function setCards() {
-  const main = document.querySelector("main");
-  const section = document.createElement("section");
-  section.className = "card";
-
-  const cardHeader = document.createElement("div");
-  cardHeader.className = "card-header";
-
-  const h2 = document.createElement("h2");
-  h2.className = "card-questionNumber";
-  h2.textContent = quizCardTry.number;
   cardHeader.appendChild(h2);
-
-  const img1 = document.createElement("img");
-  img1.src = "pictures/bookmarke-active2.png";
-  img1.alt = "bookmark-active";
-  img1.className = "card-bookmark card-bookmarked";
   cardHeader.appendChild(img1);
-
-  const img2 = document.createElement("img");
-  img2.src = "pictures/bookmark-inactive.png";
-  img2.alt = "bookmark-inactive";
-  img2.className = "card-bookmark card-notBookmarked card-bookmark-hide";
   cardHeader.appendChild(img2);
-
   section.appendChild(cardHeader);
-
-  const questionBox = document.createElement("div");
-  questionBox.className = "card-questionBox card-textBox";
-
-  const questionText = document.createElement("p");
-  questionText.className = "card-questionText";
-  questionText.textContent = quizCardTry.question;
   questionBox.appendChild(questionText);
-
-  const cardButton = document.createElement("button");
-  cardButton.className = "card-button";
-
-  const textShow = document.createElement("p");
-  textShow.className = "card-button-textShow";
-  textShow.textContent = "Show Answer";
-  cardButton.appendChild(textShow);
-
-  const textHide = document.createElement("p");
-  textHide.className = "card-button-textHide card-button-textHidden";
-  textHide.textContent = "Hide Answer";
-  cardButton.appendChild(textHide);
-
-  questionBox.appendChild(cardButton);
-
+  createcardButton.appendChild(textShow);
+  createcardButton.appendChild(textHide);
+  questionBox.appendChild(createcardButton);
   section.appendChild(questionBox);
-
-  const answerBox = document.createElement("div");
-  answerBox.className = "card-answerBox card-textBox";
-
-  const answerText = document.createElement("p");
-  answerText.className = "card-answerText card-answerText-hidden";
-  answerText.textContent = quizCardTry.answer;
   answerBox.appendChild(answerText);
-
   section.appendChild(answerBox);
-
-  const tagBox = document.createElement("div");
-  tagBox.className = "card-tagBox";
-
-  const tags = document.createElement("article");
-  tags.className = "card-tag";
-  tags.textContent = quizCardTry.tag;
-
   tagBox.appendChild(tags);
 
   section.appendChild(tagBox);
@@ -103,4 +99,4 @@ function setCards() {
   main.appendChild(section);
 }
 
-setCards(quizCardTry);
+setCards();

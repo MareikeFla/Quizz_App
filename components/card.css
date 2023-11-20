@@ -58,15 +58,15 @@
 }
 
 .card-answerBox {
-  transition: 1s ease-out;
+  background-color: var(--colorTextBox);
 }
 
 .card-answerBox-active {
-  background-color: var(--colorHighlight);
+  transition: 1s ease-out;
 }
 
 .card-answerText {
-  color: var(--colorBase);
+  color: var(--colorHighlight);
 }
 
 .card-answerText-hidden {

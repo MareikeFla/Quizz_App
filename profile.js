@@ -27,9 +27,11 @@ const shadowFooter = "var(--colorDark) 0 -3px 20px 3px";
 function checkSliderPosition(colorMode) {
   if (colorMode == "dark") {
     document.documentElement.style.setProperty("--left", "0%");
-  } else if (colorMode == "light") {
+  }
+  if (colorMode == "light") {
     document.documentElement.style.setProperty("--left", "33%%");
-  } else {
+  }
+  if (colorMode == "rainbow") {
     document.documentElement.style.setProperty("--left", "66%%");
   }
 }
