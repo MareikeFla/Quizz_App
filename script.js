@@ -24,8 +24,6 @@ const rainbowShadowHeader =
 const shadowHeader = "var(--colorDark) 0 3px 20px 3px";
 const shadowFooter = "var(--colorDark) 0 -3px 20px 3px";
 
-console.log(localStorage.getItem("locColorMode"));
-
 function initialColorMode() {
   if (localStorage.getItem("locColorMode") == null) {
     if (prefersDarkMode) {
