@@ -29,10 +29,10 @@ function checkSliderPosition(colorMode) {
     document.documentElement.style.setProperty("--left", "0%");
   }
   if (colorMode == "light") {
-    document.documentElement.style.setProperty("--left", "33%%");
+    document.documentElement.style.setProperty("--left", "33%");
   }
   if (colorMode == "rainbow") {
-    document.documentElement.style.setProperty("--left", "66%%");
+    document.documentElement.style.setProperty("--left", "66%");
   }
 }
 
