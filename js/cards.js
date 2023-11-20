@@ -3,18 +3,21 @@ const quizCardsContent = [
     number: "#1",
     question: "question 1",
     answer: "answer 1",
+    tag: "#css",
     bookmarked: false,
   },
   {
     number: "#2",
     question: "question 2",
     answer: "answer 2",
+    tag: "#css",
     bookmarked: false,
   },
   {
     number: "#3",
     question: "question 3",
     answer: "answer 3",
+    tag: "#css",
     bookmarked: false,
   },
 ];
@@ -36,7 +39,7 @@ cardHeader.className = "card-header";
 
 const h2 = document.createElement("h2");
 h2.className = "card-questionNumber";
-h2.textContent = quizCardTry.number;
+h2.textContent = quizCardsContent.number;
 
 const img1 = document.createElement("img");
 img1.src = "pictures/bookmarke-active2.png";
@@ -53,7 +56,7 @@ questionBox.className = "card-questionBox card-textBox";
 
 const questionText = document.createElement("p");
 questionText.className = "card-questionText";
-questionText.textContent = quizCardTry.question;
+questionText.textContent = quizCardsContent.question;
 
 const createcardButton = document.createElement("button");
 createcardButton.className = "card-button";
@@ -71,14 +74,14 @@ answerBox.className = "card-answerBox card-textBox";
 
 const answerText = document.createElement("p");
 answerText.className = "card-answerText card-answerText-hidden";
-answerText.textContent = quizCardTry.answer;
+answerText.textContent = quizCardsContent.answer;
 
 const tagBox = document.createElement("div");
 tagBox.className = "card-tagBox";
 
 const tags = document.createElement("article");
 tags.className = "card-tag";
-tags.textContent = quizCardTry.tag;
+tags.textContent = quizCardsContent.tag;
 
 function setCards() {
   cardHeader.appendChild(h2);
@@ -99,4 +102,4 @@ function setCards() {
   main.appendChild(section);
 }
 
-setCards();
+quizCardsContent.forEach(setCards);
