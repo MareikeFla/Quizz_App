@@ -3,21 +3,21 @@ const quizCards = [
     number: "#1",
     question: "question 1",
     answer: "answer 1",
-    tags: "#css",
+    tags: ["#css", "#html", "#JavaScript"],
     bookmarked: false,
   },
   {
     number: "#2",
     question: "question 2",
     answer: "answer 2",
-    tags: "#css",
+    tags: ["#css", "#JavaScript"],
     bookmarked: false,
   },
   {
     number: "#3",
     question: "question 3",
     answer: "answer 3",
-    tags: "#css",
+    tags: ["#css", "#html"],
     bookmarked: false,
   },
 ];
@@ -72,9 +72,13 @@ function setCards(quizCard) {
   const tagBox = document.createElement("div");
   tagBox.className = "card-tagBox";
 
-  const tags = document.createElement("article");
-  tags.className = "card-tag";
-  tags.textContent = quizCard.tags;
+  function createTag(tagName) {
+    const tag = document.createElement("article");
+    tag.className = "card-tag";
+    tag.textContent = tagName;
+    tagBox.appendChild(tag);
+  }
+  quizCard.tags.forEach(createTag);
 
   cardHeader.appendChild(h2);
   cardHeader.appendChild(img1);
@@ -87,7 +91,6 @@ function setCards(quizCard) {
   section.appendChild(questionBox);
   answerBox.appendChild(answerText);
   section.appendChild(answerBox);
-  tagBox.appendChild(tags);
 
   section.appendChild(tagBox);
 
