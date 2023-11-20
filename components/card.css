@@ -1,6 +1,7 @@
 .card {
   background-color: var(--colorHighlight);
   border-radius: var(--borderRadius);
+  margin-bottom: 1.5rem;
 }
 
 .card-header {
