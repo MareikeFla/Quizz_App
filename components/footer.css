@@ -8,7 +8,7 @@ footer {
   height: 4rem;
   background-color: var(--colorBase);
   border-radius: var(--borderRadius) var(--borderRadius) 0 0;
-  box-shadow: var(--colorDark) 0 -3px 20px 2px;
+  box-shadow: var(--shadowFooter);
 }
 
 .footer-link {

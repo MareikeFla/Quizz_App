@@ -11,7 +11,7 @@ header {
   top: 0;
   z-index: 1;
   color: var(--colorHighlight);
-  box-shadow: var(--colorDark) 0 3px 20px 2px;
+  box-shadow: var(--shadowHeader);
 }
 
 .header-logo {
