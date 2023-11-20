@@ -37,7 +37,6 @@ function initialColorMode() {
 }
 
 initialColorMode();
-console.log(localStorage.getItem("locColorMode"));
 
 function setColorMode(colorMode) {
   if (colorMode == "dark") {
@@ -77,7 +76,6 @@ function setColorMode(colorMode) {
 }
 
 setColorMode(localStorage.getItem("locColorMode"));
-console.log(localStorage.getItem("locColorMode"));
 
 cardButton.addEventListener("click", () => {
   cardAnswerText.classList.toggle("card-answerText-hidden");
@@ -98,4 +96,3 @@ cardBookmarked.addEventListener("click", () => {
 cardNotBookmarked.addEventListener("click", () => {
   toggleBookmarkClass();
 });
-console.log(localStorage.getItem("locColorMode"));

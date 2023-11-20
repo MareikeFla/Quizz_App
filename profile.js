@@ -35,7 +35,6 @@ function checkSliderPosition(colorMode) {
 }
 
 checkSliderPosition(localStorage.getItem("locColorMode"));
-console.log(localStorage.getItem("locColorMode"));
 
 function setColorMode(colorMode) {
   if (colorMode == "dark") {
@@ -75,7 +74,6 @@ function setColorMode(colorMode) {
 }
 
 setColorMode(localStorage.getItem("locColorMode"));
-console.log(localStorage.getItem("locColorMode"));
 
 // EVENTLISTENER SLIDER
 
@@ -83,19 +81,16 @@ sliderBoxElementLight.addEventListener("click", () => {
   document.documentElement.style.setProperty("--left", "33%");
   localStorage.setItem("locColorMode", "light");
   setColorMode(localStorage.getItem("locColorMode"));
-  console.log(localStorage.getItem("locColorMode"));
 });
 
 sliderBoxElementDark.addEventListener("click", () => {
   document.documentElement.style.setProperty("--left", "0%");
   localStorage.setItem("locColorMode", "dark");
   setColorMode(localStorage.getItem("locColorMode"));
-  console.log(localStorage.getItem("locColorMode"));
 });
 
 sliderBoxElementRainbow.addEventListener("click", () => {
   document.documentElement.style.setProperty("--left", "66%");
   localStorage.setItem("locColorMode", "rainbow");
   setColorMode(localStorage.getItem("locColorMode"));
-  console.log(localStorage.getItem("locColorMode"));
 });
