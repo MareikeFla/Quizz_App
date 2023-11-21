@@ -27,10 +27,12 @@ const shadowFooter = "var(--colorDark) 0 -3px 20px 3px";
 function checkSliderPosition(colorMode) {
   if (colorMode == "dark") {
     document.documentElement.style.setProperty("--left", "0%");
-  } else if (colorMode == "light") {
-    document.documentElement.style.setProperty("--left", "33%%");
-  } else {
-    document.documentElement.style.setProperty("--left", "66%%");
+  }
+  if (colorMode == "light") {
+    document.documentElement.style.setProperty("--left", "33%");
+  }
+  if (colorMode == "rainbow") {
+    document.documentElement.style.setProperty("--left", "66%");
   }
 }
 
@@ -77,15 +79,15 @@ setColorMode(localStorage.getItem("locColorMode"));
 
 // EVENTLISTENER SLIDER
 
-sliderBoxElementLight.addEventListener("click", () => {
-  document.documentElement.style.setProperty("--left", "33%");
-  localStorage.setItem("locColorMode", "light");
-  setColorMode(localStorage.getItem("locColorMode"));
-});
-
 sliderBoxElementDark.addEventListener("click", () => {
   document.documentElement.style.setProperty("--left", "0%");
   localStorage.setItem("locColorMode", "dark");
+  setColorMode(localStorage.getItem("locColorMode"));
+});
+
+sliderBoxElementLight.addEventListener("click", () => {
+  document.documentElement.style.setProperty("--left", "33%");
+  localStorage.setItem("locColorMode", "light");
   setColorMode(localStorage.getItem("locColorMode"));
 });
 

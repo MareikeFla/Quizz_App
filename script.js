@@ -1,11 +1,11 @@
-const cardButton = document.querySelector(".card-button");
-const cardButtonTextShow = document.querySelector(".card-button-textShow");
-const cardButtonTextHide = document.querySelector(".card-button-textHide");
-const cardAnswerText = document.querySelector(".card-answerText");
-const cardAnswerBox = document.querySelector(".card-answerBox");
+const cardButton = document.querySelectorAll(".card-button");
+const cardButtonTextShow = document.querySelectorAll(".card-button-textShow");
+const cardButtonTextHide = document.querySelectorAll(".card-button-textHide");
+const cardAnswerText = document.querySelectorAll(".card-answerText");
+const cardAnswerBox = document.querySelectorAll(".card-answerBox");
 
-const cardBookmarked = document.querySelector(".card-bookmarked");
-const cardNotBookmarked = document.querySelector(".card-notBookmarked");
+const cardBookmarked = document.querySelectorAll(".card-bookmarked");
+const cardNotBookmarked = document.querySelectorAll(".card-notBookmarked");
 
 const prefersDarkMode = Boolean(
   getComputedStyle(document.documentElement).getPropertyValue("--darkMode")
@@ -23,8 +23,6 @@ const rainbowShadowHeader =
   "calc(-100vw / 3 * 2) 0 30px 6px rgb(255, 234, 0),calc(-100vw / 3) 0 30px 6px rgb(255, 191, 0),calc(100vw / 3) 0 30px 6px rgba(255, 0, 0, 1)";
 const shadowHeader = "var(--colorDark) 0 3px 20px 3px";
 const shadowFooter = "var(--colorDark) 0 -3px 20px 3px";
-
-console.log(localStorage.getItem("locColorMode"));
 
 function initialColorMode() {
   if (localStorage.getItem("locColorMode") == null) {
@@ -77,22 +75,26 @@ function setColorMode(colorMode) {
 
 setColorMode(localStorage.getItem("locColorMode"));
 
-cardButton.addEventListener("click", () => {
-  cardAnswerText.classList.toggle("card-answerText-hidden");
-  cardAnswerBox.classList.toggle("card-answerBox-acive");
-  cardButtonTextShow.classList.toggle("card-button-textHidden");
-  cardButtonTextHide.classList.toggle("card-button-textHidden");
-});
-
-function toggleBookmarkClass() {
-  cardBookmarked.classList.toggle("card-bookmark-hide");
-  cardNotBookmarked.classList.toggle("card-bookmark-hide");
+for (let i = 0; i < cardButton.length; i++) {
+  cardButton[i].addEventListener("click", () => {
+    cardAnswerText[i].classList.toggle("card-answerText-hidden");
+    cardAnswerBox[i].classList.toggle("card-answerBox-acive");
+    cardButtonTextShow[i].classList.toggle("card-button-textHidden");
+    cardButtonTextHide[i].classList.toggle("card-button-textHidden");
+  });
 }
 
-cardBookmarked.addEventListener("click", () => {
-  toggleBookmarkClass();
-});
+for (let i = 0; i < cardBookmarked.length; i++) {
+  function toggleBookmarkClass() {
+    cardBookmarked[i].classList.toggle("card-bookmark-hide");
+    cardNotBookmarked[i].classList.toggle("card-bookmark-hide");
+  }
 
-cardNotBookmarked.addEventListener("click", () => {
-  toggleBookmarkClass();
-});
+  cardBookmarked[i].addEventListener("click", () => {
+    toggleBookmarkClass();
+  });
+
+  cardNotBookmarked[i].addEventListener("click", () => {
+    toggleBookmarkClass();
+  });
+}
