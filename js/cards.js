@@ -58,12 +58,12 @@ function createCard(quizCard) {
   const img1 = document.createElement("img");
   img1.src = "pictures/bookmarke-active2.png";
   img1.alt = "bookmark-active";
-  img1.className = "card-bookmark card-bookmarked";
+  img1.className = "card-bookmark card-bookmarked card-bookmark-hide";
 
   const img2 = document.createElement("img");
   img2.src = "pictures/bookmark-inactive.png";
   img2.alt = "bookmark-inactive";
-  img2.className = "card-bookmark card-notBookmarked card-bookmark-hide";
+  img2.className = "card-bookmark card-notBookmarked ";
 
   const questionBox = document.createElement("div");
   questionBox.className = "card-questionBox card-textBox";
