@@ -4,21 +4,42 @@ const quizCards = [
     question: "question 1",
     answer: "answer 1",
     tags: ["#css", "#html", "#JavaScript"],
-    bookmarked: false,
   },
   {
     number: "#2",
     question: "question 2",
     answer: "answer 2",
     tags: ["#css", "#JavaScript"],
-    bookmarked: false,
   },
   {
     number: "#3",
     question: "question 3",
     answer: "answer 3",
     tags: ["#css", "#html"],
-    bookmarked: false,
+  },
+  {
+    number: "#3",
+    question: "question 3",
+    answer: "answer 3",
+    tags: ["#css", "#html"],
+  },
+  {
+    number: "#3",
+    question: "question 3",
+    answer: "answer 3",
+    tags: ["#css", "#html"],
+  },
+  {
+    number: "#3",
+    question: "question 3",
+    answer: "answer 3",
+    tags: ["#css", "#html"],
+  },
+  {
+    number: "#3",
+    question: "question 3",
+    answer: "answer 3",
+    tags: ["#css", "#html"],
   },
 ];
 
