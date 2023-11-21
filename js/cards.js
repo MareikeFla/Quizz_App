@@ -119,3 +119,21 @@ function createCard(quizCard) {
 }
 
 quizCards.forEach(createCard);
+
+const cardBookmarked = document.querySelectorAll(".card-bookmarked");
+const cardNotBookmarked = document.querySelectorAll(".card-notBookmarked");
+
+for (let i = 0; i < cardBookmarked.length; i++) {
+  function toggleBookmarkClass() {
+    cardBookmarked[i].classList.toggle("card-bookmark-hide");
+    cardNotBookmarked[i].classList.toggle("card-bookmark-hide");
+  }
+
+  cardBookmarked[i].addEventListener("click", () => {
+    toggleBookmarkClass();
+  });
+
+  cardNotBookmarked[i].addEventListener("click", () => {
+    toggleBookmarkClass();
+  });
+}
