@@ -43,7 +43,7 @@ const quizCards = [
   },
 ];
 
-function setCards(quizCard) {
+function createCard(quizCard) {
   const main = document.querySelector("main");
   const section = document.createElement("section");
   section.className = "card";
@@ -118,4 +118,4 @@ function setCards(quizCard) {
   main.appendChild(section);
 }
 
-quizCards.forEach(setCards);
+quizCards.forEach(createCard);
