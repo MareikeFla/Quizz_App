@@ -1,3 +1,5 @@
+// Define an array of quiz cards with their details
+
 const quizCards = [
   {
     number: "#1",
@@ -43,6 +45,8 @@ const quizCards = [
   },
 ];
 
+// Function to create a card element in the DOM for each quiz card
+
 function createCard(quizCard, i) {
   const main = document.querySelector("main");
   const section = document.createElement("section");
@@ -63,6 +67,7 @@ function createCard(quizCard, i) {
   img2.src = "pictures/bookmark-inactive.png";
   img2.alt = "bookmark-inactive";
 
+  // Check if the card is bookmarked (Further info at the bottom)
   if (localStorage.getItem("cardBookmarked_" + i)) {
     img1.className = "card-bookmark card-bookmarked";
     img2.className = "card-bookmark card-notBookmarked card-bookmark-hide";
@@ -99,12 +104,17 @@ function createCard(quizCard, i) {
   const tagBox = document.createElement("div");
   tagBox.className = "card-tagBox";
 
+  // Function to create tag elements for each tag in the quiz card
+
   function createTag(tagName) {
     const tag = document.createElement("article");
     tag.className = "card-tag";
     tag.textContent = tagName;
     tagBox.appendChild(tag);
   }
+
+  // Loop through each tag in the quiz card and create a tag element
+
   quizCard.tags.forEach(createTag);
 
   cardHeader.appendChild(h2);
@@ -118,16 +128,19 @@ function createCard(quizCard, i) {
   section.appendChild(questionBox);
   answerBox.appendChild(answerText);
   section.appendChild(answerBox);
-
   section.appendChild(tagBox);
-
   main.appendChild(section);
 }
 
+// Function to dynamically load quiz cards based on the current page
+
 const dynamicQuizCards = () => {
+  // Check if the current page is the index page
   if (window.location.href.match("index.html")) {
+    // If on index page, load all quiz cards
     quizCards.forEach(createCard);
   } else {
+    // If not on index page, load only bookmarked quiz cards
     for (let i = 0; i < quizCards.length; i++) {
       if (localStorage.getItem("cardBookmarked_" + i)) {
         createCard(quizCards[i], i);
@@ -137,6 +150,8 @@ const dynamicQuizCards = () => {
 };
 
 dynamicQuizCards();
+
+// Toggle bookmark on click
 
 const cardBookmarked = document.querySelectorAll(".card-bookmarked");
 const cardNotBookmarked = document.querySelectorAll(".card-notBookmarked");
