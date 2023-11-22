@@ -124,7 +124,15 @@ function createCard(quizCard, i) {
   main.appendChild(section);
 }
 
-quizCards.forEach(createCard);
+if (window.location.href.match("index.html")) {
+  quizCards.forEach(createCard);
+} else {
+  for (let i = 0; i < quizCards.length; i++) {
+    if (localStorage.getItem("cardBookmarked_" + i)) {
+      createCard(quizCards[i], i);
+    }
+  }
+}
 
 const cardBookmarked = document.querySelectorAll(".card-bookmarked");
 const cardNotBookmarked = document.querySelectorAll(".card-notBookmarked");
