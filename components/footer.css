@@ -1,14 +1,18 @@
 footer {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
   position: sticky;
   bottom: 0;
-  width: 100%;
   height: 4rem;
   background-color: var(--colorBase);
   border-radius: var(--borderRadius) var(--borderRadius) 0 0;
   box-shadow: var(--shadowFooter);
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
 
 .footer-link {
