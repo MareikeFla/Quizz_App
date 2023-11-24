@@ -2,7 +2,6 @@ footer {
   display: flex;
   position: sticky;
   bottom: 0;
-  height: 4rem;
   background-color: var(--colorBase);
   border-radius: var(--borderRadius) var(--borderRadius) 0 0;
   box-shadow: var(--shadowFooter);
@@ -24,18 +23,20 @@ nav {
   justify-content: center;
   align-items: center;
   border-radius: var(--borderRadius);
-  padding: 5px 0;
+  padding: 10px;
   cursor: pointer;
+  margin: 5px 0;
 }
 
 .footer-icon {
-  height: 2.3rem;
+  height: 2rem;
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .footer-activePage {
   box-shadow: white 0 5px 10px 1px inset,
     var(--colorHighlight) 0 0 10px 5px inset,
-    var(--colorHighlight) 0 0 12px 5px inset, var(--colorDark) 0 3px 7px 0;
+    var(--colorHighlight) 0 0 12px 5px inset, 
+    var(--colorDark) 0 3px 7px 0;
 }

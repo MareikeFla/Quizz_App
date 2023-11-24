@@ -19,27 +19,23 @@
 
 .card-bookmark {
   height: 3rem;
-  margin-top: -10px;
+  margin-top: -5px;
   cursor: pointer;
-  box-shadow: red 0 0 2px 2p;
 }
-
 
 .card-textBox {
   background-color: var(--colorTextBox);
   border-radius: var(--borderRadius);
-}
-
-.card-questionBox,
-.card-answerBox {
+  padding: calc( 1.5 * var(--gapStandard)) var(--gapStandard);
+  margin: 0 calc(1.5 * var(--gapStandard));
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: var(--gapStandard) var(--gapStandard) var(--gapStandard)
-    var(--gapStandard);
-  margin: 0 calc(1 * var(--gapStandard));
+  box-shadow: var(--boxShadow);
+
 }
+
 .card-answerBox,
 .card-tagBox {
   margin-bottom: var(--gapStandard);
@@ -51,15 +47,6 @@
 
 .card-questionText {
   margin-bottom: var(--gapStandard);
-  font-size: 0.9rem;
-}
-
-.card-answerBox {
-  background-color: var(--colorTextBox);
-}
-
-.card-answerBox-active {
-  transition: 1s ease-out;
 }
 
 .card-answerText {
@@ -72,23 +59,25 @@
 
 .card-button {
   padding: calc(0.5 * var(--gapStandard)) calc(2 * var(--gapStandard));
-  margin-bottom: calc(-2 * var(--gapStandard));
+  margin-bottom: calc(-1.8 * var(--gapStandard));
   background-color: var(--colorTextBox);
   border: none;
-  box-shadow: var(--colorDark) 0 0 10px 0;
+  box-shadow: var(--colorDark) 0 0 10px 0, var(--boxShadow);
   border-radius: var(--borderRadius);
   cursor: pointer;
-}
+  transition: 0.3s;
+  min-width: 10rem;
+  transform: rotate(-1.5deg) ;
 
-.hidden {
-  display: none;
+}
+.card-button:active {
+  transform: rotate(1.5deg) ;
 }
 
 .card-tagBox {
   display: flex;
   gap: calc(0.5 * var(--gapStandard));
-  margin: 0 calc(1 * var(--gapStandard)) var(--gapStandard)
-    calc(1 * var(--gapStandard));
+  margin: 0 calc(1.5 * var(--gapStandard)) var(--gapStandard);
   flex-wrap: wrap;
 }
 
@@ -98,4 +87,5 @@
   font-size: 0.7rem;
   color: var(--colorHighlight);
   border-radius: calc(0.5 * var(--borderRadius));
+  box-shadow: var(--boxShadow);
 }

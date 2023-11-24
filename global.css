@@ -17,6 +17,7 @@
   --borderRadius: 0.5rem;
   --gapStandard: 1rem;
   --darkMode: 0;
+  --boxShadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,5 +34,9 @@ main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem 1rem 1rem 1rem;
+  padding: 2rem 1rem 1rem 1rem;
+}
+
+.hidden {
+  display: none;
 }

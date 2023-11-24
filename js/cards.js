@@ -3,14 +3,23 @@
 const quizCards = [
   {
     number: "#1",
-    question: "question 1",
+    question:
+      "question 1 lorem ipsum vaingardium leviosa test text der irgendwann umbrechen muss sonst habe ich ein problem",
     answer: "answer 1",
-    tags: ["#css", "#html", "#JavaScript"],
+    tags: [
+      "#css",
+      "#html",
+      "#JavaScript",
+      "#JavaScript",
+      "#JavaScript",
+      "#JavaScript",
+    ],
   },
   {
     number: "#2",
     question: "question 2",
-    answer: "answer 2",
+    answer:
+      "answer 2 Dies ist eine sehr lange anstwort auf Fargen die nieman gestellt hat oder jemals stellen wird und ich mag Ernie und Bert und Pikatchu ist gelb",
     tags: ["#css", "#JavaScript"],
   },
   {
