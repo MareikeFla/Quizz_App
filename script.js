@@ -68,7 +68,7 @@ for (let i = 0; i < cardButton.length; i++) {
   cardButton[i].addEventListener("click", () => {
     cardAnswerText[i].classList.toggle("card-answerText-hidden");
     cardAnswerBox[i].classList.toggle("card-answerBox-acive");
-    cardButtonTextShow[i].classList.toggle("card-button-textHidden");
-    cardButtonTextHide[i].classList.toggle("card-button-textHidden");
+    cardButtonTextShow[i].classList.toggle("hidden");
+    cardButtonTextHide[i].classList.toggle("hidden");
   });
 }

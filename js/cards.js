@@ -90,9 +90,9 @@ function createCard(quizCard, i) {
   // Check if the card is bookmarked (Further info at the bottom)
   if (localStorage.getItem("cardBookmarked_" + i)) {
     img1.className = "card-bookmark card-bookmarked";
-    img2.className = "card-bookmark card-notBookmarked card-bookmark-hide";
+    img2.className = "card-bookmark card-notBookmarked hidden";
   } else {
-    img1.className = "card-bookmark card-bookmarked card-bookmark-hide";
+    img1.className = "card-bookmark card-bookmarked hidden";
     img2.className = "card-bookmark card-notBookmarked";
   }
   cardHeader.appendChild(img1);
@@ -117,7 +117,7 @@ function createCard(quizCard, i) {
   createcardButton.appendChild(textShow);
 
   const textHide = document.createElement("p");
-  textHide.className = "card-button-textHide card-button-textHidden";
+  textHide.className = "card-button-textHide hidden";
   textHide.textContent = "Hide Answer";
   createcardButton.appendChild(textHide);
 
@@ -176,8 +176,8 @@ const cardNotBookmarked = document.querySelectorAll(".card-notBookmarked");
 
 for (let i = 0; i < cardBookmarked.length; i++) {
   function toggleBookmarkClass() {
-    cardBookmarked[i].classList.toggle("card-bookmark-hide");
-    cardNotBookmarked[i].classList.toggle("card-bookmark-hide");
+    cardBookmarked[i].classList.toggle("hidden");
+    cardNotBookmarked[i].classList.toggle("hidden");
   }
 
   cardBookmarked[i].addEventListener("click", () => {
