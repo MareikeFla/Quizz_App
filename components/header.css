@@ -16,18 +16,5 @@ header {
 
 .header-logo {
   height: 50%;
-  margin: 0 0.5rem;
-}
-
-.header-logo-darkMode {
-  display: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  .header-logo-lightMode {
-    display: none;
-  }
-  .header-logo-darkMode {
-    display: block;
-  }
+  margin: 0 1rem;
 }
