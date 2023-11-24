@@ -47,17 +47,26 @@ const quizCards = [
 
 // Function to create a card element in the DOM for each quiz card
 
+// const createNewElement = (element, parent, stringClasses) => {
+//   element = document.createElement('"' + element + '"');
+//   element.className = stringClasses;
+//   parent.append(element);
+// };
+
 function createCard(quizCard, i) {
   const main = document.querySelector("main");
+
   const section = document.createElement("section");
   section.className = "card";
 
   const cardHeader = document.createElement("div");
   cardHeader.className = "card-header";
+  section.appendChild(cardHeader);
 
   const h2 = document.createElement("h2");
   h2.className = "card-questionNumber";
   h2.textContent = quizCard.number;
+  cardHeader.appendChild(h2);
 
   const img1 = document.createElement("img");
   img1.src = "pictures/bookmarke-active2.png";
@@ -75,34 +84,44 @@ function createCard(quizCard, i) {
     img1.className = "card-bookmark card-bookmarked card-bookmark-hide";
     img2.className = "card-bookmark card-notBookmarked";
   }
+  cardHeader.appendChild(img1);
+  cardHeader.appendChild(img2);
 
   const questionBox = document.createElement("div");
   questionBox.className = "card-questionBox card-textBox";
+  section.appendChild(questionBox);
 
   const questionText = document.createElement("p");
   questionText.className = "card-questionText";
   questionText.textContent = quizCard.question;
+  questionBox.appendChild(questionText);
 
   const createcardButton = document.createElement("button");
   createcardButton.className = "card-button";
+  questionBox.appendChild(createcardButton);
 
   const textShow = document.createElement("p");
   textShow.className = "card-button-textShow";
   textShow.textContent = "Show Answer";
+  createcardButton.appendChild(textShow);
 
   const textHide = document.createElement("p");
   textHide.className = "card-button-textHide card-button-textHidden";
   textHide.textContent = "Hide Answer";
+  createcardButton.appendChild(textHide);
 
   const answerBox = document.createElement("div");
   answerBox.className = "card-answerBox card-textBox";
+  section.appendChild(answerBox);
 
   const answerText = document.createElement("p");
   answerText.className = "card-answerText card-answerText-hidden";
   answerText.textContent = quizCard.answer;
+  answerBox.appendChild(answerText);
 
   const tagBox = document.createElement("div");
   tagBox.className = "card-tagBox";
+  section.appendChild(tagBox);
 
   // Function to create tag elements for each tag in the quiz card
 
@@ -117,18 +136,6 @@ function createCard(quizCard, i) {
 
   quizCard.tags.forEach(createTag);
 
-  cardHeader.appendChild(h2);
-  cardHeader.appendChild(img1);
-  cardHeader.appendChild(img2);
-  section.appendChild(cardHeader);
-  questionBox.appendChild(questionText);
-  createcardButton.appendChild(textShow);
-  createcardButton.appendChild(textHide);
-  questionBox.appendChild(createcardButton);
-  section.appendChild(questionBox);
-  answerBox.appendChild(answerText);
-  section.appendChild(answerBox);
-  section.appendChild(tagBox);
   main.appendChild(section);
 }
 
