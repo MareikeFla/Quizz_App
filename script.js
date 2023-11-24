@@ -37,10 +37,7 @@ function setColorMode(colorMode) {
   if (colorMode == "dark") {
     document.documentElement.style.setProperty("--colorBase", colorBaseDark);
     document.documentElement.style.setProperty("--colorDark", colorDarkDark);
-    document.documentElement.style.setProperty(
-      "--colorTextBox",
-      colorTextBoxDark
-    );
+    document.documentElement.style.setProperty("--colorTextBox",colorTextBoxDark);
     document.documentElement.style.setProperty("--colorHighlight", "#26add1");
     document.documentElement.style.setProperty("--shadowFooter", shadowFooter);
     document.documentElement.style.setProperty("--shadowHeader", shadowHeader);
@@ -56,15 +53,10 @@ function setColorMode(colorMode) {
   }
 
   if (colorMode == "rainbow") {
-    document.documentElement.style.setProperty("--colorBase", "white");
-    document.documentElement.style.setProperty(
-      "--shadowFooter",
-      rainbowShadowFooter
-    );
-    document.documentElement.style.setProperty(
-      "--shadowHeader",
-      rainbowShadowHeader
-    );
+    document.documentElement.style.setProperty("--colorBase", colorBaseDark);
+    document.documentElement.style.setProperty("--colorDark", colorDark);
+    document.documentElement.style.setProperty("--shadowFooter",rainbowShadowFooter);
+    document.documentElement.style.setProperty("--shadowHeader",rainbowShadowHeader);
     document.documentElement.style.setProperty("--colorHighlight", "hotpink");
     document.documentElement.style.setProperty("--colorTextBox", colorTextBox);
   }
