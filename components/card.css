@@ -24,9 +24,6 @@
   box-shadow: red 0 0 2px 2p;
 }
 
-.card-bookmark-hide {
-  display: none;
-}
 
 .card-textBox {
   background-color: var(--colorTextBox);
