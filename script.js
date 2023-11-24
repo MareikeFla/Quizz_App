@@ -4,9 +4,6 @@ const cardButtonTextHide = document.querySelectorAll(".card-button-textHide");
 const cardAnswerText = document.querySelectorAll(".card-answerText");
 const cardAnswerBox = document.querySelectorAll(".card-answerBox");
 
-const cardBookmarked = document.querySelectorAll(".card-bookmarked");
-const cardNotBookmarked = document.querySelectorAll(".card-notBookmarked");
-
 const prefersDarkMode = Boolean(
   getComputedStyle(document.documentElement).getPropertyValue("--darkMode")
 );
@@ -81,20 +78,5 @@ for (let i = 0; i < cardButton.length; i++) {
     cardAnswerBox[i].classList.toggle("card-answerBox-acive");
     cardButtonTextShow[i].classList.toggle("card-button-textHidden");
     cardButtonTextHide[i].classList.toggle("card-button-textHidden");
-  });
-}
-
-for (let i = 0; i < cardBookmarked.length; i++) {
-  function toggleBookmarkClass() {
-    cardBookmarked[i].classList.toggle("card-bookmark-hide");
-    cardNotBookmarked[i].classList.toggle("card-bookmark-hide");
-  }
-
-  cardBookmarked[i].addEventListener("click", () => {
-    toggleBookmarkClass();
-  });
-
-  cardNotBookmarked[i].addEventListener("click", () => {
-    toggleBookmarkClass();
   });
 }
