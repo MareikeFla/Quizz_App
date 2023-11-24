@@ -33,14 +33,22 @@ function initialColorMode() {
 
 initialColorMode();
 
+const headerLogoStandard = document.querySelector(".logo-standard");
+const headerLogoRainbow = document.querySelector(".logo-rainbow");
+
 function setColorMode(colorMode) {
   if (colorMode == "dark") {
     document.documentElement.style.setProperty("--colorBase", colorBaseDark);
     document.documentElement.style.setProperty("--colorDark", colorDarkDark);
-    document.documentElement.style.setProperty("--colorTextBox",colorTextBoxDark);
+    document.documentElement.style.setProperty(
+      "--colorTextBox",
+      colorTextBoxDark
+    );
     document.documentElement.style.setProperty("--colorHighlight", "#26add1");
     document.documentElement.style.setProperty("--shadowFooter", shadowFooter);
     document.documentElement.style.setProperty("--shadowHeader", shadowHeader);
+    headerLogoStandard.classList.remove("hidden");
+    headerLogoRainbow.classList.add("hidden");
   }
 
   if (colorMode == "light") {
@@ -50,15 +58,25 @@ function setColorMode(colorMode) {
     document.documentElement.style.setProperty("--colorHighlight", "#26add1");
     document.documentElement.style.setProperty("--shadowFooter", shadowFooter);
     document.documentElement.style.setProperty("--shadowHeader", shadowHeader);
+    headerLogoStandard.classList.remove("hidden");
+    headerLogoRainbow.classList.add("hidden");
   }
 
   if (colorMode == "rainbow") {
     document.documentElement.style.setProperty("--colorBase", colorBaseDark);
     document.documentElement.style.setProperty("--colorDark", colorDark);
-    document.documentElement.style.setProperty("--shadowFooter",rainbowShadowFooter);
-    document.documentElement.style.setProperty("--shadowHeader",rainbowShadowHeader);
+    document.documentElement.style.setProperty(
+      "--shadowFooter",
+      rainbowShadowFooter
+    );
+    document.documentElement.style.setProperty(
+      "--shadowHeader",
+      rainbowShadowHeader
+    );
     document.documentElement.style.setProperty("--colorHighlight", "hotpink");
     document.documentElement.style.setProperty("--colorTextBox", colorTextBox);
+    headerLogoStandard.classList.add("hidden");
+    headerLogoRainbow.classList.remove("hidden");
   }
 }
 
