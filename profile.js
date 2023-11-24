@@ -21,6 +21,24 @@ const rainbowShadowHeader =
 const shadowHeader = "var(--colorDark) 0 3px 20px 3px";
 const shadowFooter = "var(--colorDark) 0 -3px 20px 3px";
 
+const numberOfCards = document.querySelector(".statistics-cards-number");
+numberOfCards.innerText = localStorage.getItem("numberOfCards");
+
+let numberOfBookmarkedCards = document.querySelector(
+  ".statistics-bookmarks-number"
+);
+numberOfBookmarkedCards.innerText = countBookmarkedCards();
+
+function countBookmarkedCards() {
+  let count = 0;
+  for (let i = 0; i < localStorage.length; i++) {
+    if (localStorage.key(i).match("cardBookmarked_")) {
+      count++;
+    }
+  }
+  return count;
+}
+
 // SWITCH MODE WITH SLIDER
 // FUNCTIONS SLIDER
 

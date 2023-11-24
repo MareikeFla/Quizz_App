@@ -43,7 +43,18 @@ const quizCards = [
     answer: "answer 7",
     tags: ["#css", "#html"],
   },
+  {
+    number: "#8",
+    question: "question 8",
+    answer: "answer 8",
+    tags: ["#css", "#html"],
+  },
 ];
+
+// Store the number of cards in the locale Storage to access it at the profile page
+
+const numberOfCards = quizCards.length;
+localStorage.setItem("numberOfCards", numberOfCards);
 
 // Function to create a card element in the DOM for each quiz card
 
