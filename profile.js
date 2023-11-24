@@ -21,6 +21,9 @@ const rainbowShadowHeader =
 const shadowHeader = "var(--colorDark) 0 3px 20px 3px";
 const shadowFooter = "var(--colorDark) 0 -3px 20px 3px";
 
+const headerLogoStandard = document.querySelector(".logo-standard");
+const headerLogoRainbow = document.querySelector(".logo-rainbow");
+
 const numberOfCards = document.querySelector(".statistics-cards-number");
 numberOfCards.innerText = localStorage.getItem("numberOfCards");
 
@@ -60,10 +63,15 @@ function setColorMode(colorMode) {
   if (colorMode == "dark") {
     document.documentElement.style.setProperty("--colorBase", colorBaseDark);
     document.documentElement.style.setProperty("--colorDark", colorDarkDark);
-    document.documentElement.style.setProperty("--colorTextBox",colorTextBoxDark);
+    document.documentElement.style.setProperty(
+      "--colorTextBox",
+      colorTextBoxDark
+    );
     document.documentElement.style.setProperty("--colorHighlight", "#26add1");
     document.documentElement.style.setProperty("--shadowFooter", shadowFooter);
     document.documentElement.style.setProperty("--shadowHeader", shadowHeader);
+    headerLogoStandard.classList.remove("hidden");
+    headerLogoRainbow.classList.add("hidden");
   }
 
   if (colorMode == "light") {
@@ -73,15 +81,25 @@ function setColorMode(colorMode) {
     document.documentElement.style.setProperty("--colorHighlight", "#26add1");
     document.documentElement.style.setProperty("--shadowFooter", shadowFooter);
     document.documentElement.style.setProperty("--shadowHeader", shadowHeader);
+    headerLogoStandard.classList.remove("hidden");
+    headerLogoRainbow.classList.add("hidden");
   }
 
   if (colorMode == "rainbow") {
     document.documentElement.style.setProperty("--colorBase", colorBaseDark);
     document.documentElement.style.setProperty("--colorDark", colorDark);
-    document.documentElement.style.setProperty("--shadowFooter",rainbowShadowFooter);
-    document.documentElement.style.setProperty("--shadowHeader",rainbowShadowHeader);
+    document.documentElement.style.setProperty(
+      "--shadowFooter",
+      rainbowShadowFooter
+    );
+    document.documentElement.style.setProperty(
+      "--shadowHeader",
+      rainbowShadowHeader
+    );
     document.documentElement.style.setProperty("--colorHighlight", "hotpink");
     document.documentElement.style.setProperty("--colorTextBox", colorTextBox);
+    headerLogoStandard.classList.add("hidden");
+    headerLogoRainbow.classList.remove("hidden");
   }
 }
 
@@ -93,16 +111,22 @@ sliderBoxElementDark.addEventListener("click", () => {
   document.documentElement.style.setProperty("--left", "0%");
   localStorage.setItem("locColorMode", "dark");
   setColorMode(localStorage.getItem("locColorMode"));
+  headerLogoRainbow.classList.add("hidden");
+  headerLogoStandard.classList.remove("hidden");
 });
 
 sliderBoxElementLight.addEventListener("click", () => {
   document.documentElement.style.setProperty("--left", "33%");
   localStorage.setItem("locColorMode", "light");
   setColorMode(localStorage.getItem("locColorMode"));
+  headerLogoRainbow.classList.add("hidden");
+  headerLogoStandard.classList.remove("hidden");
 });
 
 sliderBoxElementRainbow.addEventListener("click", () => {
   document.documentElement.style.setProperty("--left", "66%");
   localStorage.setItem("locColorMode", "rainbow");
   setColorMode(localStorage.getItem("locColorMode"));
+  headerLogoRainbow.classList.remove("hidden");
+  headerLogoStandard.classList.add("hidden");
 });
