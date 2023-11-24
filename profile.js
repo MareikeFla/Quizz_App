@@ -79,7 +79,7 @@ function setColorMode(colorMode) {
   }
 
   if (colorMode == "rainbow") {
-    document.documentElement.style.setProperty("--colorBase", "white");
+    document.documentElement.style.setProperty("--colorBase", colorBaseDark);
     document.documentElement.style.setProperty(
       "--shadowFooter",
       rainbowShadowFooter
