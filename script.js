@@ -3,6 +3,7 @@ const cardButtonTextShow = document.querySelectorAll(".card-button-textShow");
 const cardButtonTextHide = document.querySelectorAll(".card-button-textHide");
 const cardAnswerText = document.querySelectorAll(".card-answerText");
 const cardAnswerBox = document.querySelectorAll(".card-answerBox");
+const cardDemandBox = document.querySelectorAll(".wrapDemand");
 
 const prefersDarkMode = Boolean(
   getComputedStyle(document.documentElement).getPropertyValue("--darkMode")
@@ -84,9 +85,17 @@ setColorMode(localStorage.getItem("locColorMode"));
 
 for (let i = 0; i < cardButton.length; i++) {
   cardButton[i].addEventListener("click", () => {
-    cardAnswerText[i].classList.toggle("card-answerText-hidden");
+    cardAnswerText[i].classList.toggle("hidden");
+    cardDemandBox[i].classList.toggle("hidden");
     cardAnswerBox[i].classList.toggle("card-answerBox-acive");
     cardButtonTextShow[i].classList.toggle("hidden");
     cardButtonTextHide[i].classList.toggle("hidden");
   });
 }
+
+const body = document.querySelector("body");
+const bodyHalfOffsetHeight = body.clientHeight / 2 + "px";
+document.documentElement.style.setProperty(
+  "--bodyHeight",
+  bodyHalfOffsetHeight
+);

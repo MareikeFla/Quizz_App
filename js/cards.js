@@ -77,7 +77,7 @@ function createCard(quizCard, i) {
   const main = document.querySelector("main");
 
   const section = document.createElement("section");
-  section.className = "card";
+  section.className = "card quiz-card";
 
   const cardHeader = document.createElement("div");
   cardHeader.className = "card-header";
@@ -135,9 +135,29 @@ function createCard(quizCard, i) {
   section.appendChild(answerBox);
 
   const answerText = document.createElement("p");
-  answerText.className = "card-answerText card-answerText-hidden";
+  answerText.className = "card-answerText hidden";
   answerText.textContent = quizCard.answer;
   answerBox.appendChild(answerText);
+
+  const demandkWrap = document.createElement("div");
+  demandkWrap.classList.add("wrapDemand", "hidden");
+  answerBox.append(demandkWrap);
+
+  const demandText = document.createElement("p");
+  demandText.classList.add("demand");
+  demandText.textContent = "Did you knew this?";
+  demandkWrap.append(demandText);
+
+  const buttonYes = document.createElement("button");
+  buttonYes.textContent = "Yes";
+  buttonYes.classList.add("demandYes");
+  demandkWrap.append(buttonYes);
+
+  const buttonNo = document.createElement("button");
+  buttonNo.textContent = "No";
+  buttonNo.classList.add("demandNo");
+
+  demandkWrap.append(buttonNo);
 
   const tagBox = document.createElement("div");
   tagBox.className = "card-tagBox";
