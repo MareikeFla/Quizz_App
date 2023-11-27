@@ -68,7 +68,8 @@
 
 .card-answerText {
   color: var(--colorHighlight);
-  margin-bottom: var(--gapStandard);
+  margin-bottom: calc(2 * var(--gapStandard));
+  font-size: 1.5rem;
 }
 
 .card-button {

@@ -85,8 +85,8 @@ setColorMode(localStorage.getItem("locColorMode"));
 
 for (let i = 0; i < cardButton.length; i++) {
   cardButton[i].addEventListener("click", () => {
-    cardAnswerText[i].classList.toggle("hidden");
-    cardDemandBox[i].classList.toggle("hidden");
+    cardAnswerText[i].classList.toggle("invisible");
+    // cardDemandBox[i].classList.toggle("invisible");
     cardAnswerBox[i].classList.toggle("card-answerBox-acive");
     cardButtonTextShow[i].classList.toggle("hidden");
     cardButtonTextHide[i].classList.toggle("hidden");
