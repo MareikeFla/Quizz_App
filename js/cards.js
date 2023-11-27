@@ -358,24 +358,35 @@ function createCard(quizCard, i) {
   h2.textContent = quizCard.number;
   cardHeader.appendChild(h2);
 
+  const bookmark = document.createElement("div");
+  bookmark.className = "card-bookmark";
+  bookmark.addEventListener("click", () => {
+    const bookmarked = section.classList.toggle("card--isBookmarked");
+    if (bookmarked) {
+      localStorage.setItem("cardBookmarked_" + quizCard.number, true);
+    } else {
+      localStorage.removeItem("cardBookmarked_" + quizCard.number);
+    }
+  });
+
+  cardHeader.append(bookmark);
+
   const img1 = document.createElement("img");
   img1.src = "pictures/bookmarke-active2.png";
   img1.alt = "bookmark-active";
+  img1.classList.add("card-bookmarkImg", "card-bookmarkImgActive");
 
   const img2 = document.createElement("img");
   img2.src = "pictures/bookmark-inactive.png";
   img2.alt = "bookmark-inactive";
+  img2.classList.add("card-bookmarkImg", "card-bookmarkImgInactive");
 
-  // Check if the card is bookmarked (Further info at the bottom)
-  if (localStorage.getItem("cardBookmarked_" + i)) {
-    img1.className = "card-bookmark card-bookmarked";
-    img2.className = "card-bookmark card-notBookmarked hidden";
-  } else {
-    img1.className = "card-bookmark card-bookmarked hidden";
-    img2.className = "card-bookmark card-notBookmarked";
+  if (localStorage.getItem("cardBookmarked_" + quizCard.number)) {
+    section.classList.add("card--isBookmarked");
   }
-  cardHeader.appendChild(img1);
-  cardHeader.appendChild(img2);
+
+  bookmark.appendChild(img1);
+  bookmark.appendChild(img2);
 
   const questionBox = document.createElement("div");
   questionBox.className = "card-questionBox card-textBox";
@@ -459,7 +470,7 @@ const dynamicQuizCards = () => {
   } else {
     // If not on index page, load only bookmarked quiz cards
     for (let i = 0; i < quizCards.length; i++) {
-      if (localStorage.getItem("cardBookmarked_" + i)) {
+      if (localStorage.getItem("cardBookmarked_" + quizCards[i].number)) {
         createCard(quizCards[i], i);
       }
     }
@@ -467,25 +478,3 @@ const dynamicQuizCards = () => {
 };
 
 dynamicQuizCards();
-
-// Toggle bookmark on click
-
-const cardBookmarked = document.querySelectorAll(".card-bookmarked");
-const cardNotBookmarked = document.querySelectorAll(".card-notBookmarked");
-
-for (let i = 0; i < cardBookmarked.length; i++) {
-  function toggleBookmarkClass() {
-    cardBookmarked[i].classList.toggle("hidden");
-    cardNotBookmarked[i].classList.toggle("hidden");
-  }
-
-  cardBookmarked[i].addEventListener("click", () => {
-    toggleBookmarkClass();
-    localStorage.removeItem("cardBookmarked_" + i);
-  });
-
-  cardNotBookmarked[i].addEventListener("click", () => {
-    toggleBookmarkClass();
-    localStorage.setItem("cardBookmarked_" + i, true);
-  });
-}

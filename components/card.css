@@ -4,6 +4,10 @@
   margin-bottom: 1.5rem;
 }
 
+.card-bookmarkImgActive {
+  display: none;
+}
+
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -17,10 +21,18 @@
   font-size: 1rem;
 }
 
-.card-bookmark {
+.card-bookmarkImg {
   height: 3rem;
   margin-top: -5px;
   cursor: pointer;
+}
+
+.card--isBookmarked .card-bookmarkImgInactive {
+  display: none;
+}
+
+.card--isBookmarked .card-bookmarkImgActive {
+  display: initial;
 }
 
 .card-textBox {
