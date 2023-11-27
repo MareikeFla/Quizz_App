@@ -1,0 +1,39 @@
+@media screen and (min-width: 600px) and (max-width: 1199px) {
+  .card {
+    width: 70vw;
+  }
+
+  main {
+    align-items: center;
+  }
+  header,
+  footer {
+    height: 6rem;
+  }
+  header {
+    font-size: 3.5rem;
+  }
+
+  .footer-link {
+    height: 5rem;
+    width: 5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main-cards {
+    width: 80vw;
+    align-self: center;
+    height: var(--bodyHeight);
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .quiz-card {
+    width: 45%;
+  }
+}
