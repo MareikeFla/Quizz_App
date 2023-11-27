@@ -1,5 +1,4 @@
 // Define an array of quiz cards with their details
-
 const quizCards = [
   {
     number: 1,
@@ -331,17 +330,8 @@ const quizCards = [
 ];
 
 // Store the number of cards in the locale Storage to access it at the profile page
-
 const numberOfCards = quizCards.length;
 localStorage.setItem("numberOfCards", numberOfCards);
-
-// Function to create a card element in the DOM for each quiz card
-
-// const createNewElement = (element, parent, stringClasses) => {
-//   element = document.createElement('"' + element + '"');
-//   element.className = stringClasses;
-//   parent.append(element);
-// };
 
 function createCard(quizCard, i) {
   const main = document.querySelector("main");
@@ -445,7 +435,6 @@ function createCard(quizCard, i) {
   section.appendChild(tagBox);
 
   // Function to create tag elements for each tag in the quiz card
-
   function createTag(tagName) {
     const tag = document.createElement("article");
     tag.className = "card-tag";
@@ -454,26 +443,22 @@ function createCard(quizCard, i) {
   }
 
   // Loop through each tag in the quiz card and create a tag element
-
   quizCard.tags.forEach(createTag);
 
   main.appendChild(section);
 }
 
 // Function to dynamically load quiz cards based on the current page
-
 const dynamicQuizCards = () => {
-  // Check if the current page is the index page
   if (window.location.href.match("index.html")) {
     // If on index page, load all quiz cards
     quizCards.forEach(createCard);
   } else {
     // If not on index page, load only bookmarked quiz cards
-    for (let i = 0; i < quizCards.length; i++) {
-      if (localStorage.getItem("cardBookmarked_" + quizCards[i].number)) {
-        createCard(quizCards[i], i);
-      }
-    }
+    const bookmarkedQuizCards = quizCards.filter((quizCard) => {
+      return localStorage.getItem("cardBookmarked_" + quizCard.number);
+    });
+    bookmarkedQuizCards.forEach(createCard);
   }
 };
 
