@@ -439,6 +439,7 @@ function createCard(quizCard, i) {
     const tag = document.createElement("article");
     tag.className = "card-tag";
     tag.textContent = tagName;
+    section.classList.add(tagName);
     tagBox.appendChild(tag);
   }
 
@@ -449,7 +450,7 @@ function createCard(quizCard, i) {
 }
 
 // Function to dynamically load quiz cards based on the current page
-const dynamicQuizCards = () => {
+const createPageSpecificQuizCards = () => {
   if (window.location.href.match("index.html")) {
     // If on index page, load all quiz cards
     quizCards.forEach(createCard);
@@ -462,4 +463,16 @@ const dynamicQuizCards = () => {
   }
 };
 
-dynamicQuizCards();
+createPageSpecificQuizCards();
+
+const checkboxFilter = document.querySelectorAll(
+  '[data-js="header-checkboxFilter"]'
+);
+
+checkboxFilter.forEach((checkbox) => {
+  checkbox.addEventListener("change", (event) => {
+    console.log(event);
+  });
+});
+
+console.log(checkboxFilter);

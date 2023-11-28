@@ -93,9 +93,9 @@ for (let i = 0; i < cardButton.length; i++) {
   });
 }
 
-const body = document.querySelector("body");
-const bodyHalfOffsetHeight = body.clientHeight / 2 + "px";
-document.documentElement.style.setProperty(
-  "--bodyHeight",
-  bodyHalfOffsetHeight
-);
+// const body = document.querySelector("body");
+// const bodyHalfOffsetHeight = body.clientHeight / 2 + "px";
+// document.documentElement.style.setProperty(
+//   "--bodyHeight",
+//   bodyHalfOffsetHeight
+// );

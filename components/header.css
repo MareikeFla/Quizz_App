@@ -4,13 +4,16 @@ header {
   align-items: center;
   height: 4rem;
   background-color: var(--colorBase);
-  font-size: 2rem;
   border-radius: 0 0 var(--borderRadius) var(--borderRadius);
   position: sticky;
   top: 0;
   z-index: 1;
   color: var(--colorHighlight);
   box-shadow: var(--shadowHeader);
+}
+
+.header-word {
+  font-size: 2rem;
 }
 
 .header-logo {

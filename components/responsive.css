@@ -10,7 +10,7 @@
   footer {
     height: 6rem;
   }
-  header {
+  .header-word {
     font-size: 3.5rem;
   }
 
@@ -24,7 +24,6 @@
   .main-cards {
     width: 80vw;
     align-self: center;
-    height: var(--bodyHeight);
     flex-wrap: wrap;
     flex-direction: column;
   }
@@ -32,8 +31,5 @@
   body {
     display: flex;
     flex-direction: column;
-  }
-  .quiz-card {
-    width: 45%;
   }
 }
