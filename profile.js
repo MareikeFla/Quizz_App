@@ -1,12 +1,20 @@
-const footerLinkHome = document.querySelector(".footer-link-home");
-const footerLinkBookmarks = document.querySelector(".footer-link-bookmarks");
-const footerLinkProfile = document.querySelector(".footer-link-profile");
+const footerLinkHome = document.querySelector(".footer--link-home");
+const footerLinkBookmarks = document.querySelector(".footer--link-bookmarks");
+const footerLinkProfile = document.querySelector(".footer--link-profile");
 
-const sliderBoxElementDark = document.querySelector(".sliderBox-dark");
-const sliderBoxElementLight = document.querySelector(".sliderBox-light");
-const sliderBoxElementRainbow = document.querySelector(".sliderBox-rainbow");
+const sliderBoxElementDark = document.querySelector(
+  ".profile-settingsColorMode--dark"
+);
+const sliderBoxElementLight = document.querySelector(
+  ".profile-settingsColorMode--light"
+);
+const sliderBoxElementRainbow = document.querySelector(
+  ".profile-settingsColorMode--rainbow"
+);
 
-const checkBoxToggleMode = document.querySelector("#settings-toggle-mode");
+const checkBoxToggleMode = document.querySelector(
+  "#profile--settings-toggle-mode"
+);
 
 const colorBase = "#f2f2f2";
 const colorBaseDark = "#181818";
@@ -21,18 +29,18 @@ const rainbowShadowHeader =
 const shadowHeader = "var(--colorDark) 0 3px 20px 3px";
 const shadowFooter = "var(--colorDark) 0 -3px 20px 3px";
 
-const headerLogoStandard = document.querySelector(".logo-standard");
-const headerLogoRainbow = document.querySelector(".logo-rainbow");
+const headerLogoStandard = document.querySelector(".header-logo--standard");
+const headerLogoRainbow = document.querySelector(".header-logo--rainbow");
 
-const numberOfCards = document.querySelector(".statistics-cards-number");
-numberOfCards.innerText = localStorage.getItem("numberOfCards");
+const numberOfcards = document.querySelector(".profile__cardCount");
+numberOfcards.innerText = localStorage.getItem("numberOfcards");
 
-let numberOfBookmarkedCards = document.querySelector(
-  ".statistics-bookmarks-number"
+let numberOfBookmarkedcards = document.querySelector(
+  ".profile__bookmarksCount"
 );
-numberOfBookmarkedCards.innerText = countBookmarkedCards();
+numberOfBookmarkedcards.innerText = countBookmarkedcards();
 
-function countBookmarkedCards() {
+function countBookmarkedcards() {
   let count = 0;
   for (let i = 0; i < localStorage.length; i++) {
     if (localStorage.key(i).match("cardBookmarked_")) {
@@ -130,3 +138,55 @@ sliderBoxElementRainbow.addEventListener("click", () => {
   headerLogoRainbow.classList.remove("hidden");
   headerLogoStandard.classList.add("hidden");
 });
+
+const textareaQuestion = document.querySelector("#profile--newCardQuestion");
+const counterQuestion = document.querySelector(".characterCounter-question");
+
+textareaQuestion.addEventListener("input", (event) => {
+  counterQuestion.textContent = textareaQuestion.value.length;
+  if (textareaQuestion.value.length > 130) {
+    counterQuestion.style.color = "red";
+  } else {
+    counterQuestion.style.color = "green";
+  }
+});
+const textareaAnswer = document.querySelector("#profile--newCardAnswer");
+const counterAnswer = document.querySelector(".characterCounter-answer");
+
+textareaAnswer.addEventListener("input", () => {
+  counterAnswer.textContent = textareaAnswer.value.length;
+  if (textareaAnswer.value.length > 130) {
+    counterAnswer.style.color = "red";
+  } else {
+    counterAnswer.style.color = "green";
+  }
+});
+
+const tags = ["#html", "#css", "#JavaScript", "#react", "#test", "#test2"];
+const newcardTagBox = document.querySelector(".profile--newCard-tagBox");
+const newcard = document.querySelector(".newcard");
+
+function createTag(tag) {
+  const newcardTagCheckbox = document.createElement("input");
+  newcardTagCheckbox.type = "checkbox";
+  newcardTagCheckbox.classList.add("newcardTagCheckbox");
+  newcardTagCheckbox.setAttribute("name", tag);
+  newcardTagCheckbox.setAttribute("id", tag);
+  newcardTagBox.append(newcardTagCheckbox);
+
+  const newcardTagLabel = document.createElement("label");
+  newcardTagLabel.textContent = tag;
+  newcardTagLabel.setAttribute("for", tag);
+  newcardTagLabel.classList.add("newcardTagLabel");
+  newcardTagBox.append(newcardTagLabel);
+}
+
+tags.forEach(createTag);
+
+const newcardTagClasses = () => {
+  const classes = Array.from(newcard.classList);
+  return classes.filter((clazz) => tags.includes(clazz));
+};
+
+const formData = new FormData(document.querySelector(".profile--newCardForm"));
+console.log(formData);

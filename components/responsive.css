@@ -1,5 +1,5 @@
 @media screen and (min-width: 600px) and (max-width: 1199px) {
-  .card {
+  .cardStyle {
     width: 70vw;
   }
 
@@ -10,18 +10,18 @@
   footer {
     height: 6rem;
   }
-  .header-word {
+  .header--title {
     font-size: 3.5rem;
   }
 
-  .footer-link {
+  .footer--link {
     height: 5rem;
     width: 5rem;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .main-cards {
+  .main--pageWithQuizcards {
     width: 80vw;
     align-self: center;
     flex-wrap: wrap;

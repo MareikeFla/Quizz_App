@@ -34,8 +34,8 @@ function initialColorMode() {
 
 initialColorMode();
 
-const headerLogoStandard = document.querySelector(".logo-standard");
-const headerLogoRainbow = document.querySelector(".logo-rainbow");
+const headerLogoStandard = document.querySelector(".header-logo--standard");
+const headerLogoRainbow = document.querySelector(".header-logo--rainbow");
 
 function setColorMode(colorMode) {
   if (colorMode == "dark") {

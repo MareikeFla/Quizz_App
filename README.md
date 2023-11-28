@@ -15,7 +15,7 @@ An incomplete list of stuff I want to do:
 - [x] I want an App with three pages, home, bookmarks and profile. There will be a navbar to reach each page.
 - [ ] There will be questions about Web Development
 - [x] The bookmark should change by clicking it
-- [x] At the settings the user should be able to toggle between light and dark mode, the initiale mode of the app should be adaptet to the useres system settings
+- [x] At the profile--settings the user should be able to toggle between light and dark mode, the initiale mode of the app should be adaptet to the useres system profile--settings
 - [ ] I want a third mode that is called "rainbow" - Because I can
 - [ ] As a first(but I guess not best solution) I will hard code my questions in JavaScript
 - [ ] Only Question that are bookmarked will show up at the bookmark section

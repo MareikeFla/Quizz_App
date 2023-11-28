@@ -15,7 +15,7 @@ nav {
   width: 100%;
 }
 
-.footer-link {
+.footer--link {
   box-shadow: white 0 5px 10px 1px inset, var(--colorDark) 0 0 10px 5px inset,
     var(--colorDark) 0 3px 7px 0;
   height: 3.5rem;
@@ -30,13 +30,13 @@ nav {
   background-color: lightgray;
 }
 
-.footer-icon {
+.footer--linkImage {
   height: 90%;
   cursor: pointer;
   opacity: 0.8;
 }
 
-.footer-activePage {
+.footer--link--active {
   box-shadow: white 0 5px 10px 1px inset,
     var(--colorHighlight) 0 0 10px 5px inset,
     var(--colorHighlight) 0 0 12px 5px inset, var(--colorDark) 0 3px 7px 0;

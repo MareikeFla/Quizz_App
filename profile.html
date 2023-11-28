@@ -10,81 +10,128 @@
   </head>
   <body>
     <header>
-      <p class="header-word">QUIZ</p>
+      <p class="header--title">QUIZ</p>
       <img
         src="pictures/dolphin2.png"
         alt="Silouette of a dolphin"
-        class="header-logo logo-standard"
+        class="header--logo header-logo--standard"
       />
       <img
         src="pictures/dolphin1.png"
         alt="Silouette of a dolphin"
-        class="header-logo logo-rainbow hidden"
+        class="header--logo header-logo--rainbow hidden"
       />
-      <p class="header-word">WAVE</p>
+      <p class="header--title">WAVE</p>
     </header>
     <main>
-      <section class="profile-header">
-        <h2 class="profile-headerHeadline">
-          Welcome <span class="profile-username">Mareike</span>!
-        </h2>
-      </section>
-      <section class="profile-main card">
-        <article class="statistics card-textBox">
-          <h3 class="statistics-headline">Statistics</h3>
-          <div class="statistics-cards">
-            <span>Quiz cards: </span
-            ><span class="statistics-cards-number"></span>
+      <h2 class="profile--headline">
+        Welcome <span class="profile-headlineUsername">Mareike</span>!
+      </h2>
+      <section class="profile cardStyle">
+        <article class="profile--statistics cardSectionStyle">
+          <h3 class="profile--sectionHeadline">Statistics</h3>
+          <div class="profile--statisticsQuizCards">
+            <span>Quiz cards: </span><span class="profile__cardCount"></span>
           </div>
-          <div class="statistics-bookmarks">
+          <div class="profile--statisticsBookmarkedCards">
             <span>Bookmarked: </span
-            ><span class="statistics-bookmarks-number"></span>
+            ><span class="profile__bookmarksCount"></span>
           </div>
         </article>
-        <article class="settings card-textBox">
-          <h3 class="settings-headline">Settings</h3>
-          <section class="setMode">
-            <h4 class="setMode-headline">Choose your favourite mode</h4>
-            <div class="sliderBox">
+        <article class="profile--settings cardSectionStyle">
+          <h3 class="profile--sectionHeadline">Color Settings</h3>
+          <section class="profile-settingsColorMode">
+            <h4 class="profile--settingsColorModeHeadline">
+              Choose your favourite mode
+            </h4>
+            <div class="profile--settingsColorModes">
               <div class="slider"></div>
-              <a href="#" class="sliderBox-element sliderBox-dark">Dark</a>
-              <a href="#" class="sliderBox-element sliderBox-light">Light</a>
-              <a href="#" class="sliderBox-element sliderBox-rainbow"
+              <a
+                href="#"
+                class="profile-settingsColorMode profile-settingsColorMode--dark"
+                >Dark</a
+              >
+              <a
+                href="#"
+                class="profile-settingsColorMode profile-settingsColorMode--light"
+                >Light</a
+              >
+              <a
+                href="#"
+                class="profile-settingsColorMode profile-settingsColorMode--rainbow"
                 >Rainbow</a
               >
             </div>
           </section>
         </article>
-        <article class="newCard card-textBox">
-          <h3 class="newCard-headline">New Card</h3>
-          <button class="newCardButton">Create new quiz card</button>
+
+        <article class="profile-newCard cardSectionStyle">
+          <h3 class="profile--sectionHeadline">New card</h3>
+          <form
+            action=""
+            class="profile--newCardForm"
+            id="profile--newCardForm"
+          >
+            <label for="profile--newCardQuestion">Enter your question</label>
+            <textarea
+              name="profile--newCardQuestion"
+              id="profile--newCardQuestion"
+              form="profile--newCardForm"
+              rows="4"
+              maxlength="150"
+              required
+            ></textarea>
+            <p class="characterCounter">
+              <span class="characterCounter-question">0</span><span>/150</span>
+            </p>
+            <label for="profile--newCardAnswer">Enter your answer</label>
+            <textarea
+              name="profile--newCardAnswer"
+              id="profile--newCardAnswer"
+              form="profile--newCardForm"
+              rows="4"
+              maxlength="150"
+              required
+            ></textarea>
+            <p class="characterCounter">
+              <span class="characterCounter-answer">0</span><span>/150</span>
+            </p>
+            <label for="profile--newCard-tagBox">Choose your tags</label>
+            <div
+              class="profile--newCard-tagBox"
+              id="profile--newCard-tagBox"
+            ></div>
+            <button type="submit" class="profile--newCardSubmit">
+              Create new quiz card
+            </button>
+          </form>
         </article>
       </section>
     </main>
     <footer>
       <nav>
-        <a href="index.html" class="footer-link footer-link-home">
+        <a href="index.html" class="footer--link footer--link-home">
           <img
             src="pictures/home-smile-regular-24.png"
             alt="Link Home"
-            class="footer-icon footer-icon-home"
+            class="footer--linkImage footer--linkImage-home"
           />
         </a>
-        <a href="bookmarks.html" class="footer-link footer-link-bookmarks">
+        <a href="bookmarks.html" class="footer--link footer--link-bookmarks">
           <img
             src="pictures/bookmarks-regular-24.png"
             alt="Link Bookmark"
-            class="footer-icon footer-icon-bookmarks"
+            class="footer--linkImage footer--linkImage-bookmarks"
           />
         </a>
         <a
           href="/profile.html"
-          class="footer-link footer-link-profile footer-activePage"
+          class="footer--link footer--link-profile footer--link--active"
         >
           <img
             src="pictures/user-regular-24.png"
             alt="Link Profile"
-            class="footer-icon footer-icon-profile"
+            class="footer--linkImage footer--linkImage-profile"
           />
         </a>
       </nav>

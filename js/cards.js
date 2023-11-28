@@ -1,5 +1,5 @@
 // Define an array of quiz cards with their details
-const quizCards = [
+const quizcards = [
   {
     number: 1,
     question: "What does HTML stand for?",
@@ -330,14 +330,14 @@ const quizCards = [
 ];
 
 // Store the number of cards in the locale Storage to access it at the profile page
-const numberOfCards = quizCards.length;
-localStorage.setItem("numberOfCards", numberOfCards);
+const numberOfcards = quizcards.length;
+localStorage.setItem("numberOfcards", numberOfcards);
 
-function createCard(quizCard, i) {
+function createcard(quizcard, i) {
   const main = document.querySelector("main");
 
   const section = document.createElement("section");
-  section.className = "card quiz-card";
+  section.className = "cardStyle quiz-card";
 
   const cardHeader = document.createElement("div");
   cardHeader.className = "card-header";
@@ -345,7 +345,7 @@ function createCard(quizCard, i) {
 
   const h2 = document.createElement("h2");
   h2.className = "card-questionNumber";
-  h2.textContent = quizCard.number;
+  h2.textContent = quizcard.number;
   cardHeader.appendChild(h2);
 
   const bookmark = document.createElement("div");
@@ -353,9 +353,9 @@ function createCard(quizCard, i) {
   bookmark.addEventListener("click", () => {
     const bookmarked = section.classList.toggle("card--isBookmarked");
     if (bookmarked) {
-      localStorage.setItem("cardBookmarked_" + quizCard.number, true);
+      localStorage.setItem("cardBookmarked_" + quizcard.number, true);
     } else {
-      localStorage.removeItem("cardBookmarked_" + quizCard.number);
+      localStorage.removeItem("cardBookmarked_" + quizcard.number);
     }
   });
 
@@ -371,7 +371,7 @@ function createCard(quizCard, i) {
   img2.alt = "bookmark-inactive";
   img2.classList.add("card-bookmarkImg", "card-bookmarkImgInactive");
 
-  if (localStorage.getItem("cardBookmarked_" + quizCard.number)) {
+  if (localStorage.getItem("cardBookmarked_" + quizcard.number)) {
     section.classList.add("card--isBookmarked");
   }
 
@@ -379,12 +379,12 @@ function createCard(quizCard, i) {
   bookmark.appendChild(img2);
 
   const questionBox = document.createElement("div");
-  questionBox.className = "card-questionBox card-textBox";
+  questionBox.className = "card-questionBox cardSectionStyle";
   section.appendChild(questionBox);
 
   const questionText = document.createElement("p");
   questionText.className = "card-questionText";
-  questionText.textContent = quizCard.question;
+  questionText.textContent = quizcard.question;
   questionBox.appendChild(questionText);
 
   const createcardButton = document.createElement("button");
@@ -402,33 +402,13 @@ function createCard(quizCard, i) {
   createcardButton.appendChild(textHide);
 
   const answerBox = document.createElement("div");
-  answerBox.className = "card-answerBox card-textBox";
+  answerBox.className = "card-answerBox cardSectionStyle";
   section.appendChild(answerBox);
 
   const answerText = document.createElement("p");
   answerText.className = "card-answerText invisible";
-  answerText.textContent = quizCard.answer;
+  answerText.textContent = quizcard.answer;
   answerBox.appendChild(answerText);
-
-  const demandkWrap = document.createElement("div");
-  demandkWrap.classList.add("wrapDemand");
-  answerBox.append(demandkWrap);
-
-  const demandText = document.createElement("p");
-  demandText.classList.add("demand");
-  demandText.textContent = "Did you knew this?";
-  demandkWrap.append(demandText);
-
-  const buttonYes = document.createElement("button");
-  buttonYes.textContent = "Yes";
-  buttonYes.classList.add("demandYes");
-  demandkWrap.append(buttonYes);
-
-  const buttonNo = document.createElement("button");
-  buttonNo.textContent = "No";
-  buttonNo.classList.add("demandNo");
-
-  demandkWrap.append(buttonNo);
 
   const tagBox = document.createElement("div");
   tagBox.className = "card-tagBox";
@@ -443,30 +423,30 @@ function createCard(quizCard, i) {
     tagBox.appendChild(tag);
   }
 
-  // Loop through each tag in the quiz card and create a tag element
-  quizCard.tags.forEach(createTag);
+  // Loop through each tag in the quiz cardStyleand create a tag element
+  quizcard.tags.forEach(createTag);
 
   main.appendChild(section);
 }
 
 // Function to dynamically load quiz cards based on the current page
-const createPageSpecificQuizCards = () => {
-  if (window.location.href.match("index.html")) {
-    // If on index page, load all quiz cards
-    quizCards.forEach(createCard);
-  } else {
+const createPageSpecificQuizcards = () => {
+  if (window.location.href.match("bookmarks.html")) {
     // If not on index page, load only bookmarked quiz cards
-    const bookmarkedQuizCards = quizCards.filter((quizCard) => {
-      return localStorage.getItem("cardBookmarked_" + quizCard.number);
+    const bookmarkedQuizcards = quizcards.filter((quizcard) => {
+      return localStorage.getItem("cardBookmarked_" + quizcard.number);
     });
-    bookmarkedQuizCards.forEach(createCard);
+    bookmarkedQuizcards.forEach(createcard);
+  } else {
+    // If on index page, load all quiz cards
+    quizcards.forEach(createcard);
   }
 };
 
-createPageSpecificQuizCards();
+createPageSpecificQuizcards();
 
 const checkboxFilter = document.querySelectorAll(
-  '[data-js="header-checkboxFilter"]'
+  "[data-js='header-checkboxFilter']"
 );
 
 checkboxFilter.forEach((checkbox) => {

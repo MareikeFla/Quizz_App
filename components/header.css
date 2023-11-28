@@ -12,11 +12,11 @@ header {
   box-shadow: var(--shadowHeader);
 }
 
-.header-word {
+.header--title {
   font-size: 2rem;
 }
 
-.header-logo {
+.header--logo {
   height: 50%;
   margin: 0 1rem;
 }
