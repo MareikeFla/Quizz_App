@@ -1,0 +1,22 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  background-color: var(--colorBase);
+  border-radius: 0 0 var(--borderRadius) var(--borderRadius);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  color: var(--colorHighlight);
+  box-shadow: var(--shadowHeader);
+}
+
+.header--title {
+  font-size: 2rem;
+}
+
+.header--logo {
+  height: 50%;
+  margin: 0 1rem;
+}
