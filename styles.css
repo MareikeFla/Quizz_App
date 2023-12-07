@@ -1,6 +1,6 @@
 @import "global.css";
-@import "components/header.css";
-@import "components/card.css";
-@import "components/footer.css";
-@import "components/profile.css";
-@import "components/responsive.css";
+@import "components/Header/header.css";
+@import "components/Cards/card.css";
+@import "components/Footer/footer.css";
+@import "components/Profile/profile.css";
+@import "components/utilities/responsive.css";
