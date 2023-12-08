@@ -1,11 +1,10 @@
 import { footerLinkEvent } from "./components/Footer/Footer.js";
-import { checkSliderPosition } from "./profiles.js";
-import { createCardsBasedOnPage } from "./js/cards.js";
+import { checkSliderPosition } from "./components/Profile/Profile.js";
+import { createCardsBasedOnPage } from "./components/Cards/Cards.js";
 
 footerLinkEvent();
 checkSliderPosition();
 createCardsBasedOnPage();
-numberOfBookmarkedCards.innerText = countBookmarkedCards();
 
 const cardButton = document.querySelectorAll(".card-button");
 const cardButtonTextShow = document.querySelectorAll(".card-button-textShow");
