@@ -1,3 +1,6 @@
+import { footerLink } from "./components/Footer/Footer.js";
+
+console.log(footerLink);
 // const cardButton = document.querySelectorAll(".card-button");
 // const cardButtonTextShow = document.querySelectorAll(".card-button-textShow");
 // const cardButtonTextHide = document.querySelectorAll(".card-button-textHide");
