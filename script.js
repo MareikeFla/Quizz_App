@@ -1,6 +1,10 @@
-import { footerLink } from "./components/Footer/Footer.js";
+import { footerLinkEvent } from "./components/Footer/Footer.js";
+import { checkSliderPosition } from "./profiles.js";
 
-console.log(footerLink);
+footerLinkEvent();
+checkSliderPosition();
+numberOfBookmarkedCards.innerText = countBookmarkedCards();
+
 // const cardButton = document.querySelectorAll(".card-button");
 // const cardButtonTextShow = document.querySelectorAll(".card-button-textShow");
 // const cardButtonTextHide = document.querySelectorAll(".card-button-textHide");
