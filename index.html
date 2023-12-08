@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
-    <title>Quizz App Profile</title>
+    <script src="profile.js" defer></script>
+    <title>Quizz App</title>
   </head>
   <body>
     <header>
@@ -22,18 +23,48 @@
       />
       <p class="header-word">WAVE</p>
     </header>
-    <main class="main-cards"></main>
+    <main>
+      <section class="profile-header">
+        <h2 class="profile-headerHeadline">
+          Welcome <span class="profile-username">Mareike</span>!
+        </h2>
+      </section>
+      <section class="profile-main card">
+        <article class="statistics card-textBox">
+          <h3 class="statistics-headline">Statistics</h3>
+          <div class="statistics-cards">
+            <span>Quiz cards: </span
+            ><span class="statistics-cards-number"></span>
+          </div>
+          <div class="statistics-bookmarks">
+            <span>Bookmarked: </span
+            ><span class="statistics-bookmarks-number"></span>
+          </div>
+        </article>
+        <article class="settings card-textBox">
+          <h3 class="settings-headline">Settings</h3>
+          <section class="setMode">
+            <h4 class="setMode-headline">Choose your favourite mode</h4>
+            <div class="sliderBox">
+              <div class="slider"></div>
+              <a href="#" class="sliderBox-element sliderBox-dark">Dark</a>
+              <a href="#" class="sliderBox-element sliderBox-light">Light</a>
+              <a href="#" class="sliderBox-element sliderBox-rainbow"
+                >Rainbow</a
+              >
+            </div>
+          </section>
+        </article>
+      </section>
+    </main>
     <footer>
       <nav>
-        <a
-          href="index.html"
-          class="footer-link footer-link-home footer-activePage"
-          >H
-          <!-- <img
+        <a href="index.html" class="footer-link footer-link-home">
+          <img
             src="pictures/bookmarks_darkGrey.png"
             alt="Link Home"
-            class="footer-icon footer-icon-home"
-          /> -->
+            class="footer-icon footer-icon-home footer-activePage"
+          />
         </a>
         <a href="bookmarks.html" class="footer-link footer-link-bookmarks">
           <img
@@ -52,6 +83,4 @@
       </nav>
     </footer>
   </body>
-  <script src="js/cards.js" defer></script>
-  <script src="script.js" defer></script>
 </html>
