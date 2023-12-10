@@ -23,7 +23,7 @@ export function createCard(quizCard, i) {
       localStorage.setItem("cardBookmarked_" + quizCard.number, true);
     } else {
       localStorage.removeItem("cardBookmarked_" + quizCard.number);
-      if (document.body.getAttribute("data-currentPage" === "#bookmarks")) {
+      if (document.body.getAttribute("data-currentpage") === "#bookmarks") {
         createBookmarkedCards();
       }
     }
