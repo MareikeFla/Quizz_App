@@ -1,10 +1,10 @@
 import { footerLinkEvent } from "./components/Footer/Footer.js";
 import { checkSliderPosition } from "./components/Profile/Profile.js";
-import { createCardsBasedOnPage } from "./components/Cards/Cards.js";
+import { createCard, quizCards } from "./components/Cards/Cards.js";
 
 footerLinkEvent();
 checkSliderPosition();
-createCardsBasedOnPage();
+quizCards.forEach(createCard);
 
 const cardButton = document.querySelectorAll(".card-button");
 const cardButtonTextShow = document.querySelectorAll(".card-button-textShow");

@@ -443,16 +443,3 @@ export function createCard(quizCard, i) {
 
   sectionCards.appendChild(section);
 }
-
-// Function to dynamically load quiz cards based on the current page
-export const createCardsBasedOnPage = () => {
-  if (document.body.getAttribute("data-currentPage") === "#home") {
-    // If on index page, load all quiz cards
-    quizCards.forEach(createCard);
-  } else {
-    const bookmarkedQuizCards = quizCards.filter((quizCard) => {
-      return localStorage.getItem("cardBookmarked_" + quizCard.number);
-    });
-    bookmarkedQuizCards.forEach(createCard);
-  }
-};
