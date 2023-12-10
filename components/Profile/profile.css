@@ -42,7 +42,8 @@
 }
 
 .profile-main {
-  margin-top: 1rem;
+  margin-top: var(--gapStandard);
+  padding: calc(0.5 * var(--gapStandard)) 0;
 }
 
 h3 {

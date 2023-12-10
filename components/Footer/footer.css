@@ -5,7 +5,7 @@ footer {
   background-color: var(--colorBase);
   border-radius: var(--borderRadius) var(--borderRadius) 0 0;
   box-shadow: var(--shadowFooter);
-  height: 4rem;
+  height: var(--heightHeaderFooter);
 }
 
 nav {

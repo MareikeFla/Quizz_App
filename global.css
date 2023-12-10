@@ -9,6 +9,7 @@
 }
 
 :root {
+  --heightHeaderFooter: 4rem;
   --colorHighlight: #26add1;
   --colorHighlightRainbow: hotpink;
   --colorPrimary: #f2f2f2;
@@ -41,16 +42,23 @@ body {
 }
 
 main {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  min-height: calc(100vh - calc(2 * var(--heightHeaderFooter)));
   padding: 2rem 1rem 1rem 1rem;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.infoTextNoBookmarks {
+  color: var(--colorHighlight);
 }
 
 .hidden {
   display: none;
 }
 
-.invisible {
-  visibility: hidden;
+.sectionQuizzCards {
+  display: flex;
+  flex-direction: column;
 }

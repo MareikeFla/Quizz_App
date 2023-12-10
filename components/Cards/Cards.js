@@ -1,5 +1,6 @@
 import { quizCards } from "./Questions.js";
 const sectionCards = document.querySelector('[data-js="cards"]');
+
 export function createCard(quizCard, i) {
   const section = document.createElement("section");
   section.className = "card quiz-card";
@@ -55,20 +56,20 @@ export function createCard(quizCard, i) {
   questionText.textContent = quizCard.question;
   questionBox.appendChild(questionText);
 
-  const createcardButton = document.createElement("button");
-  createcardButton.className = "card-button";
+  const cardButtonAnswer = document.createElement("button");
+  cardButtonAnswer.className = "card-button";
 
-  questionBox.appendChild(createcardButton);
+  questionBox.appendChild(cardButtonAnswer);
 
   const textShow = document.createElement("p");
   textShow.className = "card-button-textShow";
   textShow.textContent = "Show Answer";
-  createcardButton.appendChild(textShow);
+  cardButtonAnswer.appendChild(textShow);
 
   const textHide = document.createElement("p");
   textHide.className = "card-button-textHide hidden";
   textHide.textContent = "Hide Answer";
-  createcardButton.appendChild(textHide);
+  cardButtonAnswer.appendChild(textHide);
 
   const answerBox = document.createElement("div");
   answerBox.className = "card-answerBox card-textBox";
@@ -91,7 +92,7 @@ export function createCard(quizCard, i) {
     tagBox.appendChild(tag);
   }
 
-  createcardButton.addEventListener("click", () => {
+  cardButtonAnswer.addEventListener("click", () => {
     answerText.classList.toggle("invisible");
     answerBox.classList.toggle("card-answerBox-acive");
     textShow.classList.toggle("hidden");
@@ -112,6 +113,7 @@ export function createBookmarkedCards() {
   });
   if (bookmarkedQuizCards.length === 0) {
     const info = document.createElement("p");
+    info.classList.add("infoTextNoBookmarks");
     info.textContent = "You have no bookmarked cards";
     sectionCards.appendChild(info);
   } else {

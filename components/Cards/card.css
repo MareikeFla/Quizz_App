@@ -1,7 +1,8 @@
 .card {
   background-color: var(--colorHighlight);
   border-radius: var(--borderRadius);
-  margin-bottom: 1.5rem;
+  margin-bottom: calc(1.5 * var(--gapStandard));
+  padding-bottom: var(--gapStandard);
 }
 
 .card-bookmarkImgActive {
@@ -59,27 +60,8 @@
   margin-bottom: var(--gapStandard);
 }
 
-.demand {
-  margin-bottom: calc(0.5 * var(--gapStandard));
-  font-size: 0.8rem;
-}
-
-.demandYes {
-  margin-right: 0.5rem;
-}
-
-.demandNo {
-  margin-left: 0.5rem;
-}
-
-.demandYes,
-.demandNo {
-  padding: 0.5rem 1rem;
-}
-
 .card-answerText {
   color: var(--colorHighlight);
-  margin-bottom: calc(2 * var(--gapStandard));
   font-size: 1.5rem;
 }
 
@@ -102,7 +84,7 @@
 .card-tagBox {
   display: flex;
   gap: calc(0.5 * var(--gapStandard));
-  margin: 0 calc(1.5 * var(--gapStandard)) var(--gapStandard);
+  margin: 0 calc(1.5 * var(--gapStandard));
   flex-wrap: wrap;
 }
 

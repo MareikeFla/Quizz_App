@@ -7,7 +7,6 @@ import { setColorMode } from "./components/utilities/ColorMode.js";
 
 footerLinkEvent();
 checkSliderPosition();
-quizCards.forEach(createCard);
 
 export const prefersDarkMode = Boolean(
   getComputedStyle(document.documentElement).getPropertyValue("--darkMode")
