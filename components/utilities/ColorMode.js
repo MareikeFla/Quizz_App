@@ -1,4 +1,6 @@
-import { prefersDarkMode } from "../../script.js";
+const prefersDarkMode = Boolean(
+  getComputedStyle(document.documentElement).getPropertyValue("--darkMode")
+);
 
 const root = document.querySelector(":root");
 const colorPrimary = getComputedStyle(root).getPropertyValue("--colorPrimary");

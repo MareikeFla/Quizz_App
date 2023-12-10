@@ -11,7 +11,3 @@ quizCards.forEach(createCard);
 
 initialColorMode();
 setColorMode(localStorage.getItem("locColorMode"));
-
-export const prefersDarkMode = Boolean(
-  getComputedStyle(document.documentElement).getPropertyValue("--darkMode")
-);

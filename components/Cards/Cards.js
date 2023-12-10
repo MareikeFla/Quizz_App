@@ -1,4 +1,5 @@
 import { quizCards } from "./Questions.js";
+import { clearCardSection } from "../utilities/ClearCardSection.js";
 const sectionCards = document.querySelector('[data-js="cards"]');
 
 export function createCard(quizCard, i) {
@@ -106,8 +107,7 @@ export function createCard(quizCard, i) {
 }
 
 export function createBookmarkedCards() {
-  const sectionCards = document.querySelector('[data-js="cards"]');
-  sectionCards.innerHTML = "";
+  clearCardSection();
   const bookmarkedQuizCards = quizCards.filter((quizCard) => {
     return localStorage.getItem("cardBookmarked_" + quizCard.number);
   });
