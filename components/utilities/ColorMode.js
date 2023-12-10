@@ -2,6 +2,16 @@ const prefersDarkMode = Boolean(
   getComputedStyle(document.documentElement).getPropertyValue("--darkMode")
 );
 
+export function initialColorMode() {
+  if (localStorage.getItem("locColorMode") == null) {
+    if (prefersDarkMode) {
+      localStorage.setItem("locColorMode", "dark");
+    } else {
+      localStorage.setItem("locColorMode", "light");
+    }
+  }
+}
+
 const root = document.querySelector(":root");
 const colorPrimary = getComputedStyle(root).getPropertyValue("--colorPrimary");
 const colorPrimaryDark =
@@ -27,16 +37,6 @@ const colorHighlight =
 const colorHighlightRainbow = getComputedStyle(root).getPropertyValue(
   "--colorHighlightRainbow"
 );
-
-export function initialColorMode() {
-  if (localStorage.getItem("locColorMode") == null) {
-    if (prefersDarkMode) {
-      localStorage.setItem("locColorMode", "dark");
-    } else {
-      localStorage.setItem("locColorMode", "light");
-    }
-  }
-}
 
 export function setColorMode(colorMode) {
   const headerLogoStandard = document.querySelector(".logo-standard");
@@ -105,5 +105,49 @@ export function setColorMode(colorMode) {
     document.documentElement.style.setProperty("--colorCardBox", colorCardBox);
     headerLogoStandard.classList.add("hidden");
     headerLogoRainbow.classList.remove("hidden");
+  }
+}
+
+// EVENTLISTENER SLIDER
+
+const sliderBoxElementDark = document.querySelector(".sliderBox-dark");
+const sliderBoxElementLight = document.querySelector(".sliderBox-light");
+const sliderBoxElementRainbow = document.querySelector(".sliderBox-rainbow");
+const headerLogoStandard = document.querySelector(".logo-standard");
+const headerLogoRainbow = document.querySelector(".logo-rainbow");
+
+sliderBoxElementDark.addEventListener("click", () => {
+  document.documentElement.style.setProperty("--left", "0%");
+  localStorage.setItem("locColorMode", "dark");
+  setColorMode(localStorage.getItem("locColorMode"));
+  headerLogoRainbow.classList.add("hidden");
+  headerLogoStandard.classList.remove("hidden");
+});
+
+sliderBoxElementLight.addEventListener("click", () => {
+  document.documentElement.style.setProperty("--left", "33%");
+  localStorage.setItem("locColorMode", "light");
+  setColorMode(localStorage.getItem("locColorMode"));
+  headerLogoRainbow.classList.add("hidden");
+  headerLogoStandard.classList.remove("hidden");
+});
+
+sliderBoxElementRainbow.addEventListener("click", () => {
+  document.documentElement.style.setProperty("--left", "66%");
+  localStorage.setItem("locColorMode", "rainbow");
+  setColorMode(localStorage.getItem("locColorMode"));
+  headerLogoRainbow.classList.remove("hidden");
+  headerLogoStandard.classList.add("hidden");
+});
+
+export function checkSliderPosition(colorMode) {
+  if (colorMode == "dark") {
+    document.documentElement.style.setProperty("--left", "0%");
+  }
+  if (colorMode == "light") {
+    document.documentElement.style.setProperty("--left", "33%");
+  }
+  if (colorMode == "rainbow") {
+    document.documentElement.style.setProperty("--left", "66%");
   }
 }

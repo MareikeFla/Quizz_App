@@ -1,6 +1,7 @@
-import { quizCards } from "./Questions.js";
-import { clearCardSection } from "../utilities/ClearCardSection.js";
+import { quizCards } from "./CardsInfo.js";
 const sectionCards = document.querySelector('[data-js="cards"]');
+
+// Function - create quiz cards
 
 export function createCard(quizCard, i) {
   const section = document.createElement("section");
@@ -106,6 +107,8 @@ export function createCard(quizCard, i) {
   sectionCards.appendChild(section);
 }
 
+// Function - only create bookmarked cards and show info if no cards are bookmarked
+
 export function createBookmarkedCards() {
   clearCardSection();
   const bookmarkedQuizCards = quizCards.filter((quizCard) => {
@@ -119,4 +122,11 @@ export function createBookmarkedCards() {
   } else {
     bookmarkedQuizCards.forEach(createCard);
   }
+}
+
+// Function - remove cards from card section
+
+export function clearCardSection() {
+  const sectionCards = document.querySelector('[data-js="cards"]');
+  sectionCards.innerHTML = "";
 }

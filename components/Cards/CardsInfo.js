@@ -1,4 +1,3 @@
-// Define an array of quiz cards with their details
 export const quizCards = [
   {
     number: 1,
@@ -320,11 +319,27 @@ export const quizCards = [
       "'null' is an assignment value representing no value, while 'undefined' represents a variable that has been declared but not yet assigned a value",
     tags: ["#javascript"],
   },
-  {
-    number: 50,
-    question: "What is a 'shadow DOM' in HTML5?",
-    answer:
-      "A method of encapsulating parts of a DOM and hiding them from the main document, creating a separate scope",
-    tags: ["#html"],
-  },
 ];
+
+export const numberOfQuizCards = quizCards.length;
+export function updateNumberOfCards() {
+  const cardNumber = document.querySelector(".statistics-cards-number");
+  cardNumber.textContent = numberOfQuizCards;
+}
+
+export function countBookmarkedCards() {
+  let count = 0;
+  for (let i = 0; i < localStorage.length; i++) {
+    if (localStorage.key(i).match("cardBookmarked_")) {
+      count++;
+    }
+  }
+  return count;
+}
+
+export function updateNumberOfBookmarkedCards(result) {
+  const numberOfBookmarkedCards = document.querySelector(
+    ".statistics-bookmarks-number"
+  );
+  numberOfBookmarkedCards.innerText = result;
+}
