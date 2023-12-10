@@ -1,8 +1,6 @@
 import { quizCards } from "./Questions.js";
-
+const sectionCards = document.querySelector('[data-js="cards"]');
 export function createCard(quizCard, i) {
-  const sectionCards = document.querySelector('[data-js="cards"]');
-
   const section = document.createElement("section");
   section.className = "card quiz-card";
 
@@ -112,5 +110,11 @@ export function createBookmarkedCards() {
   const bookmarkedQuizCards = quizCards.filter((quizCard) => {
     return localStorage.getItem("cardBookmarked_" + quizCard.number);
   });
-  bookmarkedQuizCards.forEach(createCard);
+  if (bookmarkedQuizCards.length === 0) {
+    const info = document.createElement("p");
+    info.textContent = "You have no bookmarked cards";
+    sectionCards.appendChild(info);
+  } else {
+    bookmarkedQuizCards.forEach(createCard);
+  }
 }
