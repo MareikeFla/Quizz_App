@@ -2,7 +2,7 @@ footer {
   display: flex;
   position: sticky;
   bottom: 0;
-  background-color: var(--colorBase);
+  background-color: var(--colorPrimary);
   border-radius: var(--borderRadius) var(--borderRadius) 0 0;
   box-shadow: var(--shadowFooter);
   height: var(--heightHeaderFooter);
@@ -16,8 +16,8 @@ nav {
 }
 
 .footer-link {
-  box-shadow: white 0 5px 10px 1px inset, var(--colorDark) 0 0 10px 5px inset,
-    var(--colorDark) 0 3px 7px 0;
+  box-shadow: white 0 5px 10px 1px inset,
+    var(--colorSecondary) 0 0 10px 5px inset, var(--colorSecondary) 0 3px 7px 0;
   height: 3.5rem;
   width: 3.5rem;
   display: flex;
@@ -38,5 +38,5 @@ nav {
 .footer-activePage {
   box-shadow: white 0 5px 10px 1px inset,
     var(--colorHighlight) 0 0 10px 5px inset,
-    var(--colorHighlight) 0 0 12px 5px inset, var(--colorDark) 0 3px 7px 0;
+    var(--colorHighlight) 0 0 12px 5px inset, var(--colorSecondary) 0 3px 7px 0;
 }

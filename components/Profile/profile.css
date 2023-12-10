@@ -16,8 +16,9 @@
   height: 2.2rem;
   /* margin: 0.5rem auto 0 auto; */
   background-color: white;
-  box-shadow: var(--colorDark) 0 0 10px 2px, inset var(--colorDark) 0 1px 0 0,
-    inset var(--colorDark) 0 -1px 0 0;
+  box-shadow: var(--colorSecondary) 0 0 10px 2px,
+    inset var(--colorSecondary) 0 1px 0 0,
+    inset var(--colorSecondary) 0 -1px 0 0;
   border-radius: var(--borderRadius);
   display: flex;
   align-items: center;

@@ -22,7 +22,7 @@
   --gapStandard: 1rem;
   --darkMode: 0;
   --boxShadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-  --shadowHeader: var(var(--colorSecondary)) 0 3px 20px 3px;
+  --shadowHeader: var(--colorSecondary) 0 3px 20px 3px;
   --shadowFooter: var(--colorSecondary) 0 -3px 20px 3px;
   --shadowHeaderRainbow: calc(-100vw / 3 * 2) 0 30px 6px rgb(255, 234, 0),
     calc(-100vw / 3) 0 30px 6px rgb(255, 191, 0),
@@ -38,7 +38,7 @@
 }
 
 body {
-  background-color: var(--colorBase);
+  background-color: var(--colorPrimary);
 }
 
 main {

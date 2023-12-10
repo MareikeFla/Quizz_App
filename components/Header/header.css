@@ -3,7 +3,7 @@ header {
   justify-content: center;
   align-items: center;
   height: var(--heightHeaderFooter);
-  background-color: var(--colorBase);
+  background-color: var(--colorPrimary);
   font-size: 2rem;
   border-radius: 0 0 var(--borderRadius) var(--borderRadius);
   position: sticky;

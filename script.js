@@ -7,11 +7,11 @@ import { setColorMode } from "./components/utilities/ColorMode.js";
 
 footerLinkEvent();
 checkSliderPosition();
+quizCards.forEach(createCard);
+
+initialColorMode();
+setColorMode(localStorage.getItem("locColorMode"));
 
 export const prefersDarkMode = Boolean(
   getComputedStyle(document.documentElement).getPropertyValue("--darkMode")
 );
-
-initialColorMode();
-
-setColorMode(localStorage.getItem("locColorMode"));
