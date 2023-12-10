@@ -76,26 +76,6 @@ export function createCard(quizCard, i) {
   answerText.textContent = quizCard.answer;
   answerBox.appendChild(answerText);
 
-  const demandkWrap = document.createElement("div");
-  demandkWrap.classList.add("wrapDemand");
-  answerBox.append(demandkWrap);
-
-  const demandText = document.createElement("p");
-  demandText.classList.add("demand");
-  demandText.textContent = "Did you knew this?";
-  demandkWrap.append(demandText);
-
-  const buttonYes = document.createElement("button");
-  buttonYes.textContent = "Yes";
-  buttonYes.classList.add("demandYes");
-  demandkWrap.append(buttonYes);
-
-  const buttonNo = document.createElement("button");
-  buttonNo.textContent = "No";
-  buttonNo.classList.add("demandNo");
-
-  demandkWrap.append(buttonNo);
-
   const tagBox = document.createElement("div");
   tagBox.className = "card-tagBox";
   section.appendChild(tagBox);

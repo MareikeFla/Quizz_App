@@ -9,7 +9,7 @@ footerLinkEvent();
 checkSliderPosition();
 quizCards.forEach(createCard);
 
-const prefersDarkMode = Boolean(
+export const prefersDarkMode = Boolean(
   getComputedStyle(document.documentElement).getPropertyValue("--darkMode")
 );
 

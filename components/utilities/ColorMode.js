@@ -1,3 +1,5 @@
+import { prefersDarkMode } from "../../script.js";
+
 const colorBase = "#f2f2f2";
 const colorBaseDark = "#181818";
 const colorDark = "#7f7f7f";
