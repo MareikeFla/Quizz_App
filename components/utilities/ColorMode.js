@@ -26,8 +26,6 @@ const colorHighlightRainbow = getComputedStyle(root).getPropertyValue(
   "--colorHighlightRainbow"
 );
 
-console.log(colorPrimary);
-
 export function initialColorMode() {
   if (localStorage.getItem("locColorMode") == null) {
     if (prefersDarkMode) {
@@ -38,14 +36,13 @@ export function initialColorMode() {
   }
 }
 
-const headerLogoStandard = document.querySelector(".logo-standard");
-const headerLogoRainbow = document.querySelector(".logo-rainbow");
-
 export function setColorMode(colorMode) {
+  const headerLogoStandard = document.querySelector(".logo-standard");
+  const headerLogoRainbow = document.querySelector(".logo-rainbow");
   if (colorMode == "dark") {
     document.documentElement.style.setProperty(
       "--colorPrimary",
-      colorPrimarDark
+      colorPrimaryDark
     );
     document.documentElement.style.setProperty(
       "--colorSecondary",

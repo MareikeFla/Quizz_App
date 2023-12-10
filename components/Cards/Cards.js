@@ -1,3 +1,5 @@
+import { quizCards } from "./Questions.js";
+
 export function createCard(quizCard, i) {
   const sectionCards = document.querySelector('[data-js="cards"]');
 
@@ -21,6 +23,9 @@ export function createCard(quizCard, i) {
       localStorage.setItem("cardBookmarked_" + quizCard.number, true);
     } else {
       localStorage.removeItem("cardBookmarked_" + quizCard.number);
+      if (document.body.getAttribute("data-currentPage" === "#bookmarks")) {
+        createBookmarkedCards();
+      }
     }
   });
 
@@ -99,4 +104,13 @@ export function createCard(quizCard, i) {
   quizCard.tags.forEach(createTag);
 
   sectionCards.appendChild(section);
+}
+
+export function createBookmarkedCards() {
+  const sectionCards = document.querySelector('[data-js="cards"]');
+  sectionCards.innerHTML = "";
+  const bookmarkedQuizCards = quizCards.filter((quizCard) => {
+    return localStorage.getItem("cardBookmarked_" + quizCard.number);
+  });
+  bookmarkedQuizCards.forEach(createCard);
 }

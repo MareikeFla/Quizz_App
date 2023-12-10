@@ -1,5 +1,6 @@
 import { createCard } from "../Cards/Cards.js";
 import { quizCards } from "../Cards/Questions.js";
+import { createBookmarkedCards } from "../Cards/Cards.js";
 
 const footerLink = document.querySelectorAll('[data-js="footer__link"]');
 const profileHtml = document.querySelector('[data-js="profile"]');
@@ -19,10 +20,7 @@ export function footerLinkEvent() {
           if (event.target.id === "home") {
             quizCards.forEach(createCard);
           } else {
-            const bookmarkedQuizCards = quizCards.filter((quizCard) => {
-              return localStorage.getItem("cardBookmarked_" + quizCard.number);
-            });
-            bookmarkedQuizCards.forEach(createCard);
+            createBookmarkedCards();
           }
         }
       });
