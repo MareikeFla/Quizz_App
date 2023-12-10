@@ -10,15 +10,25 @@
 
 :root {
   --colorHighlight: #26add1;
+  --colorHighlightRainbow: hotpink;
   /* This vaiables are based on the prefered color scheme and are set with .js  */
-  --colorBase: ;
-  --colorDark: ;
-  --colorTextBox: ;
+  --colorPrimary: #f2f2f2;
+  --colorPrimaryDark: #181818;
+  --colorSecondary: #7f7f7f;
+  --colorSecondaryDark: #a8a8a8;
+  --colorCardBox: #ffffff;
+  --colorCardBoxDark: #e0e0e0;
   --borderRadius: 0.5rem;
   --gapStandard: 1rem;
   --darkMode: 0;
   --boxShadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-  --bodyHeight: ;
+  --shadowHeader: var(var(--colorSecondary)) 0 3px 20px 3px;
+  --shadowFooter: var(--colorSecondary) 0 -3px 20px 3px;
+  --shadowHeaderRainbow: calc(-100vw / 3 * 2) 0 30px 6px rgb(255, 234, 0),
+    calc(-100vw / 3) 0 30px 6px rgb(255, 191, 0),
+    calc(100vw / 3) 0 30px 6px rgba(255, 0, 0, 1);
+  --shadowFooterRainbow: calc(-100vw / 3 * 2) 0 30px 6px #00ff00,
+    calc(-100vw / 3) 0 30px 6px #0000ff, calc(100vw / 3) 0 30px 6px #4b0082;
 }
 
 @media (prefers-color-scheme: dark) {

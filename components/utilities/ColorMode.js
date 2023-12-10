@@ -1,17 +1,32 @@
 import { prefersDarkMode } from "../../script.js";
 
-const colorBase = "#f2f2f2";
-const colorBaseDark = "#181818";
-const colorDark = "#7f7f7f";
-const colorDarkDark = "#a8a8a8";
-const colorTextBox = "#ffffff";
-const colorTextBoxDark = "#e0e0e0";
-const rainbowShadowFooter =
-  "calc(-100vw / 3 * 2) 0 30px 6px #00FF00,calc(-100vw / 3) 0 30px 6px #0000FF,calc(100vw / 3) 0 30px 6px #4B0082";
-const rainbowShadowHeader =
-  "calc(-100vw / 3 * 2) 0 30px 6px rgb(255, 234, 0),calc(-100vw / 3) 0 30px 6px rgb(255, 191, 0),calc(100vw / 3) 0 30px 6px rgba(255, 0, 0, 1)";
-const shadowHeader = "var(--colorDark) 0 3px 20px 3px";
-const shadowFooter = "var(--colorDark) 0 -3px 20px 3px";
+const root = document.querySelector(":root");
+const colorPrimary = getComputedStyle(root).getPropertyValue("--colorPrimary");
+const colorPrimaryDark =
+  getComputedStyle(root).getPropertyValue("--colorPrimaryDark");
+const colorSecondary =
+  getComputedStyle(root).getPropertyValue("--colorSecondary");
+const colorSecondaryDark = getComputedStyle(root).getPropertyValue(
+  "--colorSecondaryDark"
+);
+const colorCardBox = getComputedStyle(root).getPropertyValue("--colorCardBox");
+const colorcardBoxDark =
+  getComputedStyle(root).getPropertyValue("--colorcardBoxDark");
+const shadowFooterRainbow = getComputedStyle(root).getPropertyValue(
+  "--shadowFooterRainbow"
+);
+const shadowHeaderRainbow = getComputedStyle(root).getPropertyValue(
+  "--shadowHeaderRainbow"
+);
+const shadowHeader = getComputedStyle(root).getPropertyValue("--shadowHeader");
+const shadowFooter = getComputedStyle(root).getPropertyValue("--shadowFooter");
+const colorHighlight =
+  getComputedStyle(root).getPropertyValue("--colorHighlight");
+const colorHighlightRainbow = getComputedStyle(root).getPropertyValue(
+  "--colorHighlightRainbow"
+);
+
+console.log(colorPrimary);
 
 export function initialColorMode() {
   if (localStorage.getItem("locColorMode") == null) {
@@ -28,13 +43,22 @@ const headerLogoRainbow = document.querySelector(".logo-rainbow");
 
 export function setColorMode(colorMode) {
   if (colorMode == "dark") {
-    document.documentElement.style.setProperty("--colorBase", colorBaseDark);
-    document.documentElement.style.setProperty("--colorDark", colorDarkDark);
     document.documentElement.style.setProperty(
-      "--colorTextBox",
-      colorTextBoxDark
+      "--colorPrimary",
+      colorPrimarDark
     );
-    document.documentElement.style.setProperty("--colorHighlight", "#26add1");
+    document.documentElement.style.setProperty(
+      "--colorSecondary",
+      colorSecondaryDark
+    );
+    document.documentElement.style.setProperty(
+      "--colorCardBox",
+      colorcardBoxDark
+    );
+    document.documentElement.style.setProperty(
+      "--colorHighlight",
+      colorHighlight
+    );
     document.documentElement.style.setProperty("--shadowFooter", shadowFooter);
     document.documentElement.style.setProperty("--shadowHeader", shadowHeader);
     headerLogoStandard.classList.remove("hidden");
@@ -42,10 +66,16 @@ export function setColorMode(colorMode) {
   }
 
   if (colorMode == "light") {
-    document.documentElement.style.setProperty("--colorBase", colorBase);
-    document.documentElement.style.setProperty("--colorDark", colorDark);
-    document.documentElement.style.setProperty("--colorTextBox", colorTextBox);
-    document.documentElement.style.setProperty("--colorHighlight", "#26add1");
+    document.documentElement.style.setProperty("--colorPrimary", colorPrimary);
+    document.documentElement.style.setProperty(
+      "--colorSecondary",
+      colorSecondary
+    );
+    document.documentElement.style.setProperty("--colorCardBox", colorCardBox);
+    document.documentElement.style.setProperty(
+      "--colorHighlight",
+      colorHighlight
+    );
     document.documentElement.style.setProperty("--shadowFooter", shadowFooter);
     document.documentElement.style.setProperty("--shadowHeader", shadowHeader);
     headerLogoStandard.classList.remove("hidden");
@@ -53,18 +83,27 @@ export function setColorMode(colorMode) {
   }
 
   if (colorMode == "rainbow") {
-    document.documentElement.style.setProperty("--colorBase", colorBaseDark);
-    document.documentElement.style.setProperty("--colorDark", colorDark);
+    document.documentElement.style.setProperty(
+      "--colorPrimary",
+      colorPrimaryDark
+    );
+    document.documentElement.style.setProperty(
+      "--colorSecondary",
+      colorSecondary
+    );
     document.documentElement.style.setProperty(
       "--shadowFooter",
-      rainbowShadowFooter
+      shadowFooterRainbow
     );
     document.documentElement.style.setProperty(
       "--shadowHeader",
-      rainbowShadowHeader
+      shadowHeaderRainbow
     );
-    document.documentElement.style.setProperty("--colorHighlight", "hotpink");
-    document.documentElement.style.setProperty("--colorTextBox", colorTextBox);
+    document.documentElement.style.setProperty(
+      "--colorHighlight",
+      colorHighlightRainbow
+    );
+    document.documentElement.style.setProperty("--colorCardBox", colorCardBox);
     headerLogoStandard.classList.add("hidden");
     headerLogoRainbow.classList.remove("hidden");
   }
