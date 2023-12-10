@@ -1,4 +1,5 @@
-import { createCard, quizCards } from "../Cards/Cards.js";
+import { createCard } from "../Cards/Cards.js";
+import { quizCards } from "../Cards/Questions.js";
 
 const footerLink = document.querySelectorAll('[data-js="footer__link"]');
 const profileHtml = document.querySelector('[data-js="profile"]');
