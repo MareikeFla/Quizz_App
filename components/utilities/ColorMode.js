@@ -112,11 +112,11 @@ export function setColorMode(colorMode) {
   }
 }
 
-const colorModes = document.querySelectorAll('[data-js="colorMode"]');
+const slidercolorModes = document.querySelectorAll('[data-js="colorMode"]');
 
 export function sliderColorMode() {
   sliderPosition(localStorage.getItem("locColorMode"));
-  colorModes.forEach((mode) => {
+  slidercolorModes.forEach((mode) => {
     mode.addEventListener("click", (event) => {
       const eventMode = event.target.id;
       toogleLogo(eventMode);
@@ -139,10 +139,10 @@ function sliderPosition(colorMode) {
   }
 }
 
-function toogleLogo(mode) {
+function toogleLogo(colorMode) {
   const headerLogoStandard = document.querySelector(".logo-standard");
   const headerLogoRainbow = document.querySelector(".logo-rainbow");
-  if (mode === "rainbow") {
+  if (colorMode === "rainbow") {
     headerLogoRainbow.classList.remove("hidden");
     headerLogoStandard.classList.add("hidden");
   } else {

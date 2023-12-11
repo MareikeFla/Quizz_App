@@ -107,7 +107,7 @@ export function createCard(quizCard, i) {
   sectionCards.appendChild(section);
 }
 
-// Function - only create bookmarked cards and show info if no cards are bookmarked
+// Function - Only create bookmarked cards and show info if no cards are bookmarked
 
 export function createBookmarkedCards() {
   clearCardSection();
