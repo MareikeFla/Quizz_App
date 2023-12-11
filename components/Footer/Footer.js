@@ -23,7 +23,6 @@ export function footerLinkEvent() {
       const currentPage = event.target.id;
       document.body.setAttribute("data-currentPage", "#" + currentPage);
       footerLink.forEach((link) => {
-        link.classList.remove("footer-activePage");
         if (currentPage === "profile") {
           clearCardSection();
           profileHtml.classList.remove("hidden");
@@ -40,7 +39,6 @@ export function footerLinkEvent() {
           }
         }
       });
-      event.target.classList.add("footer-activePage");
     });
   });
 }

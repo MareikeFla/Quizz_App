@@ -37,6 +37,7 @@ const shadowFooterRainbow = getComputedStyle(root).getPropertyValue(
 const shadowHeaderRainbow = getComputedStyle(root).getPropertyValue(
   "--shadowHeaderRainbow"
 );
+
 const shadowHeader = getComputedStyle(root).getPropertyValue("--shadowHeader");
 const shadowFooter = getComputedStyle(root).getPropertyValue("--shadowFooter");
 const colorHighlight =
@@ -67,7 +68,7 @@ export function setColorMode(colorMode) {
     );
     document.documentElement.style.setProperty("--shadowFooter", shadowFooter);
     document.documentElement.style.setProperty("--shadowHeader", shadowHeader);
-    toogleLogo("dark");
+    toggleLogo("dark");
   }
 
   if (colorMode == "light") {
@@ -83,7 +84,7 @@ export function setColorMode(colorMode) {
     );
     document.documentElement.style.setProperty("--shadowFooter", shadowFooter);
     document.documentElement.style.setProperty("--shadowHeader", shadowHeader);
-    toogleLogo("light");
+    toggleLogo("light");
   }
 
   if (colorMode == "rainbow") {
@@ -108,7 +109,7 @@ export function setColorMode(colorMode) {
       colorHighlightRainbow
     );
     document.documentElement.style.setProperty("--colorCardBox", colorCardBox);
-    toogleLogo("rainbow");
+    toggleLogo("rainbow");
   }
 }
 
@@ -119,7 +120,7 @@ export function sliderColorMode() {
   slidercolorModes.forEach((mode) => {
     mode.addEventListener("click", (event) => {
       const eventMode = event.target.id;
-      toogleLogo(eventMode);
+      toggleLogo(eventMode);
       localStorage.setItem("locColorMode", eventMode);
       setColorMode(eventMode);
       sliderPosition(eventMode);
@@ -139,7 +140,7 @@ function sliderPosition(colorMode) {
   }
 }
 
-function toogleLogo(colorMode) {
+function toggleLogo(colorMode) {
   const headerLogoStandard = document.querySelector(".logo-standard");
   const headerLogoRainbow = document.querySelector(".logo-rainbow");
   if (colorMode === "rainbow") {
