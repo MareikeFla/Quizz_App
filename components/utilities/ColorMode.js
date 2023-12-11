@@ -1,6 +1,10 @@
+// Check if user prefers dark mode in system settings
+
 const prefersDarkMode = Boolean(
   getComputedStyle(document.documentElement).getPropertyValue("--darkMode")
 );
+
+// Initial color mode according to user settings if no color mode is set yet
 
 export function initialColorMode() {
   if (localStorage.getItem("locColorMode") == null) {
@@ -10,7 +14,10 @@ export function initialColorMode() {
       localStorage.setItem("locColorMode", "light");
     }
   }
+  setColorMode(localStorage.getItem("locColorMode"));
 }
+
+// Select color variables for color mode
 
 const root = document.querySelector(":root");
 const colorPrimary = getComputedStyle(root).getPropertyValue("--colorPrimary");
@@ -38,9 +45,9 @@ const colorHighlightRainbow = getComputedStyle(root).getPropertyValue(
   "--colorHighlightRainbow"
 );
 
+// Color mode light/dark/rainbow
+
 export function setColorMode(colorMode) {
-  const headerLogoStandard = document.querySelector(".logo-standard");
-  const headerLogoRainbow = document.querySelector(".logo-rainbow");
   if (colorMode == "dark") {
     document.documentElement.style.setProperty(
       "--colorPrimary",
@@ -60,8 +67,7 @@ export function setColorMode(colorMode) {
     );
     document.documentElement.style.setProperty("--shadowFooter", shadowFooter);
     document.documentElement.style.setProperty("--shadowHeader", shadowHeader);
-    headerLogoStandard.classList.remove("hidden");
-    headerLogoRainbow.classList.add("hidden");
+    toogleLogo("dark");
   }
 
   if (colorMode == "light") {
@@ -77,8 +83,7 @@ export function setColorMode(colorMode) {
     );
     document.documentElement.style.setProperty("--shadowFooter", shadowFooter);
     document.documentElement.style.setProperty("--shadowHeader", shadowHeader);
-    headerLogoStandard.classList.remove("hidden");
-    headerLogoRainbow.classList.add("hidden");
+    toogleLogo("light");
   }
 
   if (colorMode == "rainbow") {
@@ -103,44 +108,26 @@ export function setColorMode(colorMode) {
       colorHighlightRainbow
     );
     document.documentElement.style.setProperty("--colorCardBox", colorCardBox);
-    headerLogoStandard.classList.add("hidden");
-    headerLogoRainbow.classList.remove("hidden");
+    toogleLogo("rainbow");
   }
 }
 
-// EVENTLISTENER SLIDER
+const colorModes = document.querySelectorAll('[data-js="colorMode"]');
 
-const sliderBoxElementDark = document.querySelector(".sliderBox-dark");
-const sliderBoxElementLight = document.querySelector(".sliderBox-light");
-const sliderBoxElementRainbow = document.querySelector(".sliderBox-rainbow");
-const headerLogoStandard = document.querySelector(".logo-standard");
-const headerLogoRainbow = document.querySelector(".logo-rainbow");
+export function sliderColorMode() {
+  sliderPosition(localStorage.getItem("locColorMode"));
+  colorModes.forEach((mode) => {
+    mode.addEventListener("click", (event) => {
+      const eventMode = event.target.id;
+      toogleLogo(eventMode);
+      localStorage.setItem("locColorMode", eventMode);
+      setColorMode(eventMode);
+      sliderPosition(eventMode);
+    });
+  });
+}
 
-sliderBoxElementDark.addEventListener("click", () => {
-  document.documentElement.style.setProperty("--left", "0%");
-  localStorage.setItem("locColorMode", "dark");
-  setColorMode(localStorage.getItem("locColorMode"));
-  headerLogoRainbow.classList.add("hidden");
-  headerLogoStandard.classList.remove("hidden");
-});
-
-sliderBoxElementLight.addEventListener("click", () => {
-  document.documentElement.style.setProperty("--left", "33%");
-  localStorage.setItem("locColorMode", "light");
-  setColorMode(localStorage.getItem("locColorMode"));
-  headerLogoRainbow.classList.add("hidden");
-  headerLogoStandard.classList.remove("hidden");
-});
-
-sliderBoxElementRainbow.addEventListener("click", () => {
-  document.documentElement.style.setProperty("--left", "66%");
-  localStorage.setItem("locColorMode", "rainbow");
-  setColorMode(localStorage.getItem("locColorMode"));
-  headerLogoRainbow.classList.remove("hidden");
-  headerLogoStandard.classList.add("hidden");
-});
-
-export function checkSliderPosition(colorMode) {
+function sliderPosition(colorMode) {
   if (colorMode == "dark") {
     document.documentElement.style.setProperty("--left", "0%");
   }
@@ -149,5 +136,17 @@ export function checkSliderPosition(colorMode) {
   }
   if (colorMode == "rainbow") {
     document.documentElement.style.setProperty("--left", "66%");
+  }
+}
+
+function toogleLogo(mode) {
+  const headerLogoStandard = document.querySelector(".logo-standard");
+  const headerLogoRainbow = document.querySelector(".logo-rainbow");
+  if (mode === "rainbow") {
+    headerLogoRainbow.classList.remove("hidden");
+    headerLogoStandard.classList.add("hidden");
+  } else {
+    headerLogoRainbow.classList.add("hidden");
+    headerLogoStandard.classList.remove("hidden");
   }
 }

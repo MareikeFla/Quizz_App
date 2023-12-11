@@ -4,7 +4,7 @@ import {
   clearCardSection,
 } from "../Cards/Cards.js";
 import { quizCards } from "../Cards/CardsInfo.js";
-import { checkSliderPosition } from "../utilities/ColorMode.js";
+import { sliderColorMode } from "../utilities/ColorMode.js";
 import {
   updateNumberOfCards,
   countBookmarkedCards,
@@ -20,18 +20,19 @@ export function footerLinkEvent() {
   const profileHtml = document.querySelector('[data-js="profile"]');
   footerLink.forEach((link) => {
     link.addEventListener("click", (event) => {
-      document.body.setAttribute("data-currentPage", "#" + event.target.id);
+      const currentPage = event.target.id;
+      document.body.setAttribute("data-currentPage", "#" + currentPage);
       footerLink.forEach((link) => {
         link.classList.remove("footer-activePage");
-        if (event.target.id === "profile") {
+        if (currentPage === "profile") {
           clearCardSection();
           profileHtml.classList.remove("hidden");
           updateNumberOfBookmarkedCards(countBookmarkedCards());
           updateNumberOfCards();
-          checkSliderPosition();
+          sliderColorMode();
         } else {
           profileHtml.classList.add("hidden");
-          if (event.target.id === "home") {
+          if (currentPage === "home") {
             clearCardSection();
             quizCards.forEach(createCard);
           } else {
