@@ -2,8 +2,8 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 4rem;
-  background-color: var(--colorBase);
+  height: var(--heightHeaderFooter);
+  background-color: var(--colorPrimary);
   font-size: 2rem;
   border-radius: 0 0 var(--borderRadius) var(--borderRadius);
   position: sticky;

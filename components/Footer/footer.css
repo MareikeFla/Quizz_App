@@ -2,10 +2,10 @@ footer {
   display: flex;
   position: sticky;
   bottom: 0;
-  background-color: var(--colorBase);
+  background-color: var(--colorPrimary);
   border-radius: var(--borderRadius) var(--borderRadius) 0 0;
   box-shadow: var(--shadowFooter);
-  height: 4rem;
+  height: var(--heightHeaderFooter);
 }
 
 nav {
@@ -16,8 +16,8 @@ nav {
 }
 
 .footer-link {
-  box-shadow: white 0 5px 10px 1px inset, var(--colorDark) 0 0 10px 5px inset,
-    var(--colorDark) 0 3px 7px 0;
+  box-shadow: white 0 5px 10px 1px inset,
+    var(--colorSecondary) 0 0 10px 5px inset, var(--colorSecondary) 0 3px 7px 0;
   height: 3.5rem;
   width: 3.5rem;
   display: flex;
@@ -35,8 +35,10 @@ nav {
   opacity: 0.8;
 }
 
-.footer-activePage {
+body[data-currentpage="#home"] .footer-link-home,
+body[data-currentpage="#bookmarks"] .footer-link-bookmarks,
+body[data-currentpage="#profile"] .footer-link-profile {
   box-shadow: white 0 5px 10px 1px inset,
     var(--colorHighlight) 0 0 10px 5px inset,
-    var(--colorHighlight) 0 0 12px 5px inset, var(--colorDark) 0 3px 7px 0;
+    var(--colorHighlight) 0 0 12px 5px inset, var(--colorSecondary) 0 3px 7px 0;
 }
