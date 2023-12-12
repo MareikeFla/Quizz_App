@@ -29,6 +29,10 @@
   width: 33%;
   text-decoration: none;
   color: rgb(21, 21, 21);
+  background-color: transparent;
+  height: 90%;
+  border: none;
+  cursor: pointer;
 }
 
 .slider {
