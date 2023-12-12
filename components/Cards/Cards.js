@@ -1,9 +1,8 @@
-import { quizCards } from "./CardsInfo.js";
-const sectionCards = document.querySelector('[data-js="cards"]');
-
+export const sectionCards = document.querySelector('[data-js="cards"]');
+import { renderBookmarks } from "../Bookmarks/Bookmarks.js";
 // Function - create quiz cards
 
-export function createCard(quizCard, i) {
+export function createCard(quizCard) {
   const section = document.createElement("section");
   section.className = "card quiz-card";
 
@@ -24,8 +23,8 @@ export function createCard(quizCard, i) {
       localStorage.setItem("cardBookmarked_" + quizCard.number, true);
     } else {
       localStorage.removeItem("cardBookmarked_" + quizCard.number);
-      if (document.body.getAttribute("data-currentpage") === "#bookmarks") {
-        createBookmarkedCards();
+      if (document.body.getAttribute("data-currentpage") === "bookmarks") {
+        renderBookmarks();
       }
     }
   });
@@ -108,22 +107,6 @@ export function createCard(quizCard, i) {
 }
 
 // Function - Only create bookmarked cards and show info if no cards are bookmarked
-
-export function createBookmarkedCards() {
-  clearCardSection();
-  const bookmarkedQuizCards = quizCards.filter((quizCard) => {
-    return localStorage.getItem("cardBookmarked_" + quizCard.number);
-  });
-  if (bookmarkedQuizCards.length === 0) {
-    const info = document.createElement("p");
-    info.classList.add("infoTextNoBookmarks");
-    info.textContent = "You have no bookmarked cards";
-    sectionCards.appendChild(info);
-  } else {
-    bookmarkedQuizCards.forEach(createCard);
-  }
-  document.querySelector("main").scrollTop = 0;
-}
 
 // Function - remove cards from card section
 

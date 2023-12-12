@@ -35,9 +35,9 @@ nav {
   opacity: 0.8;
 }
 
-body[data-currentpage="#home"] .footer-link-home,
-body[data-currentpage="#bookmarks"] .footer-link-bookmarks,
-body[data-currentpage="#profile"] .footer-link-profile {
+body[data-currentpage="home"] .footer-link-home,
+body[data-currentpage="bookmarks"] .footer-link-bookmarks,
+body[data-currentpage="profile"] .footer-link-profile {
   box-shadow: white 0 5px 10px 1px inset,
     var(--colorHighlight) 0 0 10px 5px inset,
     var(--colorHighlight) 0 0 12px 5px inset, var(--colorSecondary) 0 3px 7px 0;

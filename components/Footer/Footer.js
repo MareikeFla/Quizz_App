@@ -1,44 +1,33 @@
-import {
-  createCard,
-  createBookmarkedCards,
-  clearCardSection,
-} from "../Cards/Cards.js";
-import { quizCards } from "../Cards/CardsInfo.js";
-import { sliderColorMode } from "../utilities/ColorMode.js";
-import {
-  updateNumberOfCards,
-  countBookmarkedCards,
-  updateNumberOfBookmarkedCards,
-} from "../Cards/CardsInfo.js";
+import { renderHome } from "../Home/Home.js";
+import { renderProfile } from "../Profile/Pofile.js";
+import { renderBookmarks } from "../Bookmarks/Bookmarks.js";
 
-const footerLink = document.querySelectorAll('[data-js="footer__link"]');
+const setCurrentPage = (page) =>
+  document.querySelector("body").setAttribute("data-currentpage", page);
+const getCurrentPage = () =>
+  document.querySelector("body").getAttribute("data-currentpage");
 
+const footerButtons = document.querySelectorAll('[data-js="footer__link"]');
+export const profileHtml = document.querySelector('[data-js="profile"]');
 // Function - render all quiz cards at the main page,
 // render only bookmarked cards at the bookmark page and show the profile section at the profile page
 
-export function footerLinkEvent() {
-  const profileHtml = document.querySelector('[data-js="profile"]');
-  footerLink.forEach((link) => {
-    link.addEventListener("click", (event) => {
-      const currentPage = event.target.id;
-      document.body.setAttribute("data-currentPage", "#" + currentPage);
-      footerLink.forEach((link) => {
-        if (currentPage === "profile") {
-          clearCardSection();
-          profileHtml.classList.remove("hidden");
-          updateNumberOfBookmarkedCards(countBookmarkedCards());
-          updateNumberOfCards();
-          sliderColorMode();
-        } else {
-          profileHtml.classList.add("hidden");
-          if (currentPage === "home") {
-            clearCardSection();
-            quizCards.forEach(createCard);
-          } else {
-            createBookmarkedCards();
-          }
-        }
-      });
+export function footerButtonEvent() {
+  footerButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      setCurrentPage(event.target.id);
+      if (getCurrentPage() === "home") {
+        renderHome();
+        console.log(getCurrentPage());
+      }
+      if (getCurrentPage() === "bookmarks") {
+        renderBookmarks();
+        console.log(getCurrentPage());
+      }
+      if (getCurrentPage() === "profile") {
+        renderProfile();
+        console.log(getCurrentPage());
+      }
     });
   });
 }
