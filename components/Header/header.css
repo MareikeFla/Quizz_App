@@ -17,3 +17,12 @@ header {
   height: 50%;
   margin: 0 1rem;
 }
+
+body[data-colorMode="light"] .logo-rainbow,
+body[data-colorMode="dark"] .logo-rainbow {
+  display: none;
+}
+
+body[data-colorMode="rainbow"] .logo-standard {
+  display: none;
+}

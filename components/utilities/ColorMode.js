@@ -4,6 +4,10 @@ const prefersDarkMode = Boolean(
   getComputedStyle(document.documentElement).getPropertyValue("--darkMode")
 );
 
+const setColorMode2 = (mode) =>
+  document.querySelector("body").setAttribute("data-colorMode", mode);
+const getColorMode = () =>
+  document.querySelector("body").getAttribute("data-colorMode");
 // Initial color mode according to user settings if no color mode is set yet
 
 export function initialColorMode() {
@@ -68,7 +72,7 @@ export function setColorMode(colorMode) {
     );
     document.documentElement.style.setProperty("--shadowFooter", shadowFooter);
     document.documentElement.style.setProperty("--shadowHeader", shadowHeader);
-    toggleLogo("dark");
+    // toggleLogo("dark");
   }
 
   if (colorMode == "light") {
@@ -84,7 +88,7 @@ export function setColorMode(colorMode) {
     );
     document.documentElement.style.setProperty("--shadowFooter", shadowFooter);
     document.documentElement.style.setProperty("--shadowHeader", shadowHeader);
-    toggleLogo("light");
+    // toggleLogo("light");
   }
 
   if (colorMode == "rainbow") {
@@ -109,7 +113,7 @@ export function setColorMode(colorMode) {
       colorHighlightRainbow
     );
     document.documentElement.style.setProperty("--colorCardBox", colorCardBox);
-    toggleLogo("rainbow");
+    // toggleLogo("rainbow");
   }
 }
 
@@ -119,11 +123,11 @@ export function sliderColorMode() {
   sliderPosition(localStorage.getItem("locColorMode"));
   slidercolorModes.forEach((mode) => {
     mode.addEventListener("click", (event) => {
-      const eventMode = event.target.id;
-      toggleLogo(eventMode);
-      localStorage.setItem("locColorMode", eventMode);
-      setColorMode(eventMode);
-      sliderPosition(eventMode);
+      setColorMode2(event.target.id);
+      // toggleLogo(eventMode);
+      localStorage.setItem("locColorMode", getColorMode());
+      setColorMode(getColorMode());
+      sliderPosition(getColorMode());
     });
   });
 }
@@ -140,14 +144,14 @@ function sliderPosition(colorMode) {
   }
 }
 
-function toggleLogo(colorMode) {
-  const headerLogoStandard = document.querySelector(".logo-standard");
-  const headerLogoRainbow = document.querySelector(".logo-rainbow");
-  if (colorMode === "rainbow") {
-    headerLogoRainbow.classList.remove("hidden");
-    headerLogoStandard.classList.add("hidden");
-  } else {
-    headerLogoRainbow.classList.add("hidden");
-    headerLogoStandard.classList.remove("hidden");
-  }
-}
+// function toggleLogo(colorMode) {
+//   const headerLogoStandard = document.querySelector(".logo-standard");
+//   const headerLogoRainbow = document.querySelector(".logo-rainbow");
+//   if (colorMode === "rainbow") {
+//     headerLogoRainbow.classList.remove("hidden");
+//     headerLogoStandard.classList.add("hidden");
+//   } else {
+//     headerLogoRainbow.classList.add("hidden");
+//     headerLogoStandard.classList.remove("hidden");
+//   }
+// }

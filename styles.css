@@ -3,3 +3,7 @@
 @import "components/Cards/card.css";
 @import "components/Footer/footer.css";
 @import "components/Profile/profile.css";
+
+/* body[data-colorMode="light"] 
+body[data-colorMode="dark"]
+body[data-colorMode="rainbow"] */

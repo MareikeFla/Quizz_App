@@ -1,9 +1,21 @@
 .card {
-  background-color: var(--colorHighlight);
   border-radius: var(--borderRadius);
   margin-bottom: calc(1.5 * var(--gapStandard));
   padding-bottom: var(--gapStandard);
 }
+
+body[data-colorMode="light"] .card,
+body[data-colorMode="dark"] .card {
+  background-color: var(--colorHighlight);
+}
+
+body[data-colorMode="rainbow"] .card {
+  background-color: var(--colorHighlightRainbow);
+}
+
+/* body[data-colorMode="light"] 
+body[data-colorMode="dark"]
+body[data-colorMode="rainbow"] */
 
 .card-bookmarkImgActive {
   display: none;
