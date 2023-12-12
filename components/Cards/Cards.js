@@ -122,6 +122,7 @@ export function createBookmarkedCards() {
   } else {
     bookmarkedQuizCards.forEach(createCard);
   }
+  document.querySelector("main").scrollTop = 0;
 }
 
 // Function - remove cards from card section
