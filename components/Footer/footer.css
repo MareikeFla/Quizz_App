@@ -2,7 +2,6 @@ footer {
   display: flex;
   position: sticky;
   bottom: 0;
-  background-color: var(--colorPrimary);
   border-radius: var(--borderRadius) var(--borderRadius) 0 0;
   box-shadow: var(--shadowFooter);
   height: var(--heightHeaderFooter);

@@ -7,9 +7,13 @@
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
     <title>Quizz App</title>
   </head>
-  <body data-currentPage="home" data-colorMode="light">
-    <header>
-      <p>QUIZ</p>
+  <body
+    data-currentPage="home"
+    data-colorMode="light"
+    class="backgroundColor__primary"
+  >
+    <header class="backgroundColor__primary">
+      <p class="color__highlight">QUIZ</p>
       <img
         src="pictures/dolphin2.png"
         alt="Silouette of a dolphin"
@@ -20,17 +24,17 @@
         alt="Silouette of a dolphin"
         class="header-logo logo-rainbow"
       />
-      <p>WAVE</p>
+      <p class="color__highlight">WAVE</p>
     </header>
-    <main>
+    <main class="backgroundColor__primary">
       <section data-js="cards" class="sectionQuizzCards"></section>
       <section class="hidden" id="profile" data-js="profile">
-        <section class="profile-header">
+        <section class="profile-header color__highlight">
           <h2>Welcome <span>Mareike</span>!</h2>
         </section>
-        <section class="profile-main card">
+        <section class="profile-main card backgroundColor__highlight">
           <article class="statistics card-textBox">
-            <h3>Statistics</h3>
+            <h3 class="color__highlight">Statistics</h3>
             <div>
               <span>Quiz cards: </span
               ><span class="statistics-cards-number"></span>
@@ -41,7 +45,7 @@
             </div>
           </article>
           <article class="settings card-textBox">
-            <h3>Settings</h3>
+            <h3 class="color__highlight">Settings</h3>
             <section>
               <h4 class="setMode-headline">Choose your favourite mode</h4>
               <div class="sliderBox">
@@ -73,7 +77,7 @@
         </section>
       </section>
     </main>
-    <footer>
+    <footer class="backgroundColor__primary">
       <nav>
         <a
           href="#"

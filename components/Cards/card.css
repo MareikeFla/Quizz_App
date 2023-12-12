@@ -4,15 +4,6 @@
   padding-bottom: var(--gapStandard);
 }
 
-body[data-colorMode="light"] .card,
-body[data-colorMode="dark"] .card {
-  background-color: var(--colorHighlight);
-}
-
-body[data-colorMode="rainbow"] .card {
-  background-color: var(--colorHighlightRainbow);
-}
-
 /* body[data-colorMode="light"] 
 body[data-colorMode="dark"]
 body[data-colorMode="rainbow"] */
@@ -29,8 +20,8 @@ body[data-colorMode="rainbow"] */
 }
 
 .card-questionNumber {
-  color: var(--colorPrimary);
   align-self: center;
+  color: var(--colorPrimary);
 }
 
 .card-bookmarkImg {
@@ -73,7 +64,6 @@ body[data-colorMode="rainbow"] */
 }
 
 .card-answerText {
-  color: var(--colorHighlight);
   font-size: 1.5rem;
 }
 
@@ -104,7 +94,6 @@ body[data-colorMode="rainbow"] */
   background-color: var(--colorCardBox);
   padding: calc(0.25 * var(--gapStandard)) calc(0.5 * var(--gapStandard));
   font-size: 0.7rem;
-  color: var(--colorHighlight);
   border-radius: calc(0.5 * var(--borderRadius));
   box-shadow: var(--boxShadow);
 }

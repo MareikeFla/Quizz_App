@@ -4,14 +4,15 @@ import { renderBookmarks } from "../Bookmarks/Bookmarks.js";
 
 export function createCard(quizCard) {
   const section = document.createElement("section");
-  section.className = "card quiz-card";
+
+  section.className = "card quiz-card backgroundColor__highlight";
 
   const cardHeader = document.createElement("div");
   cardHeader.className = "card-header";
   section.appendChild(cardHeader);
 
   const h2 = document.createElement("h2");
-  h2.className = "card-questionNumber";
+  h2.className = "card-questionNumber color__primary";
   h2.textContent = quizCard.number;
   cardHeader.appendChild(h2);
 
@@ -77,7 +78,7 @@ export function createCard(quizCard) {
   section.appendChild(answerBox);
 
   const answerText = document.createElement("p");
-  answerText.className = "card-answerText invisible";
+  answerText.className = "card-answerText invisible color__highlight";
   answerText.textContent = quizCard.answer;
   answerBox.appendChild(answerText);
 
@@ -88,7 +89,7 @@ export function createCard(quizCard) {
   // Function to create tag elements for each tag in the quiz card
   function createTag(tagName) {
     const tag = document.createElement("article");
-    tag.className = "card-tag";
+    tag.className = "card-tag color__highlight";
     tag.textContent = tagName;
     tagBox.appendChild(tag);
   }

@@ -18,104 +18,104 @@ export function initialColorMode() {
       localStorage.setItem("locColorMode", "light");
     }
   }
-  setColorMode(localStorage.getItem("locColorMode"));
+  // setColorMode(localStorage.getItem("locColorMode"));
 }
 
 // Select color variables for color mode
 
-const root = document.querySelector(":root");
-const colorPrimary = getComputedStyle(root).getPropertyValue("--colorPrimary");
-const colorPrimaryDark =
-  getComputedStyle(root).getPropertyValue("--colorPrimaryDark");
-const colorSecondary =
-  getComputedStyle(root).getPropertyValue("--colorSecondary");
-const colorSecondaryDark = getComputedStyle(root).getPropertyValue(
-  "--colorSecondaryDark"
-);
-const colorCardBox = getComputedStyle(root).getPropertyValue("--colorCardBox");
-const colorcardBoxDark =
-  getComputedStyle(root).getPropertyValue("--colorcardBoxDark");
-const shadowFooterRainbow = getComputedStyle(root).getPropertyValue(
-  "--shadowFooterRainbow"
-);
-const shadowHeaderRainbow = getComputedStyle(root).getPropertyValue(
-  "--shadowHeaderRainbow"
-);
+// const root = document.querySelector(":root");
+// const colorPrimary = getComputedStyle(root).getPropertyValue("--colorPrimary");
+// const colorPrimaryDark =
+//   getComputedStyle(root).getPropertyValue("--colorPrimaryDark");
+// const colorSecondary =
+//   getComputedStyle(root).getPropertyValue("--colorSecondary");
+// const colorSecondaryDark = getComputedStyle(root).getPropertyValue(
+//   "--colorSecondaryDark"
+// );
+// const colorCardBox = getComputedStyle(root).getPropertyValue("--colorCardBox");
+// const colorcardBoxDark =
+//   getComputedStyle(root).getPropertyValue("--colorcardBoxDark");
+// const shadowFooterRainbow = getComputedStyle(root).getPropertyValue(
+//   "--shadowFooterRainbow"
+// );
+// const shadowHeaderRainbow = getComputedStyle(root).getPropertyValue(
+//   "--shadowHeaderRainbow"
+// );
 
-const shadowHeader = getComputedStyle(root).getPropertyValue("--shadowHeader");
-const shadowFooter = getComputedStyle(root).getPropertyValue("--shadowFooter");
-const colorHighlight =
-  getComputedStyle(root).getPropertyValue("--colorHighlight");
-const colorHighlightRainbow = getComputedStyle(root).getPropertyValue(
-  "--colorHighlightRainbow"
-);
+// const shadowHeader = getComputedStyle(root).getPropertyValue("--shadowHeader");
+// const shadowFooter = getComputedStyle(root).getPropertyValue("--shadowFooter");
+// const colorHighlight =
+//   getComputedStyle(root).getPropertyValue("--colorHighlight");
+// const colorHighlightRainbow = getComputedStyle(root).getPropertyValue(
+//   "--colorHighlightRainbow"
+// );
 
 // Color mode light/dark/rainbow
 
-export function setColorMode(colorMode) {
-  if (colorMode == "dark") {
-    document.documentElement.style.setProperty(
-      "--colorPrimary",
-      colorPrimaryDark
-    );
-    document.documentElement.style.setProperty(
-      "--colorSecondary",
-      colorSecondaryDark
-    );
-    document.documentElement.style.setProperty(
-      "--colorCardBox",
-      colorcardBoxDark
-    );
-    document.documentElement.style.setProperty(
-      "--colorHighlight",
-      colorHighlight
-    );
-    document.documentElement.style.setProperty("--shadowFooter", shadowFooter);
-    document.documentElement.style.setProperty("--shadowHeader", shadowHeader);
-    // toggleLogo("dark");
-  }
+// export function setColorMode(colorMode) {
+//   if (colorMode == "dark") {
+//     document.documentElement.style.setProperty(
+//       "--colorPrimary",
+//       colorPrimaryDark
+//     );
+//     document.documentElement.style.setProperty(
+//       "--colorSecondary",
+//       colorSecondaryDark
+//     );
+//     document.documentElement.style.setProperty(
+//       "--colorCardBox",
+//       colorcardBoxDark
+//     );
+//     document.documentElement.style.setProperty(
+//       "--colorHighlight",
+//       colorHighlight
+//     );
+//     document.documentElement.style.setProperty("--shadowFooter", shadowFooter);
+//     document.documentElement.style.setProperty("--shadowHeader", shadowHeader);
+//     // toggleLogo("dark");
+//   }
 
-  if (colorMode == "light") {
-    document.documentElement.style.setProperty("--colorPrimary", colorPrimary);
-    document.documentElement.style.setProperty(
-      "--colorSecondary",
-      colorSecondary
-    );
-    document.documentElement.style.setProperty("--colorCardBox", colorCardBox);
-    document.documentElement.style.setProperty(
-      "--colorHighlight",
-      colorHighlight
-    );
-    document.documentElement.style.setProperty("--shadowFooter", shadowFooter);
-    document.documentElement.style.setProperty("--shadowHeader", shadowHeader);
-    // toggleLogo("light");
-  }
+//   if (colorMode == "light") {
+//     document.documentElement.style.setProperty("--colorPrimary", colorPrimary);
+//     document.documentElement.style.setProperty(
+//       "--colorSecondary",
+//       colorSecondary
+//     );
+//     document.documentElement.style.setProperty("--colorCardBox", colorCardBox);
+//     document.documentElement.style.setProperty(
+//       "--colorHighlight",
+//       colorHighlight
+//     );
+//     document.documentElement.style.setProperty("--shadowFooter", shadowFooter);
+//     document.documentElement.style.setProperty("--shadowHeader", shadowHeader);
+//     // toggleLogo("light");
+//   }
 
-  if (colorMode == "rainbow") {
-    document.documentElement.style.setProperty(
-      "--colorPrimary",
-      colorPrimaryDark
-    );
-    document.documentElement.style.setProperty(
-      "--colorSecondary",
-      colorSecondary
-    );
-    document.documentElement.style.setProperty(
-      "--shadowFooter",
-      shadowFooterRainbow
-    );
-    document.documentElement.style.setProperty(
-      "--shadowHeader",
-      shadowHeaderRainbow
-    );
-    document.documentElement.style.setProperty(
-      "--colorHighlight",
-      colorHighlightRainbow
-    );
-    document.documentElement.style.setProperty("--colorCardBox", colorCardBox);
-    // toggleLogo("rainbow");
-  }
-}
+//   if (colorMode == "rainbow") {
+//     document.documentElement.style.setProperty(
+//       "--colorPrimary",
+//       colorPrimaryDark
+//     );
+//     document.documentElement.style.setProperty(
+//       "--colorSecondary",
+//       colorSecondary
+//     );
+//     document.documentElement.style.setProperty(
+//       "--shadowFooter",
+//       shadowFooterRainbow
+//     );
+//     document.documentElement.style.setProperty(
+//       "--shadowHeader",
+//       shadowHeaderRainbow
+//     );
+//     document.documentElement.style.setProperty(
+//       "--colorHighlight",
+//       colorHighlightRainbow
+//     );
+//     document.documentElement.style.setProperty("--colorCardBox", colorCardBox);
+//     // toggleLogo("rainbow");
+//   }
+// }
 
 const slidercolorModes = document.querySelectorAll('[data-js="colorMode"]');
 
@@ -126,7 +126,7 @@ export function sliderColorMode() {
       setColorMode2(event.target.id);
       // toggleLogo(eventMode);
       localStorage.setItem("locColorMode", getColorMode());
-      setColorMode(getColorMode());
+      // setColorMode(getColorMode());
       sliderPosition(getColorMode());
     });
   });
