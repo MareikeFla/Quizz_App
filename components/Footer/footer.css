@@ -3,8 +3,9 @@ footer {
   position: sticky;
   bottom: 0;
   border-radius: var(--borderRadius) var(--borderRadius) 0 0;
-  box-shadow: var(--shadowFooter);
   height: var(--heightHeaderFooter);
+  background-color: var(--colorPrimary);
+  box-shadow: var(--shadowFooter);
 }
 
 nav {

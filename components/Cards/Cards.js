@@ -5,14 +5,14 @@ import { renderBookmarks } from "../Bookmarks/Bookmarks.js";
 export function createCard(quizCard) {
   const section = document.createElement("section");
 
-  section.className = "card quiz-card backgroundColor__highlight";
+  section.className = "card quiz-card";
 
   const cardHeader = document.createElement("div");
   cardHeader.className = "card-header";
   section.appendChild(cardHeader);
 
   const h2 = document.createElement("h2");
-  h2.className = "card-questionNumber color__primary";
+  h2.className = "card-questionNumber";
   h2.textContent = quizCard.number;
   cardHeader.appendChild(h2);
 
@@ -50,53 +50,53 @@ export function createCard(quizCard) {
   bookmark.appendChild(img2);
 
   const questionBox = document.createElement("div");
-  questionBox.className = "card-questionBox card-textBox";
+  questionBox.className = "cardBoxQuestion cardBox";
   section.appendChild(questionBox);
 
   const questionText = document.createElement("p");
-  questionText.className = "card-questionText";
+  questionText.className = "cardQuestion";
   questionText.textContent = quizCard.question;
   questionBox.appendChild(questionText);
 
   const cardButtonAnswer = document.createElement("button");
-  cardButtonAnswer.className = "card-button";
+  cardButtonAnswer.className = "cardButton";
 
   questionBox.appendChild(cardButtonAnswer);
 
   const textShow = document.createElement("p");
-  textShow.className = "card-button-textShow";
+  textShow.className = "cardButton-textShow";
   textShow.textContent = "Show Answer";
   cardButtonAnswer.appendChild(textShow);
 
   const textHide = document.createElement("p");
-  textHide.className = "card-button-textHide hidden";
+  textHide.className = "cardButton-textHide hidden";
   textHide.textContent = "Hide Answer";
   cardButtonAnswer.appendChild(textHide);
 
   const answerBox = document.createElement("div");
-  answerBox.className = "card-answerBox card-textBox";
+  answerBox.className = "cardAnswerBox cardBox";
   section.appendChild(answerBox);
 
   const answerText = document.createElement("p");
-  answerText.className = "card-answerText invisible color__highlight";
+  answerText.className = "cardAnswer invisible ";
   answerText.textContent = quizCard.answer;
   answerBox.appendChild(answerText);
 
   const tagBox = document.createElement("div");
-  tagBox.className = "card-tagBox";
+  tagBox.className = "cardWrapTags";
   section.appendChild(tagBox);
 
   // Function to create tag elements for each tag in the quiz card
   function createTag(tagName) {
     const tag = document.createElement("article");
-    tag.className = "card-tag color__highlight";
+    tag.className = "cardTag";
     tag.textContent = tagName;
     tagBox.appendChild(tag);
   }
 
   cardButtonAnswer.addEventListener("click", () => {
     answerText.classList.toggle("invisible");
-    answerBox.classList.toggle("card-answerBox-acive");
+    answerBox.classList.toggle("cardAnswerBox-acive");
     textShow.classList.toggle("hidden");
     textHide.classList.toggle("hidden");
   });

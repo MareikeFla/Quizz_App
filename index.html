@@ -7,12 +7,8 @@
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
     <title>Quizz App</title>
   </head>
-  <body
-    data-currentPage="home"
-    data-colorMode="light"
-    class="backgroundColor__primary"
-  >
-    <header class="backgroundColor__primary">
+  <body data-currentPage="home" data-colorTheme="light">
+    <header>
       <p class="color__highlight">QUIZ</p>
       <img
         src="pictures/dolphin2.png"
@@ -26,14 +22,14 @@
       />
       <p class="color__highlight">WAVE</p>
     </header>
-    <main class="backgroundColor__primary">
+    <main>
       <section data-js="cards" class="sectionQuizzCards"></section>
-      <section class="hidden" id="profile" data-js="profile">
-        <section class="profile-header color__highlight">
+      <section class="profile" id="profile" data-js="profile">
+        <section class="profile-welcome color__highlight">
           <h2>Welcome <span>Mareike</span>!</h2>
         </section>
-        <section class="profile-main card backgroundColor__highlight">
-          <article class="statistics card-textBox">
+        <section class="profile-main card">
+          <article class="statistics cardBox">
             <h3 class="color__highlight">Statistics</h3>
             <div>
               <span>Quiz cards: </span
@@ -44,10 +40,10 @@
               ><span class="statistics-bookmarks-number"></span>
             </div>
           </article>
-          <article class="settings card-textBox">
+          <article class="settings cardBox">
             <h3 class="color__highlight">Settings</h3>
-            <section>
-              <h4 class="setMode-headline">Choose your favourite mode</h4>
+            <div>
+              <p class="setMode-headline">Choose your favourite mode</p>
               <div class="sliderBox">
                 <div class="slider"></div>
                 <button
@@ -72,12 +68,12 @@
                   Rainbow
                 </button>
               </div>
-            </section>
+            </div>
           </article>
         </section>
       </section>
     </main>
-    <footer class="backgroundColor__primary">
+    <footer>
       <nav>
         <a
           href="#"

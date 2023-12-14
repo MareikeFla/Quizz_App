@@ -8,7 +8,7 @@ const getCurrentPage = () =>
   document.querySelector("body").getAttribute("data-currentpage");
 
 const footerButtons = document.querySelectorAll('[data-js="footer__link"]');
-export const profileHtml = document.querySelector('[data-js="profile"]');
+
 // Function - render all quiz cards at the main page,
 // render only bookmarked cards at the bookmark page and show the profile section at the profile page
 

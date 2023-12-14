@@ -8,6 +8,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 1;
+  color: var(--colorHighlight);
+  background-color: var(--colorPrimary);
   box-shadow: var(--shadowHeader);
 }
 
@@ -16,11 +18,11 @@ header {
   margin: 0 1rem;
 }
 
-body[data-colorMode="light"] .logo-rainbow,
-body[data-colorMode="dark"] .logo-rainbow {
+body[data-colorTheme="light"] .logo-rainbow,
+body[data-colorTheme="dark"] .logo-rainbow {
   display: none;
 }
 
-body[data-colorMode="rainbow"] .logo-standard {
+body[data-colorTheme="rainbow"] .logo-standard {
   display: none;
 }

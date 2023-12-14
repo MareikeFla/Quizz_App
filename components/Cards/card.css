@@ -2,14 +2,7 @@
   border-radius: var(--borderRadius);
   margin-bottom: calc(1.5 * var(--gapStandard));
   padding-bottom: var(--gapStandard);
-}
-
-/* body[data-colorMode="light"] 
-body[data-colorMode="dark"]
-body[data-colorMode="rainbow"] */
-
-.card-bookmarkImgActive {
-  display: none;
+  background-color: var(--colorHighlight);
 }
 
 .card-header {
@@ -30,6 +23,10 @@ body[data-colorMode="rainbow"] */
   cursor: pointer;
 }
 
+.card-bookmarkImgActive {
+  display: none;
+}
+
 .card--isBookmarked .card-bookmarkImgInactive {
   display: none;
 }
@@ -38,7 +35,7 @@ body[data-colorMode="rainbow"] */
   display: initial;
 }
 
-.card-textBox {
+.cardBox {
   background-color: var(--colorCardBox);
   border-radius: var(--borderRadius);
   padding: calc(1.5 * var(--gapStandard)) var(--gapStandard);
@@ -50,24 +47,25 @@ body[data-colorMode="rainbow"] */
   box-shadow: var(--boxShadow);
 }
 
-.card-answerBox,
-.card-tagBox {
+.cardAnswerBox,
+.cardTag {
   margin-bottom: var(--gapStandard);
+  color: var(--colorHighlight);
 }
 
-.card-questionBox {
+.cardBoxQuestion {
   margin-bottom: calc(2 * var(--gapStandard));
 }
 
-.card-questionText {
+.cardQuestion {
   margin-bottom: var(--gapStandard);
 }
 
-.card-answerText {
+.cardAnswer {
   font-size: 1.5rem;
 }
 
-.card-button {
+.cardButton {
   padding: calc(0.5 * var(--gapStandard)) calc(2 * var(--gapStandard));
   margin-bottom: calc(-1.8 * var(--gapStandard));
   background-color: var(--colorCardBox);
@@ -79,18 +77,18 @@ body[data-colorMode="rainbow"] */
   min-width: 10rem;
   transform: rotate(-1.5deg);
 }
-.card-button:active {
+.cardButton:active {
   transform: rotate(1.5deg);
 }
 
-.card-tagBox {
+.cardWrapTags {
   display: flex;
   gap: calc(0.5 * var(--gapStandard));
   margin: 0 calc(1.5 * var(--gapStandard));
   flex-wrap: wrap;
 }
 
-.card-tag {
+.cardTag {
   background-color: var(--colorCardBox);
   padding: calc(0.25 * var(--gapStandard)) calc(0.5 * var(--gapStandard));
   font-size: 0.7rem;
