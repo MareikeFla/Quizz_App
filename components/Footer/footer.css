@@ -1,18 +1,23 @@
 footer {
   display: flex;
+  justify-content: center;
   position: sticky;
   bottom: 0;
   border-radius: var(--borderRadius) var(--borderRadius) 0 0;
   height: var(--heightHeaderFooter);
   background-color: var(--colorPrimary);
   box-shadow: var(--shadowFooter);
+  width: 100%;
+  max-width: 630px;
 }
 
-nav {
+.footer-nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
+  max-width: 600px;
+  padding: 0 var(--gapStandard);
 }
 
 .footer-link {

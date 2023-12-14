@@ -50,7 +50,7 @@ export function createCard(quizCard) {
   bookmark.appendChild(img2);
 
   const questionBox = document.createElement("div");
-  questionBox.className = "cardBoxQuestion cardBox";
+  questionBox.className = "cardQuestionBox cardBox";
   section.appendChild(questionBox);
 
   const questionText = document.createElement("p");

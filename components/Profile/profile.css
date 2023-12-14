@@ -3,12 +3,14 @@
 }
 
 body[data-currentPage="profile"] .profile {
-  display: initial;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
 }
 
 .profile-welcome {
-  display: flex;
-  justify-content: center;
   color: var(--colorHighlight);
 }
 
@@ -57,6 +59,7 @@ body[data-currentPage="profile"] .profile {
 .profile-main {
   margin-top: var(--gapStandard);
   padding: calc(0.5 * var(--gapStandard)) 0;
+  width: 100%;
 }
 
 h3 {

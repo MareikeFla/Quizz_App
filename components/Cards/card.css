@@ -3,6 +3,8 @@
   margin-bottom: calc(1.5 * var(--gapStandard));
   padding-bottom: var(--gapStandard);
   background-color: var(--colorHighlight);
+  max-width: 600px;
+  width: 100%;
 }
 
 .card-header {
@@ -53,7 +55,7 @@
   color: var(--colorHighlight);
 }
 
-.cardBoxQuestion {
+.cardQuestionBox {
   margin-bottom: calc(2 * var(--gapStandard));
 }
 
