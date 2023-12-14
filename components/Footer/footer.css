@@ -6,9 +6,9 @@ footer {
   border-radius: var(--borderRadius) var(--borderRadius) 0 0;
   height: var(--heightHeaderFooter);
   background-color: var(--colorPrimary);
-  box-shadow: var(--shadowFooter);
   width: 100%;
   max-width: 630px;
+  box-shadow: var(--shadowFooter);
 }
 
 .footer-nav {
