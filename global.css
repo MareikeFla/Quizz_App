@@ -17,6 +17,9 @@
 
 body {
   background-color: var(--colorPrimary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 body[data-colorTheme="light"] {
@@ -52,6 +55,9 @@ body[data-colorTheme="rainbow"] {
 main {
   min-height: calc(100vh - calc(2 * var(--heightHeaderFooter)));
   padding: 2rem 1rem 1rem 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .invisible {
@@ -60,9 +66,4 @@ main {
 
 .hidden {
   display: none;
-}
-
-.sectionQuizzCards {
-  display: flex;
-  flex-direction: column;
 }

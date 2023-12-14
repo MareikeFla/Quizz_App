@@ -11,6 +11,8 @@ header {
   color: var(--colorHighlight);
   background-color: var(--colorPrimary);
   box-shadow: var(--shadowHeader);
+  width: 100%;
+  max-width: 630px;
 }
 
 .header-logo {

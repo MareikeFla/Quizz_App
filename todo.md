@@ -4,4 +4,4 @@
 
   - [x] Move all rendering logic from footer eventlistener into corresponding page component
 
-- [ ] Use css styling for color mode instead of function.
+- [x] Use css styling for color mode instead of function.
