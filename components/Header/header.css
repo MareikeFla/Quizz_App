@@ -3,17 +3,26 @@ header {
   justify-content: center;
   align-items: center;
   height: var(--heightHeaderFooter);
-  background-color: var(--colorPrimary);
   font-size: 2rem;
   border-radius: 0 0 var(--borderRadius) var(--borderRadius);
   position: sticky;
   top: 0;
   z-index: 1;
   color: var(--colorHighlight);
+  background-color: var(--colorPrimary);
   box-shadow: var(--shadowHeader);
 }
 
 .header-logo {
   height: 50%;
   margin: 0 1rem;
+}
+
+body[data-colorTheme="light"] .logo-rainbow,
+body[data-colorTheme="dark"] .logo-rainbow {
+  display: none;
+}
+
+body[data-colorTheme="rainbow"] .logo-standard {
+  display: none;
 }

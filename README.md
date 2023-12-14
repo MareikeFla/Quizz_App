@@ -58,7 +58,7 @@ Here it took me some time to figure the syntax out...
 
 ```
 const prefersDarkMode = Boolean(
-  getComputedStyle(document.documentElement).getPropertyValue("--darkMode")
+  getComputedStyle(document.documentElement).getPropertyValue("--preferedColorMode")
 );
 ```
 

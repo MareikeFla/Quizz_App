@@ -10,35 +10,43 @@
 
 :root {
   --heightHeaderFooter: 4rem;
-  --colorHighlight: #26add1;
-  --colorHighlightRainbow: hotpink;
-  --colorPrimary: #f2f2f2;
-  --colorPrimaryDark: #181818;
-  --colorSecondary: #7f7f7f;
-  --colorSecondaryDark: #a8a8a8;
-  --colorCardBox: #ffffff;
-  --colorCardBoxDark: #e0e0e0;
   --borderRadius: 0.5rem;
   --gapStandard: 1rem;
-  --darkMode: 0;
   --boxShadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-  --shadowHeader: var(--colorSecondary) 0 3px 20px 3px;
-  --shadowFooter: var(--colorSecondary) 0 -3px 20px 3px;
-  --shadowHeaderRainbow: calc(-100vw / 3 * 2) 0 30px 6px rgb(255, 234, 0),
-    calc(-100vw / 3) 0 30px 6px rgb(255, 191, 0),
-    calc(100vw / 3) 0 30px 6px rgba(255, 0, 0, 1);
-  --shadowFooterRainbow: calc(-100vw / 3 * 2) 0 30px 6px #00ff00,
-    calc(-100vw / 3) 0 30px 6px #0000ff, calc(100vw / 3) 0 30px 6px #4b0082;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --darkMode: 1;
-  }
 }
 
 body {
   background-color: var(--colorPrimary);
+}
+
+body[data-colorTheme="light"] {
+  --colorHighlight: #26add1;
+  --colorPrimary: #f2f2f2;
+  --colorSecondary: #7f7f7f;
+  --colorCardBox: #ffffff;
+  --shadowHeader: var(--colorSecondary) 0 3px 20px 3px;
+  --shadowFooter: var(--colorSecondary) 0 -3px 20px 3px;
+}
+
+body[data-colorTheme="dark"] {
+  --colorHighlight: #26add1;
+  --colorPrimary: #181818;
+  --colorSecondary: #a8a8a8;
+  --colorCardBox: #e0e0e0;
+  --shadowHeader: var(--colorSecondary) 0 3px 20px 3px;
+  --shadowFooter: var(--colorSecondary) 0 -3px 20px 3px;
+}
+
+body[data-colorTheme="rainbow"] {
+  --colorHighlight: hotpink;
+  --colorPrimary: #181818;
+  --colorSecondary: #a8a8a8;
+  --colorCardBox: #ffffff;
+  --shadowHeader: calc(-100vw / 3 * 2) 0 30px 6px rgb(255, 234, 0),
+    calc(-100vw / 3) 0 30px 6px rgb(255, 191, 0),
+    calc(100vw / 3) 0 30px 6px rgba(255, 0, 0, 1);
+  --shadowFooter: calc(-100vw / 3 * 2) 0 30px 6px #00ff00,
+    calc(-100vw / 3) 0 30px 6px #0000ff, calc(100vw / 3) 0 30px 6px #4b0082;
 }
 
 main {
@@ -48,14 +56,6 @@ main {
 
 .invisible {
   visibility: hidden;
-}
-
-.infoTextNoBookmarks {
-  color: var(--colorHighlight);
-  width: 100%;
-  text-align: center;
-  font-size: 2rem;
-  margin-top: calc(2 * var(--gapStandard));
 }
 
 .hidden {

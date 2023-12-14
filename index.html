@@ -7,9 +7,9 @@
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
     <title>Quizz App</title>
   </head>
-  <body data-currentPage="home">
+  <body data-currentPage="home" data-colorTheme="light">
     <header>
-      <p>QUIZ</p>
+      <p class="color__highlight">QUIZ</p>
       <img
         src="pictures/dolphin2.png"
         alt="Silouette of a dolphin"
@@ -18,19 +18,19 @@
       <img
         src="pictures/dolphin1.png"
         alt="Silouette of a dolphin"
-        class="header-logo logo-rainbow hidden"
+        class="header-logo logo-rainbow"
       />
-      <p>WAVE</p>
+      <p class="color__highlight">WAVE</p>
     </header>
     <main>
       <section data-js="cards" class="sectionQuizzCards"></section>
-      <section class="hidden" id="profile" data-js="profile">
-        <section class="profile-header">
+      <section class="profile" id="profile" data-js="profile">
+        <section class="profile-welcome color__highlight">
           <h2>Welcome <span>Mareike</span>!</h2>
         </section>
         <section class="profile-main card">
-          <article class="statistics card-textBox">
-            <h3>Statistics</h3>
+          <article class="statistics cardBox">
+            <h3 class="color__highlight">Statistics</h3>
             <div>
               <span>Quiz cards: </span
               ><span class="statistics-cards-number"></span>
@@ -40,10 +40,10 @@
               ><span class="statistics-bookmarks-number"></span>
             </div>
           </article>
-          <article class="settings card-textBox">
-            <h3>Settings</h3>
-            <section>
-              <h4 class="setMode-headline">Choose your favourite mode</h4>
+          <article class="settings cardBox">
+            <h3 class="color__highlight">Settings</h3>
+            <div>
+              <p class="setMode-headline">Choose your favourite mode</p>
               <div class="sliderBox">
                 <div class="slider"></div>
                 <button
@@ -68,7 +68,7 @@
                   Rainbow
                 </button>
               </div>
-            </section>
+            </div>
           </article>
         </section>
       </section>

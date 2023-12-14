@@ -1,153 +1,48 @@
-// Check if user prefers dark mode in system settings
+const colorModeLight = "light";
+const colorModeDark = "dark";
+const colorModeRainbow = "rainbow";
+const colorModes = [colorModeLight, colorModeDark, colorModeRainbow];
 
-const prefersDarkMode = Boolean(
-  getComputedStyle(document.documentElement).getPropertyValue("--darkMode")
-);
+const setColorMode2 = (mode) => {
+  if (colorModes.includes(mode)) {
+    document.querySelector("body").setAttribute("data-colorTheme", mode);
+    localStorage.setItem("locColorMode", mode);
+  }
+};
 
-// Initial color mode according to user settings if no color mode is set yet
+const getColorMode = () => localStorage.getItem("locColorMode");
 
 export function initialColorMode() {
-  if (localStorage.getItem("locColorMode") == null) {
-    if (prefersDarkMode) {
-      localStorage.setItem("locColorMode", "dark");
+  let colorMode = getColorMode();
+  if (colorMode === null) {
+    if (window.matchMedia("(prefers-color-scheme: dark)")) {
+      colorMode = colorModeDark;
     } else {
-      localStorage.setItem("locColorMode", "light");
+      colorMode = colorModeLight;
     }
   }
-  setColorMode(localStorage.getItem("locColorMode"));
+  setColorMode2(colorMode);
 }
-
-// Select color variables for color mode
-
-const root = document.querySelector(":root");
-const colorPrimary = getComputedStyle(root).getPropertyValue("--colorPrimary");
-const colorPrimaryDark =
-  getComputedStyle(root).getPropertyValue("--colorPrimaryDark");
-const colorSecondary =
-  getComputedStyle(root).getPropertyValue("--colorSecondary");
-const colorSecondaryDark = getComputedStyle(root).getPropertyValue(
-  "--colorSecondaryDark"
-);
-const colorCardBox = getComputedStyle(root).getPropertyValue("--colorCardBox");
-const colorcardBoxDark =
-  getComputedStyle(root).getPropertyValue("--colorcardBoxDark");
-const shadowFooterRainbow = getComputedStyle(root).getPropertyValue(
-  "--shadowFooterRainbow"
-);
-const shadowHeaderRainbow = getComputedStyle(root).getPropertyValue(
-  "--shadowHeaderRainbow"
-);
-
-const shadowHeader = getComputedStyle(root).getPropertyValue("--shadowHeader");
-const shadowFooter = getComputedStyle(root).getPropertyValue("--shadowFooter");
-const colorHighlight =
-  getComputedStyle(root).getPropertyValue("--colorHighlight");
-const colorHighlightRainbow = getComputedStyle(root).getPropertyValue(
-  "--colorHighlightRainbow"
-);
-
-// Color mode light/dark/rainbow
-
-export function setColorMode(colorMode) {
-  if (colorMode == "dark") {
-    document.documentElement.style.setProperty(
-      "--colorPrimary",
-      colorPrimaryDark
-    );
-    document.documentElement.style.setProperty(
-      "--colorSecondary",
-      colorSecondaryDark
-    );
-    document.documentElement.style.setProperty(
-      "--colorCardBox",
-      colorcardBoxDark
-    );
-    document.documentElement.style.setProperty(
-      "--colorHighlight",
-      colorHighlight
-    );
-    document.documentElement.style.setProperty("--shadowFooter", shadowFooter);
-    document.documentElement.style.setProperty("--shadowHeader", shadowHeader);
-    toggleLogo("dark");
-  }
-
-  if (colorMode == "light") {
-    document.documentElement.style.setProperty("--colorPrimary", colorPrimary);
-    document.documentElement.style.setProperty(
-      "--colorSecondary",
-      colorSecondary
-    );
-    document.documentElement.style.setProperty("--colorCardBox", colorCardBox);
-    document.documentElement.style.setProperty(
-      "--colorHighlight",
-      colorHighlight
-    );
-    document.documentElement.style.setProperty("--shadowFooter", shadowFooter);
-    document.documentElement.style.setProperty("--shadowHeader", shadowHeader);
-    toggleLogo("light");
-  }
-
-  if (colorMode == "rainbow") {
-    document.documentElement.style.setProperty(
-      "--colorPrimary",
-      colorPrimaryDark
-    );
-    document.documentElement.style.setProperty(
-      "--colorSecondary",
-      colorSecondary
-    );
-    document.documentElement.style.setProperty(
-      "--shadowFooter",
-      shadowFooterRainbow
-    );
-    document.documentElement.style.setProperty(
-      "--shadowHeader",
-      shadowHeaderRainbow
-    );
-    document.documentElement.style.setProperty(
-      "--colorHighlight",
-      colorHighlightRainbow
-    );
-    document.documentElement.style.setProperty("--colorCardBox", colorCardBox);
-    toggleLogo("rainbow");
-  }
-}
-
-const slidercolorModes = document.querySelectorAll('[data-js="colorMode"]');
 
 export function sliderColorMode() {
-  sliderPosition(localStorage.getItem("locColorMode"));
+  const slidercolorModes = document.querySelectorAll('[data-js="colorMode"]');
+  setSliderPosition(getColorMode());
   slidercolorModes.forEach((mode) => {
     mode.addEventListener("click", (event) => {
-      const eventMode = event.target.id;
-      toggleLogo(eventMode);
-      localStorage.setItem("locColorMode", eventMode);
-      setColorMode(eventMode);
-      sliderPosition(eventMode);
+      setColorMode2(event.target.id);
+      setSliderPosition(getColorMode());
     });
   });
 }
 
-function sliderPosition(colorMode) {
-  if (colorMode == "dark") {
+function setSliderPosition(colorMode) {
+  if (colorMode === colorModeDark) {
     document.documentElement.style.setProperty("--left", "0%");
   }
-  if (colorMode == "light") {
+  if (colorMode === colorModeLight) {
     document.documentElement.style.setProperty("--left", "33%");
   }
-  if (colorMode == "rainbow") {
+  if (colorMode === colorModeRainbow) {
     document.documentElement.style.setProperty("--left", "66%");
-  }
-}
-
-function toggleLogo(colorMode) {
-  const headerLogoStandard = document.querySelector(".logo-standard");
-  const headerLogoRainbow = document.querySelector(".logo-rainbow");
-  if (colorMode === "rainbow") {
-    headerLogoRainbow.classList.remove("hidden");
-    headerLogoStandard.classList.add("hidden");
-  } else {
-    headerLogoRainbow.classList.add("hidden");
-    headerLogoStandard.classList.remove("hidden");
   }
 }
